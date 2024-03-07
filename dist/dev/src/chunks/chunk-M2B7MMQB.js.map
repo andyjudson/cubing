@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../../node_modules/cubing/src/cubing/search/worker-workarounds/worker-guard.ts"],
-  "sourcesContent": ["export const exposeAPI: { expose: boolean } = {\n  expose: true,\n};\n"],
-  "mappings": ";AAAO,IAAM,YAAiC;EAC5C,QAAQ;AACV;",
-  "names": []
-}
