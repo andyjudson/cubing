@@ -38,13 +38,14 @@
 
       const twistyPlayer = document.querySelector("twisty-player");
       twistyPlayer.alg = scramble;
+      twistyPlayer.alg.play()
 
       document.body.prepend(new TwistyAlgViewer({ twistyPlayer: twistyPlayer }));
 
       window.addEventListener("keydown", async (e) => {
         if (e.code === "Space") {
           twistyPlayer.alg = await randomScrambleForEvent("333");
-          twistyPlayer.alg.play()
+          console.log('thinking ...')
         }
       })
     </script>
