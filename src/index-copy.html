@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf8">
+  <title>My Cubing App</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- Note: the source file is `main.ts`, but here we use the transpiled file name it will have on the web server. -->
+  <script src="./main.js" type="module"></script>
+  <!--
+  <script type="module">
+    window.addEventListener("keydown", async (e) => {
+        if (e.code === "Space") {
+          twistyPlayer.alg = await randomScrambleForEvent("333");
+          twistyPlayer.alg.play()
+        }
+      })
+  </script>
+  -->
+</head>
+
+<body>
+  <div class="large">
+    <twisty-player id="main-player"
+      visualization="PG3D"
+      experimental-setup-anchor="start"
+      hint-facelets="none"
+      background="none"
+      control-panel="none"
+      viewer-link="none"
+    ></twisty-player>
+  </div>
+  <div class="footer">
+    Built with <a href="https://github.com/cubing/cubing.js">cubing.js</a> | see <a href="https://github.com/andyjudson">github</a>
+  </div>
+</body>
+
+</html>

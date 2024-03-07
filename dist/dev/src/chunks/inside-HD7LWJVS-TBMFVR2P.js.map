@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../node_modules/cubing/src/cubing/search/inside/index.ts"],
+  "sourcesContent": ["import { expose } from \"../../vendor/apache/comlink-everywhere/inside\";\nimport { insideAPI } from \"./api\";\n\nexpose(insideAPI);\n"],
+  "mappings": ";;;;;;;;;;;;;AAGA,OAAO,SAAS;",
+  "names": []
+}

@@ -1,0 +1,49 @@
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: black;
+    color: white;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 5px;
+  display: grid;
+  place-content: center;
+  gap: 1em;
+  font-family: Ubuntu, Tahoma, sans-serif;
+}
+
+table {
+  font-size: 0.8em;
+  text-align: center;
+}
+
+twisty-player {
+  height: 100%;
+  width: 100%;
+}
+
+twisty-alg-viewer {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+twisty-alg-viewer a:hover {
+  color: yellow;
+}
+
+
+.large {
+  /* default cube size is width = 384px and height = 256px (ratio of 1.5) */
+  width: 576px;
+  height: 384px;
+}
+
+.footer {
+  font-size: 0.4em;
+  color: lightgrey;
+}
