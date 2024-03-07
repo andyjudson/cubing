@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Scramble!</title>
+    <style>
+      html, body {
+        height: 100%;
+        display: grid;
+        place-content: center;
+
+        font-family: Ubuntu, Tahoma, sans-serif;
+        font-size: 1.25em;
+      }
+      twisty-alg-viewer {
+        width: 75%;
+        margin: auto;
+      }
+      twisty-player {
+        width: 100%;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: rgba(0, 0, 0, 0.85);
+          color: white;
+        }
+      }
+    </style>
+
+    <script src="https://cdn.cubing.net/js/cubing/twisty" type="module"></script>
+    <script type="module">
+      import { TwistyAlgViewer } from "https://cdn.cubing.net/js/cubing/twisty";
+      import { randomScrambleForEvent } from "https://cdn.cubing.net/js/cubing/scramble";
+      import { eventInfo } from "https://cdn.cubing.net/js/cubing/puzzles";
+
+      const event = new URL(location.href).searchParams.get("event") ?? "333";
+
+      const scramble = await randomScrambleForEvent(event);
+      scramble.log();
+
+      const twistyPlayer = document.querySelector("twisty-player");
+      twistyPlayer.puzzle = eventInfo(event).puzzleID;
+      twistyPlayer.alg = scramble;
+      document.body.prepend(new TwistyAlgViewer({ twistyPlayer: twistyPlayer }));
+
+      window.addEventListener("keydown", async (e) => {
+        if (e.code === "Space") {
+          twistyPlayer.alg = await randomScrambleForEvent(event);
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <twisty-player
+      background="none"
+      control-panel="none"
+    ></twisty-player>
+  </body>
+</html>
