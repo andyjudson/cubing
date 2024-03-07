@@ -24,6 +24,7 @@
           color: white;
         }
       }
+      
     </style>
 
     <script src="https://cdn.cubing.net/js/cubing/twisty" type="module"></script>
@@ -32,22 +33,23 @@
       import { randomScrambleForEvent } from "https://cdn.cubing.net/js/cubing/scramble";
       import { eventInfo } from "https://cdn.cubing.net/js/cubing/puzzles";
 
-      const event = new URL(location.href).searchParams.get("event") ?? "333";
-
-      const scramble = await randomScrambleForEvent(event);
+      const scramble = await randomScrambleForEvent("333");
       scramble.log();
 
       const twistyPlayer = document.querySelector("twisty-player");
-      twistyPlayer.puzzle = eventInfo(event).puzzleID;
+      twistyPlayer.puzzle = "333";
       twistyPlayer.alg = scramble;
+
       document.body.prepend(new TwistyAlgViewer({ twistyPlayer: twistyPlayer }));
 
       window.addEventListener("keydown", async (e) => {
         if (e.code === "Space") {
-          twistyPlayer.alg = await randomScrambleForEvent(event);
+          twistyPlayer.alg = await randomScrambleForEvent("333");
+          twistyPlayer.alg.play()
         }
       })
     </script>
+
   </head>
   <body>
     <twisty-player
