@@ -39,12 +39,14 @@ twisty-alg-viewer .twisty-alg-current-move {
   font-size: 1.4em;
 }
 
-/*
+a:any-link {
+  text-decoration: none;
+}
+
 a:hover {
   text-decoration: none;
   color: cyan;
 }
-*/
 
 .medium {
   width: 480px;
