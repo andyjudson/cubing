@@ -24,4 +24,4 @@ Resources
 - [J Perm - Learn 2-look OLL](https://youtu.be/GhmYBgLoQQg?si=n-5QSiKUfa14q3Gf)
 - [J Perm - Learn 2-look PLL](https://youtu.be/f_Yor-ydZjs?si=-2ydT3XDFE0IF9ht)
 
-This site is built with [cubing.js](https://github.com/cubing/cubing.js) from Lucas Garron, with thanks to [CubeHead](https://www.youtube.com/@CubeHead) (aka. Milan Struyf) and [J Perm](https://www.youtube.com/@JPerm) (aka. Dylan Wang) for their cubing tutorial that have helped me learn cubing..
+This site is built with [cubing.js](https://github.com/cubing/cubing.js) from Lucas Garron, with thanks to [CubeHead](https://www.youtube.com/@CubeHead) (aka. Milan Struyf) and [J Perm](https://www.youtube.com/@JPerm) (aka. Dylan Wang) for their cubing tutorial that have helped me learn cubing.
