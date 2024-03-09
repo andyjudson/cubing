@@ -20,8 +20,8 @@ table {
 
 
 twisty-player {
-  margin: auto;
   width: 100%;
+  margin: auto;
 }
 
 
@@ -32,12 +32,17 @@ twisty-alg-viewer {
   text-align: center;
 } 
 
-
 twisty-alg-viewer .twisty-alg-current-move {
   padding: 1px;
   color: greenyellow;
   font-weight: 600;
   font-size: 1.4em;
+}
+
+#controls {
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }
 
 a:any-link {
@@ -64,3 +69,6 @@ a:hover {
   color: lightgrey;
 }
 
+.btn {
+  font-size: 24px;
+}
