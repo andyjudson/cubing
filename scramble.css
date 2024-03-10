@@ -1,15 +1,12 @@
 twisty-player {
     width: 100%;
     margin: auto;
-    width: 576px;
-    height: 384px;
   }
   
   twisty-alg-viewer {
     width: 100%;
     margin: auto;
-    font-size: 1.5em;
-    text-align: center;
+    font-size: 24px;
   } 
   
   /*
@@ -21,14 +18,15 @@ twisty-player {
   
   twisty-alg-viewer .twisty-alg-current-move {
     color: greenyellow;
-    padding: 0.2em;
-    font-weight: 600;
-    font-size: 1.4em;
+    padding: 1px;
+    font-weight: 400;
+    font-size: 36px;
   }
   
   #control {
     width: 100%;
     margin: auto;
+    padding: 4px;
     text-align: center;
   }
   
@@ -37,8 +35,8 @@ twisty-player {
   }
   
   #algorithm {
-    width: 100%;
+    width: 90%;
     margin: auto;
+    padding: 4px;
     text-align: center;
-    padding-top: 3em;
   }
