@@ -1,0 +1,44 @@
+twisty-player {
+    width: 100%;
+    margin: auto;
+    width: 576px;
+    height: 384px;
+  }
+  
+  twisty-alg-viewer {
+    width: 100%;
+    margin: auto;
+    font-size: 1.5em;
+    text-align: center;
+  } 
+  
+  /*
+  twisty-alg-viewer .twisty-alg-current-move {
+    color: hotpink;
+    text-decoration: none;
+  }
+  */
+  
+  twisty-alg-viewer .twisty-alg-current-move {
+    color: greenyellow;
+    padding: 0.2em;
+    font-weight: 600;
+    font-size: 1.4em;
+  }
+  
+  #control {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  #control .btn {
+    font-size: 24px;
+  }
+  
+  #algorithm {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 3em;
+  }

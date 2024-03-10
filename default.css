@@ -1,74 +1,21 @@
+/* ----- general styling + layout ----- */
 
 html, body {
-  margin: 5;
-  padding: 5px;
+  margin: 1em;
+  padding: 1em;
   display: grid;
   place-content: center;
   gap: 1em;
   font-family: "Ubuntu", Tahoma, Verdana, sans-serif;
   font-weight: 300;
   font-style: normal;
-  background-color: black;
-  color: white;
 }
         
-table {
-  font-size: 0.8em;
-  width: 500px;
-  text-align: left;
-}
-
-
-twisty-player {
-  width: 100%;
-  margin: auto;
-}
-
-
-twisty-alg-viewer {
-  width: 100%;
-  margin: auto;
-  font-size: 1.5em;
-  text-align: center;
-} 
-
-twisty-alg-viewer .twisty-alg-current-move {
-  padding: 1px;
-  color: greenyellow;
-  font-weight: 600;
-  font-size: 1.4em;
-}
-
-#controls {
-  width: 100%;
-  margin: auto;
-  text-align: center;
-}
-
 a:any-link {
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: none;
-  color: cyan;
 }
 
-.medium {
-  width: 480px;
-  height: 320px;
-}
-
-.large {
-  width: 576px;
-  height: 384px;
-}
-
-.footer {
-  font-size: 0.6em;
-  color: lightgrey;
-}
-
-.btn {
-  font-size: 24px;
-}
