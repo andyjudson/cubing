@@ -1,42 +1,42 @@
 twisty-player {
-    width: 100%;
-    margin: auto;
-  }
-  
-  twisty-alg-viewer {
-    width: 100%;
-    margin: auto;
-    font-size: 24px;
-  } 
-  
-  /*
-  twisty-alg-viewer .twisty-alg-current-move {
-    color: hotpink;
-    text-decoration: none;
-  }
-  */
-  
-  twisty-alg-viewer .twisty-alg-current-move {
-    color: greenyellow;
-    padding: 1px;
-    font-weight: 400;
-    font-size: 36px;
-  }
-  
-  #control {
-    width: 100%;
-    margin: auto;
-    padding: 4px;
-    text-align: center;
-  }
-  
-  #control .btn {
-    font-size: 24px;
-  }
-  
-  #algorithm {
-    width: 90%;
-    margin: auto;
-    padding: 4px;
-    text-align: center;
-  }
+  width: 100%;
+  margin: auto;
+}
+
+twisty-alg-viewer {
+  width: 100%;
+  margin: auto;
+  font-size: 24px;
+} 
+
+/*
+twisty-alg-viewer .twisty-alg-current-move {
+  color: hotpink;
+  text-decoration: none;
+}
+*/
+
+twisty-alg-viewer .twisty-alg-current-move {
+  color: greenyellow;
+  padding: 1px;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+#control {
+  width: 100%;
+  margin: auto;
+  padding: 4px;
+  text-align: center;
+}
+
+#control .btn {
+  font-size: 24px;
+}
+
+#algorithm {
+  width: 90%;
+  margin: auto;
+  padding: 4px;
+  text-align: center;
+}

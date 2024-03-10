@@ -1,8 +1,35 @@
-#introBlock {
-    padding-top: 2em;
+twisty-player {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    padding: 2px;
 }
 
-#tutorialBlock {
-    padding-top: 2em;
+twisty-alg-viewer {
+    width: 100%;
+    margin: auto;
+    padding: 2px;
+}
+
+twisty-alg-viewer .twisty-alg-current-move {
+    color: yellowgreen;
+}
+
+#player {
+    background-color: inherit
+}
+
+#algorithm {
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    background-color: inherit
+}
+
+#control {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: inherit;
 }
 

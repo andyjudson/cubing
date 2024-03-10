@@ -1,8 +1,8 @@
 /* ----- general styling + layout ----- */
 
 html, body {
-  margin: 1em;
-  padding: 1em;
+  margin: 1px;
+  padding: 1px;
   display: grid;
   font-family: "Ubuntu", Tahoma, Verdana, sans-serif;
   font-weight: 300;
@@ -17,3 +17,6 @@ a:hover {
   text-decoration: none;
 }
 
+.footer {
+  font-size: 0.8em;
+}
