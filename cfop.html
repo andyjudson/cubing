@@ -15,7 +15,7 @@
 
     <script type="module">
       import { TwistyPlayer, TwistyAlgViewer } from "https://cdn.cubing.net/js/cubing/twisty";
-      
+    
       const twistyPlayer = new TwistyPlayer({
         puzzle: "3x3x3",
         visualization: "PG3D",
@@ -57,6 +57,7 @@
         visualization=PG2D / experimental-2D-LL
       */
 
+      
       function play() {
         twistyPlayer.play()
       }
@@ -74,13 +75,19 @@
       }
 
       function demoAlg() {
-        console.log('hello! enjoy the demo ...')        
-        twistyPlayer.experimentalSetupAnchor = "end"     // end state so cube is solved using alg
-        twistyPlayer.experimentalSetupAlg = "x2"         // rotate cube so U is yellow
-        twistyPlayer.experimentalStickering = "full"     // prefer full instead of masking which messes with setup alg + colour orientation, or need to understanding how to do custom masking
-        twistyPlayer.alg = "(R U R' U) (R U2 R')"        // sune example
+        console.log("hello! enjoy the demo ...");
+        
+        algNotes.innerHTML = "OLL corner orientation using Sune algorithm.";
+
+        twistyPlayer.experimentalSetupAnchor = "end";     // end state so cube is solved using alg
+        twistyPlayer.experimentalSetupAlg = "x2";         // rotate cube so U is yellow
+        twistyPlayer.experimentalStickering = "full";     // prefer full instead of masking which messes with setup alg + colour orientation, or need to understanding how to do custom masking
+        twistyPlayer.alg = "(R U R' U) (R U2 R')";        // sune example
+
       }
       
+      const algNotes = document.getElementById("notes");
+
       document.getElementById("player").appendChild(twistyPlayer);      
       document.getElementById("algorithm").appendChild(new TwistyAlgViewer({ twistyPlayer: twistyPlayer }));
 
@@ -107,16 +114,16 @@
       <div class="row py-3">
         <div class="col-12 p-2">
         <h1>CFOP Beginner Method</h1>
-        <p>The site is built to make it easier to practice (i.e. replay) the specific moves per case whilst learning CFOP algorithms. 
-          All examples and notes are based on the excellent tutorials for Beginner CFOP from <img src="./png/cubehead_logo_bleached_hair_480x480.png" height="24px"/><b>CubeHead</b>.
-          I'll focus on the F2L, OLL and PLL stages, and will skip the CROSS stage but see the video from CubeHead below. Just to clarify, I'm not a cubing expert, far from it, as this is a crib sheet for my own learning, and if others find it useful, then that is a win.
-          See these links to his Beginner CFOP YouTube videos: 
-          <a href="https://youtu.be/M-vKaV2NbEo?si=OxAuMfna4qGy4iNg">Intuitive CROSS</a> | 
-          <a href="https://youtu.be/ReOZZHscIGk?si=HSO998LSWOHP6Rvl">Intuitive F2L</a> | 
-          <a href="https://youtu.be/6PSBaxlBqRg?si=UwraHaKXkdcLiIUn">2-look OLL</a> |
-          <a href="https://youtu.be/ZC9nwou59ow?si=NB4cbgdTsUZzbOba">2-look PLL</a></p>
+        <p>The site is built to make it easier to practice (i.e. replay) the specific moves per case whilst learning CFOP algorithms. All examples and notes are based on the excellent <a href="https://www.youtube.com/playlist?list=PLqrfspOsG9B-zqJu9f-45BZRamipy-q2y">Beginner CFOP tutorials</a> from <img src="./png/cubehead_logo_bleached_hair_480x480.png" height="24px"><a href="https://www.youtube.com/@CubeHead">CubeHead</a>.</p>
+        <p>I'll focus on the F2L, OLL and PLL stages, and will skip the CROSS stage but see the video from CubeHead below. Just to be clear, I'm not a cubing expert, far from it, this is cheat sheet for my own learning, and if others find it useful, then that is a bonus.</p>
+        <div>
+          <a href="#f2l" class="btn btn-primary" tabindex="-1" role="button">Intuitive F2L</a>
+          <a href="#oll" class="btn btn-primary" tabindex="-1" role="button">2-Look OLL</a>
+          <a href="#pll" class="btn btn-primary" tabindex="-1" role="button">2-Look PLL</a>
           <button type="button" id="btn-demo" class="btn btn-primary"
             data-bs-toggle="modal" data-bs-target="#modalTwisty">Launch algorithm demo</button>
+        </div>
+        
         </div>
       </div>
 
@@ -124,7 +131,8 @@
 
       <div class="row py-3">
         <div class="col-12 p-2">
-          <h3>F2L intuitive cases</h3>
+          <a id="f2l"><h3>F2L intuitive cases</h3></a>
+          <p>See <a href="https://youtu.be/ReOZZHscIGk?si=HSO998LSWOHP6Rvl">Intuitive F2L</a> YouTube video from CubeHead.</p>
           <p>Like with the cross stage, solving the first two layers, is a combination of a few repeated patterns, 
           and intuitively setting up pieces to allow you to slot an edge-corner pair into the position. Whilst there are 
           over 40 algorithms, there are 4 easy cases when pieces are in the top layer, and you can use a few tricks to get 
@@ -382,10 +390,10 @@
       </div>
 
       <!-- oll cases -->
-
       <div class="row py-3">
         <div class="col-12 p-2">
-          <h3>OLL 2-Look Cases</h3>
+          <a id="oll"><h3>OLL 2-Look Cases</h3></a>
+          <p>See <a href="https://youtu.be/6PSBaxlBqRg?si=UwraHaKXkdcLiIUn">2-look OLL</a> YouTube video from CubeHead.</p>
           <p>The goal of OLL (orientation of last layer) is to solve the yellow face after finishing F2L.
           We can no longer use "intuitive" techniques, rather we need to use algorithms that solve 
           specific patterns. Even though, there are 57 cases in total, we only need 9 algorithms for 2-look OLL.
@@ -604,7 +612,8 @@
 
       <div class="row py-3">
         <div class="col-12 p-2">
-          <h3>PLL 2-Look Cases</h3>
+          <a id="pll"><h3>PLL 2-Look Cases</h3></a>
+          <p>See <a href="https://youtu.be/ZC9nwou59ow?si=NB4cbgdTsUZzbOba">2-look PLL</a>  YouTube video from CubeHead.</p>    
           <p>The goal of PLL (permutation of the last layer) is to finish the cube solve by moving pieces around after OLL.
             You do this by recognizing patterns on the side of the last layer, and do an algorithm that solves that case. 
             Even though there 21 cases in total, we only need 6 algorithms for 2-look PLL. The first step is to solve the corners, then the second step is to solve the edges.
@@ -752,6 +761,9 @@
 
     </div>
 
+
+
+
     <!-- modal cubing.js player -->
 
     <div class="modal fade" id="modalTwisty" tabindex="-1" aria-labelledby="modalTwistyLabel" aria-hidden="true">
@@ -763,7 +775,7 @@
           </div>
           <div class="modal-body">
             <div class="vstack gap-2">
-              <div id="notes" class="p-2">Case: OLL corner orientation using Sune algorithm.</div>
+              <div id="notes" class="p-2"></div>
               <div id="algorithm" class="p-2"></div>
               <div id="player" class="p-2"></div>
               <div id="control" class="p-2 material-symbols-outlined">
