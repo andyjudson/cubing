@@ -8,6 +8,7 @@ My solve times are consistently around 2 to 3 mins, and whilst I'm not looking t
 
 Experiments
  - [Cube Scramble](scramble.html)
+ - [Cube Image Generator](puzzlegen.html)
  - [CFOP Beginner Cheatsheet](cfop.html)
 
 Resources

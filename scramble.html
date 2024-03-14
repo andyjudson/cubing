@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scramble!</title>
+    <title>Scramble</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,24 +13,31 @@
     
     <link rel="stylesheet" href="./default.css">
     <link rel="stylesheet" href="./scramble.css">
-    <link rel="stylesheet" href="./cubing-icons.css">
-
+    
     <script src="https://cdn.cubing.net/js/cubing/twisty" type="module"></script>
     <script type="module">
 
-      import { TwistyAlgViewer } from "https://cdn.cubing.net/js/cubing/twisty";
+      import { TwistyPlayer, TwistyAlgViewer } from "https://cdn.cubing.net/js/cubing/twisty";
       import { randomScrambleForEvent } from "https://cdn.cubing.net/js/cubing/scramble";
       
       const scramble = await randomScrambleForEvent("333");
       scramble.log();
 
-      const twistyPlayer = document.querySelector("twisty-player");
-      twistyPlayer.alg = scramble;
-      twistyPlayer.tempoScale = 1.5; 
+      const twistyPlayer = new TwistyPlayer({
+        puzzle: "3x3x3",
+        visualization: "PG3D",
+        background: "none",
+        hintFacelets: "none",
+        controlPanel: "none",
+        tempoScale: 1.5
+      });
+    
+      twistyPlayer.alg = scramble;      
       twistyPlayer.play();
       
+      document.getElementById("player").appendChild(twistyPlayer);      
       document.getElementById("algorithm").appendChild(new TwistyAlgViewer({ twistyPlayer: twistyPlayer }));
-      
+    
       window.addEventListener("keydown", async (e) => {
         if (e.code === "KeyS") {
           refreshScramble();
@@ -79,10 +86,7 @@
 
     <div class="container vw-100 vh-100">
 
-      <div id="player"><twisty-player
-        background="none" control-panel="none" hint-facelets="none" 
-        visualization="PG3D" experimental-setup-anchor="start">
-      </twisty-player></div>
+      <div id="player"></div>
       <div id="control" class="material-icons">
         <button type="button" id="btn-refresh" class="btn btn-outline-light">autorenew</button>
         <button type="button" id="btn-play" class="btn btn-outline-light">play_arrow</button>
