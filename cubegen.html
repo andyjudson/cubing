@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PuzzleGen</title>
+    <title>CubeGen</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +24,7 @@
         visualization: "PG3D",
         background: "none",
         hintFacelets: "none",
-        controlPanel: "none",
-        tempoScale: 1.5
+        controlPanel: "none"
       });
 
       function apply() {
@@ -37,7 +36,13 @@
       }
 
       function screenshot() {
+        // cubing.js does not yet let us control the format, it generates png for 3d and svg for 2d
         twistyPlayer.experimentalDownloadScreenshot("cubing-3x3")
+        /*let p = twistyPlayer.experimentalScreenshot("cubing-3x3")
+        p.then(result => {
+          console.log(result);
+          navigator.clipboard.writeText(result);
+        })*/
       }
       
       document.getElementById("player").appendChild(twistyPlayer);
@@ -86,15 +91,13 @@
 
       </div>
 
-      <!-- examples made earlier ...
+      <div id="placeholder">
+        <!-- examples made earlier ...
         <img src="./cubing-3x3.png" style="width:288px; height:288px;">
-        <img src="./cubing-3x3.svg">
-      -->
-
+        <img src="./cubing-3x3.svg" style="width:288px; height:288px;">        
+        -->
       </div>
-
       
-
     </div>
 
     <div class="container fixed-bottom footer">

@@ -1,0 +1,25 @@
+{
+    "f2l": {
+        "alg-1.1": {
+            "name":"Righty pair",
+            "case":"Easy insert",
+            "alg":"U R U' R'"
+        }  
+    },
+    "oll": {
+        "alg-1.1": {
+            "name": "line",
+            "case": "Horizontal line",
+            "probability": 0.25, 
+            "alg": "F (R U R' U') F'"
+        }
+    },
+    "pll": {
+        "alg-1.1": {
+            "name": "Y perm",
+            "case": "Opposite corner swap",
+            "probability": 0.67,
+            "alg": "F R U' R' U' R U R' F' (R U R' U') (R' F R F')"
+        }
+    }
+}
