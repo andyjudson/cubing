@@ -84,11 +84,11 @@
       }
 
       function demoAlg(evt) {
+        twistyPlayer.jumpToStart();
         twistyPlayer.experimentalStickering = "full";     // prefer full instead of masking which messes with setup alg + colour orientation, or need to understanding how to do custom masking
         twistyPlayer.experimentalSetupAnchor = "end";     // end state so cube is solved using alg
         twistyPlayer.experimentalSetupAlg = "x2";         // rotate cube so U is yellow, stickering only supports white on top
-        twistyPlayer.jumpToStart();
-
+        
         console.log(evt.target.id)
                     
         switch (evt.target.id) {
@@ -100,42 +100,42 @@
           case "btn-f2l-1-1":
             algNotes.innerHTML = "F2L :: easy insert with righty pair."
             twistyPlayer.alg = "U R U' R'";
-            twistyPlayer.experimentalStickering = "F2L";
-            twistyPlayer.experimentalSetupAlg = "";
+            //twistyPlayer.experimentalStickering = "F2L";
+            //twistyPlayer.experimentalSetupAlg = "";
             break;
           case "btn-f2l-1-2":
             algNotes.innerHTML = "F2L :: easy insert with lefty pair."
             twistyPlayer.alg = "U' L' U L";
-            twistyPlayer.experimentalStickering = "F2L";
-            twistyPlayer.experimentalSetupAlg = "";
+            //twistyPlayer.experimentalStickering = "F2L";
+            //twistyPlayer.experimentalSetupAlg = "";
             break;
           case "btn-f2l-1-3":
             algNotes.innerHTML = "F2L :: easy insert with righty insert."
             twistyPlayer.alg = "R U R'";
-            twistyPlayer.experimentalStickering = "F2L";
-            twistyPlayer.experimentalSetupAlg = "";
+            //twistyPlayer.experimentalStickering = "F2L";
+            //twistyPlayer.experimentalSetupAlg = "";
             break;
           case "btn-f2l-1-4":
             algNotes.innerHTML = "F2L :: easy insert with lefty insert."
             twistyPlayer.alg = "L' U' L";
-            twistyPlayer.experimentalStickering = "F2L";
-            twistyPlayer.experimentalSetupAlg = "";
+            //twistyPlayer.experimentalStickering = "F2L";
+            //twistyPlayer.experimentalSetupAlg = "";
             break;       
           // oll cases
           case "btn-oll-1-1":
             algNotes.innerHTML = "OLL :: cross orientation using Line algorithm."
             twistyPlayer.alg = "F (R U R' U') F'";
-            twistyPlayer.experimentalStickering = "Cross";
+            //twistyPlayer.experimentalStickering = "Cross";
             break;
           case "btn-oll-1-2":
             algNotes.innerHTML = "OLL :: cross orientation using Hook algorithm."
             twistyPlayer.alg = "f (R U R' U') f'";
-            twistyPlayer.experimentalStickering = "Cross";
+            //twistyPlayer.experimentalStickering = "Cross";
             break;          
           case "btn-oll-1-3":
             algNotes.innerHTML = "OLL :: cross orientation using Dot algorithm."
             twistyPlayer.alg = "F (R U R' U') F' f (R U R' U') f'";
-            twistyPlayer.experimentalStickering = "Cross";
+            //twistyPlayer.experimentalStickering = "Cross";
             break;   
           case "btn-oll-2-1":
             algNotes.innerHTML = "OLL :: corner orientation using Sune algorithm."
