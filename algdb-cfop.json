@@ -2,24 +2,123 @@
     "f2l": {
         "alg-1.1": {
             "name":"Righty pair",
-            "case":"Easy insert",
+            "case":"Easy inserts",
             "alg":"U R U' R'"
-        }  
+        },
+        "alg-1.2": {
+            "name":"Left pair",
+            "case":"Easy inserts",
+            "alg":"U' L' U L"
+        },
+        "alg-1.3": {
+            "name":"Right insert",
+            "case":"Easy inserts",
+            "alg":"R U R'"
+        },
+        "alg-1.4": {
+            "name":"Left insert",
+            "case":"Easy inserts",
+            "alg":"L' U' L"
+        } 
     },
     "oll": {
         "alg-1.1": {
-            "name": "line",
-            "case": "Horizontal line",
+            "name": "Line",
+            "case": "Cross Orientation",
             "probability": 0.25, 
             "alg": "F (R U R' U') F'"
+        },
+        "alg-1.2": {
+            "name": "Hook",
+            "case": "Cross Orientation",
+            "probability": 0.50, 
+            "alg": "f (R U R' U') f'"
+        },
+        "alg-1.3": {
+            "name": "Dot",
+            "case": "Cross Orientation",
+            "probability": 0.125, 
+            "alg": "F (R U R' U') F' f (R U R' U') f'"
+        },
+        "alg-2.1": {
+            "name": "Sune",
+            "case": "Corner Orientation",
+            "probability": 0.148, 
+            "alg": "(R U R' U) (R U2 R')"
+        },
+        "alg-2.2": {
+            "name": "Anti-Sune",
+            "case": "Corner Orientation",
+            "probability": 0.148, 
+            "alg": "(R U2 R') (U' R U' R')"
+        },
+        "alg-2.3": {
+            "name": "Cross-1",
+            "case": "Corner Orientation",
+            "probability": 0.074, 
+            "alg": "(R U R' U) (R U' R' U) (R U2 R')"
+        },
+        "alg-2.4": {
+            "name": "Cross-2",
+            "case": "Corner Orientation",
+            "probability": 0.148, 
+            "alg": "R U2 (R2 U') (R2 U') R2 U2 R"
+        },
+        "alg-2.5": {
+            "name": "Chameleon",
+            "case": "Corner Orientation",
+            "probability": 0.148, 
+            "alg": "(r U R' U') (r' F R F')"
+        },
+        "alg-2.6": {
+            "name": "Kite",
+            "case": "Corner Orientation",
+            "probability": 0.148, 
+            "alg": "F' (r U R' U') (r' F R)"
+        },
+        "alg-2.7": {
+            "name": "Headlights",
+            "case": "Corner Orientation",
+            "probability": 0.148, 
+            "alg": "R2 D (R' U2 R) D' (R' U2 R')"
         }
     },
     "pll": {
         "alg-1.1": {
             "name": "Y perm",
             "case": "Opposite corner swap",
-            "probability": 0.67,
+            "probability": 0.667,
             "alg": "F R U' R' U' R U R' F' (R U R' U') (R' F R F')"
+        },
+        "alg-1.2": {
+            "name": "T perm",
+            "case": "Adjacent corner swap",
+            "probability": 0.167,
+            "alg": "(R U R' U') R' F R2 U' R' U' R U R' F'"
+        },
+        "alg-2.1": {
+            "name": "Ua perm",
+            "case": "Edge cycle anti-clockwise",
+            "probability": 0.333,
+            "alg": "(R U R' U') R' F R2 U' R' U' R U R' F'"
+        },
+        "alg-2.2": {
+            "name": "Ub perm",
+            "case": "Edge cycle clockwise",
+            "probability": 0.333,
+            "alg": "R' U (R' U') (R' U') R' U (R U R2)"
+        },
+        "alg-2.3": {
+            "name": "H perm",
+            "case": "Opposite edge swap",
+            "probability": 0.083,
+            "alg": "M2 U' (M2 U2 M2) U' M2"
+        },
+        "alg-2.4": {
+            "name": "Z perm",
+            "case": "Adjacent edge swap",
+            "probability": 0.167,
+            "alg": "M' U' (M2 U')(M2 U') M' U2 M2"
         }
     }
 }
