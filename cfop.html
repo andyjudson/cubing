@@ -28,6 +28,13 @@
         tempoScale: 1.0,
       });
 
+      // define custom masking orbits to work with cfop + use z2 or x2, to orientate cube so yellow is up
+      const mask_default = "EDGES:------------,CORNERS:--------,CENTERS:------";
+      const mask_f2l = "EDGES:----IIII----,CORNERS:----IIII,CENTERS:-----I";
+      const mask_oll_cross = "EDGES:----OOOO----,CORNERS:----IIII,CENTERS:------";
+      const mask_oll_layer = "EDGES:----OOOO----,CORNERS:----OOOO,CENTERS:------";
+      const mask_pll_corners = "EDGES:----OOOO----,CORNERS:--------,CENTERS:------";
+
       /*
         f2l example:
 
@@ -86,9 +93,10 @@
 
       function demoAlg(evt) {
         twistyPlayer.jumpToStart();
-        twistyPlayer.experimentalStickering = "full";     // prefer full instead of masking which messes with setup alg + colour orientation, or need to understanding how to do custom masking
-        twistyPlayer.experimentalSetupAnchor = "end";     // end state so cube is solved using alg
-        twistyPlayer.experimentalSetupAlg = "x2";         // rotate cube so U is yellow, stickering only supports white on top
+        twistyPlayer.experimentalSetupAnchor = "end"; // end state so cube is solved using alg
+        twistyPlayer.experimentalStickering = "full"; // prefer full instead of masking which messes with setup alg + colour orientation, or need to understanding how to do custom masking
+        twistyPlayer.experimentalSetupAlg = "z2"; // rotate cube so U is yellow, stickering only supports white on top
+        twistyPlayer.experimentalStickeringMaskOrbits = mask_default;  // no sticker manipulation
         
         console.log(evt.target.id)
                     
@@ -101,68 +109,84 @@
           case "btn-f2l-1-1":
             algNotes.innerHTML = "F2L :: easy insert with righty pair."
             twistyPlayer.alg = "U R U' R'";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;
           case "btn-f2l-1-2":
             algNotes.innerHTML = "F2L :: easy insert with lefty pair."
             twistyPlayer.alg = "U' L' U L";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;
           case "btn-f2l-1-3":
             algNotes.innerHTML = "F2L :: easy insert with righty insert."
             twistyPlayer.alg = "R U R'";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;
           case "btn-f2l-1-4":
             algNotes.innerHTML = "F2L :: easy insert with lefty insert."
             twistyPlayer.alg = "L' U' L";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;       
           // oll cases
           case "btn-oll-1-1":
-            algNotes.innerHTML = "OLL :: cross orientation using Line algorithm."
+            algNotes.innerHTML = "OLL :: cross orientation using Line algorithm.";
             twistyPlayer.alg = "F (R U R' U') F'";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_cross;
             break;
           case "btn-oll-1-2":
-            algNotes.innerHTML = "OLL :: cross orientation using Hook algorithm."
+            algNotes.innerHTML = "OLL :: cross orientation using Hook algorithm.";
             twistyPlayer.alg = "f (R U R' U') f'";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_cross;
             break;          
           case "btn-oll-1-3":
-            algNotes.innerHTML = "OLL :: cross orientation using Dot algorithm."
+            algNotes.innerHTML = "OLL :: cross orientation using Dot algorithm.";
             twistyPlayer.alg = "F (R U R' U') F' f (R U R' U') f'";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_cross;
             break;   
           case "btn-oll-2-1":
-            algNotes.innerHTML = "OLL :: corner orientation using Sune algorithm."
+            algNotes.innerHTML = "OLL :: corner orientation using Sune algorithm.";
             twistyPlayer.alg = "(R U R' U) (R U2 R')";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-2":
-            algNotes.innerHTML = "OLL :: corner orientation using Anti-Sune algorithm."
-            twistyPlayer.alg = "(R U2 R') (U' R U' R')";
+            algNotes.innerHTML = "OLL :: corner orientation using Anti-Sune algorithm.";
+            twistyPlayer.alg = "(R U2 R') (U' R U' R')"; 
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-3":
-            algNotes.innerHTML = "OLL :: corner orientation using Cross-1 algorithm."
+            algNotes.innerHTML = "OLL :: corner orientation using Cross-1 algorithm.";
             twistyPlayer.alg = "(R U R' U) (R U' R' U) (R U2 R')";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-4":
-            algNotes.innerHTML = "OLL :: corner orientation using Cross-2 algorithm."
+            algNotes.innerHTML = "OLL :: corner orientation using Cross-2 algorithm.";
             twistyPlayer.alg = "R U2 (R2 U') (R2 U') R2 U2 R";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-5":
-            algNotes.innerHTML = "OLL :: corner orientation using Chameleon algorithm."
+            algNotes.innerHTML = "OLL :: corner orientation using Chameleon algorithm.";
             twistyPlayer.alg = "(r U R' U') (r' F R F')";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-6":
-            algNotes.innerHTML = "OLL :: corner orientation using Kite algorithm."
+            algNotes.innerHTML = "OLL :: corner orientation using Kite algorithm.";
             twistyPlayer.alg = "F' (r U R' U') (r' F R)";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-7":
-            algNotes.innerHTML = "OLL :: corner orientation using Headlights algorithm."
+            algNotes.innerHTML = "OLL :: corner orientation using Headlights algorithm.";
             twistyPlayer.alg = "R2 D (R' U2 R) D' (R' U2 R')";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           // pll cases
           case "btn-pll-1-1":
-            algNotes.innerHTML = "PLL :: opposite corner swap using Y perm algorithm."
+            algNotes.innerHTML = "PLL :: opposite corner swap using Y perm algorithm.";
             twistyPlayer.alg = "F R U' R' U' R U R' F' (R U R' U') (R' F R F')";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_pll_corners;
             break;
           case "btn-pll-1-2":
             algNotes.innerHTML = "PLL :: adjacent corner swap using T perm algorithm."
             twistyPlayer.alg = "(R U R' U') R' F R2 U' R' U' R U R' F'";
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_pll_corners;
             break;
           case "btn-pll-2-1":
             algNotes.innerHTML = "PLL :: Edge cycle anti-clockwise Ua perm algorithm."

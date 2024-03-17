@@ -27,12 +27,19 @@
         controlPanel: "none"
       });
 
+      //twistyPlayer.experimentalStickeringMaskOrbits = "EDGES:DD----DDD--D,CORNERS:I-----I-,CENTERS:DDDDDD";
+      //twistyPlayer.alg = "F' U B' R' U F2 U2 F' U' F U2 D B' D' R2 B2 U'"
+      //twistyPlayer.experimentalSetupAnchor = "end";
+            
       function apply() {
+        twistyPlayer.visualization = document.getElementById("form-vizualization").value;
         twistyPlayer.alg = document.getElementById("form-alg").value;
         twistyPlayer.experimentalSetupAlg = document.getElementById("form-setupalg").value;
-        twistyPlayer.visualization = document.getElementById("form-vizualization").value;
-        twistyPlayer.experimentalStickering = document.getElementById("form-stickering").value;
         twistyPlayer.experimentalSetupAnchor = document.getElementById("form-anchor").value;
+        twistyPlayer.experimentalStickering = document.getElementById("form-stickering").value;
+        let mask = document.getElementById("form-maskorbits").value
+        if (mask != "")
+          twistyPlayer.experimentalStickeringMaskOrbits = mask;
       }
 
       function screenshot() {
@@ -50,6 +57,14 @@
       document.getElementById("btn-apply").addEventListener("click", apply);
       document.getElementById("btn-screenshot").addEventListener("click", screenshot);
           
+      window.addEventListener("keydown", async (e) => {
+        if (e.code === "Enter") {
+          apply();
+        }
+      })
+
+
+      
     </script>
 
   </head>
@@ -58,13 +73,16 @@
     <div class="container vw-100 vh-100">
 
       <div id="player"></div>
-      <div id="form" class="col-4 mx-auto">
+
+      <div id="form" class="col-6 mx-auto">
         <form>
-          <div class="mb-3">
+          <div class="">
             <label class="form-label">algorithm</label>
             <input id="form-alg" class="form-control" placeholder="">
             <label class="form-label">setup algorithm</label>
             <input id="form-setupalg" class="form-control" placeholder="">
+            <label class="form-label">masking orbit</label>
+            <input id="form-maskorbits" class="form-control" placeholder="">
             <label class="form-label">visualization</label>
             <select id="form-vizualization" class="form-select">
               <option value="PG3D">3d</option>
@@ -81,8 +99,8 @@
             </select>
             <label class="form-label">anchor</label>
             <select id="form-anchor" class="form-select">
-              <option value="start">start</option>
               <option value="end">end</option>
+              <option value="start">start</option>              
             </select>
           </div>
           <button id="btn-apply" type="button" class="btn btn-primary">Apply</button>
@@ -92,10 +110,12 @@
       </div>
 
       <div id="placeholder">
+
         <!-- examples made earlier ...
         <img src="./cubing-3x3.png" style="width:288px; height:288px;">
         <img src="./cubing-3x3.svg" style="width:288px; height:288px;">        
         -->
+        
       </div>
       
     </div>

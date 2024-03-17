@@ -9,12 +9,10 @@ twisty-alg-viewer {
   font-size: 24px;
 } 
 
-/*
-twisty-alg-viewer .twisty-alg-current-move {
+/*twisty-alg-viewer .twisty-alg-move a:hover {
   color: hotpink;
   text-decoration: none;
-}
-*/
+}*/
 
 twisty-alg-viewer .twisty-alg-current-move {
   color: greenyellow;
