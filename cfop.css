@@ -36,4 +36,10 @@ twisty-alg-viewer .twisty-alg-current-move {
     background-color: inherit;
 }
 
+.cube-modal {
+    width: 130px;
+    height: 130px;
+    margin: 0;
+    padding: 0;
+}
 
