@@ -39,6 +39,21 @@
             "name":"Connected in top layer",
             "case":"Connected",
             "alg":"(R U2 R') U' (R U R')"
+        },
+        "alg-3.1": {
+            "name":"White side, Colours match",
+            "case":"Solve pairs in slot",
+            "alg":"(R U2 R') U' (R U R')"
+        },
+        "alg-3.2": {
+            "name":"White side, Colours not match",
+            "case":"Solve pairs in slot",
+            "alg":"U' (R U R' U) (R U R')"
+        },
+        "alg-3.3": {
+            "name":"White up",
+            "case":"Solve pairs in slot",
+            "alg":"U2 (R U R' U) (R U' R')"
         }
     },
     "oll": {
