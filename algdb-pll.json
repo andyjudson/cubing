@@ -1,0 +1,18 @@
+{
+    "pll-case-1": {
+        "comment": "Permutation of Edges or Corners Only",
+        "alg-1.1": {}
+    },
+    "pll-case-2": {
+        "comment": "Swap One Set of Adjacent Corners",
+        "alg-2.1": {}
+    },
+    "pll-case-3": {
+        "comment": "Swap One Set of Corners Diagonally",
+        "alg-3.1": {}
+    },
+    "pll-case-4": {
+        "comment": "Double Spins",
+        "alg-4.1": {}
+    }
+}

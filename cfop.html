@@ -59,17 +59,16 @@
         twistyPlayer.tempoScale = parseFloat(evt.target.id.substr(10, 3))
       }
 
-      function demoAlg(evt) {
+      function demoAlg(evt) {        
+        // apply defaults
         twistyPlayer.jumpToStart();
         twistyPlayer.cameraLatitude=30;  // set camera angel (x-axis)
         twistyPlayer.cameraLongitude=45;  // set camera angel (y-axis)
         twistyPlayer.experimentalSetupAnchor = "end";  // end state so cube is solved using alg
-        twistyPlayer.experimentalStickering = "full";  // prefer full instead of masking which messes with setup alg + colour orientation, or need to understanding how to do custom masking
+        twistyPlayer.experimentalStickering = "full";  // prefer full instead of masking which messes with setup alg + colours orientation, or need to understanding how to do custom masking
         twistyPlayer.experimentalSetupAlg = "z2";  // rotate cube so U is yellow, stickering only supports white on top
         twistyPlayer.experimentalStickeringMaskOrbits = mask_default;  // no sticker manipulation
-        
-        console.log(evt.target.id)
-                    
+        // apply case settings            
         switch (evt.target.id) {
           // demo
           case "btn-demo":

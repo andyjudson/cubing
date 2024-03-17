@@ -1,0 +1,58 @@
+{
+    "oll-case-1": {
+        "comment": "Edges Oriented Correctly",
+        "alg-1.1": {}
+    },
+    "oll-case-2": {
+        "comment": "Corners Oriented Correct, Edges Flipped",
+        "alg-2.1": {}
+    },
+    "oll-case-3": {
+        "comment": "P Shapes",
+        "alg-3.1": {}
+    },
+    "oll-case-4": {
+        "comment": "W Shapes",
+        "alg-4.1": {}
+    },
+    "oll-case-5": {
+        "comment": "Squares Shapes",
+        "alg-5.1": {}
+    },
+    "oll-case-6": {
+        "comment": "L Shapes",
+        "alg-6.1": {}
+    },
+    "oll-case-7": {
+        "comment": "Fish Shapes",
+        "alg-7.1": {}
+    },
+    "oll-case-8": {
+        "comment": "Weird Shapes",
+        "alg-8.1": {}
+    },
+    "oll-case-9": {
+        "comment": "Lighting Shapes",
+        "alg-9.1": {}
+    },
+    "oll-case-10": {
+        "comment": "T Shapes",
+        "alg-10.1": {}
+    },
+    "oll-case-11": {
+        "comment": "C Shapes",
+        "alg-11.1": {}
+    },
+    "oll-case-12": {
+        "comment": "I Shapes",
+        "alg-12.1": {}
+    },
+    "oll-case-13": {
+        "comment": "L Shapes",
+        "alg-13.1": {}
+    },
+    "oll-case-14": {
+        "comment": "No Edges Flipped Correctly",
+        "alg-14.1": {}
+    }
+}

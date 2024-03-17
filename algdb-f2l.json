@@ -62,28 +62,63 @@
             "case":"",
             "alg":"U' (R U2 R') y' U (R' U' R)"
         },
-
-
-
-
-
-
-
-        
         "alg-3.4": {
             "name":"",
             "case":"",
-            "alg":"U' (R U' R' U) y' (R' U' R)"
+            "alg":"y' U (R' U2 R) d' U (R U R')"
         },
-
-        
+        "alg-3.5": {
+            "name":"",
+            "case":"",
+            "alg":"y' U (R' U R U') (R' U' R)"
+        },
+        "alg-3.6": {
+            "name":"",
+            "case":"",
+            "alg":"U' (R U' R' U) (R U R')"
+        }
     },
     "f2l-case-4": {
+        "comment": "Split Pair by Going Over",
         "alg-4.1": {
             "name":"",
             "case":"",
-            "alg":""
+            "alg":"y' (R' U R U') y U' (R U R')"
         },
-        
+        "alg-4.2": {
+            "name":"",
+            "case":"",
+            "alg":"(R U' R' U) y' U (R' U' R)"
+        },
+        "alg-4.3": {
+            "name":"",
+            "case":"",
+            "alg":"(R U2 R') U' (R U R')"
+        },
+        "alg-4.4": {
+            "name":"",
+            "case":"",
+            "alg":"y' (R' U2 R) U (R' U' R)"
+        }
+    },
+    "f2l-case-5": {
+        "comment": "Pair Made on Side",
+        "alg-5.1": {}
+    },
+    "f2l-case-6": {
+        "comment": "Weird",
+        "alg-6.1": {}
+    },
+    "f2l-case-7": {
+        "comment": "Corner in Slot, Edge in U Face",
+        "alg-7.1": {}
+    },
+    "f2l-case-8": {
+        "comment": "Edge in Slot, Corner in U Face",
+        "alg-8.1": {}
+    },
+    "f2l-case-9": {
+        "comment": "Edge and Corner in Slot",
+        "alg-9.1": {}
     }
 }
