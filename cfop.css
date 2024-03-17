@@ -37,9 +37,9 @@ twisty-alg-viewer .twisty-alg-current-move {
 }
 
 .cube-modal {
-    width: 130px;
-    height: 130px;
-    margin: 0;
+    width: 100px;
+    height: 100px;
+    margin: auto;
     padding: 0;
 }
 
