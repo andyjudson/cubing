@@ -19,7 +19,27 @@
             "name":"Left insert",
             "case":"Easy inserts",
             "alg":"L' U' L"
-        } 
+        },
+        "alg-2.1": {
+            "name":"Edge stuck, corner open",
+            "case":"Stuck",
+            "alg":"(U' R U' R') U2 (R U' R')"
+        },
+        "alg-2.2": {
+            "name":"Corner stuck, edge open",
+            "case":"Stuck",
+            "alg":"(R U' R' U) (R U' R')"
+        },
+        "alg-2.3": {
+            "name":"Connected in slot",
+            "case":"Connected",
+            "alg":"(R U' R' U') R U R' U2 (R U' R')"
+        },
+        "alg-2.4": {
+            "name":"Connected in top layer",
+            "case":"Connected",
+            "alg":"(R U2 R') U' (R U R')"
+        }
     },
     "oll": {
         "alg-1.1": {

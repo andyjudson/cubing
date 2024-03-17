@@ -40,6 +40,8 @@
         let mask = document.getElementById("form-maskorbits").value
         if (mask != "")
           twistyPlayer.experimentalStickeringMaskOrbits = mask;
+        else
+          twistyPlayer.experimentalStickeringMaskOrbits = "EDGES:------------,CORNERS:--------,CENTERS:------";
       }
 
       function screenshot() {
