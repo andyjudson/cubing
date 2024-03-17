@@ -26,10 +26,6 @@
         hintFacelets: "none",
         controlPanel: "none"
       });
-
-      //twistyPlayer.experimentalStickeringMaskOrbits = "EDGES:DD----DDD--D,CORNERS:I-----I-,CENTERS:DDDDDD";
-      //twistyPlayer.alg = "F' U B' R' U F2 U2 F' U' F U2 D B' D' R2 B2 U'"
-      //twistyPlayer.experimentalSetupAnchor = "end";
             
       function apply() {
         twistyPlayer.visualization = document.getElementById("form-vizualization").value;
@@ -37,11 +33,12 @@
         twistyPlayer.experimentalSetupAlg = document.getElementById("form-setupalg").value;
         twistyPlayer.experimentalSetupAnchor = document.getElementById("form-anchor").value;
         twistyPlayer.experimentalStickering = document.getElementById("form-stickering").value;
+        let mask_default = "EDGES:------------,CORNERS:--------,CENTERS:------";
         let mask = document.getElementById("form-maskorbits").value
         if (mask != "")
           twistyPlayer.experimentalStickeringMaskOrbits = mask;
         else
-          twistyPlayer.experimentalStickeringMaskOrbits = "EDGES:------------,CORNERS:--------,CENTERS:------";
+          twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
       }
 
       function screenshot() {
