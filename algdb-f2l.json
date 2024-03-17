@@ -1,0 +1,89 @@
+{
+    "f2l-case-1": {
+        "comment": "Easy Cases",
+        "alg-1.1": {
+            "name":"Righty pair",
+            "case":"Easy inserts",
+            "alg":"U (R U' R')"
+        },
+        "alg-1.2": {
+            "name":"Left pair",
+            "case":"Easy inserts",
+            "alg":"U' (L' U L)"
+        },
+        "alg-1.3": {
+            "name":"Left insert",
+            "case":"Easy inserts",
+            "alg":"(L' U' L)"
+        },
+        "alg-1.4": {
+            "name":"Right insert",
+            "case":"Easy inserts",
+            "alg":"(R U R')"
+        }
+    },
+    "f2l-case-2": {
+        "comment": "Reposition Edge",
+        "alg-2.1": {
+            "name":"",
+            "case":"",
+            "alg":"(U' R U R') U2 (R U' R')"
+        },
+        "alg-2.2": {
+            "name":"",
+            "case":"",
+            "alg":"y' (U R' U' R) U2 (R' U R)"
+        },
+        "alg-2.3": {
+            "name":"",
+            "case":"",
+            "alg":"U' (R U2 R') U2 (R U' R')"
+        },
+        "alg-2.4": {
+            "name":"",
+            "case":"",
+            "alg":"y' U (R' U2 R) U2 (R' U R)"
+        }
+    },
+    "f2l-case-3": {
+        "comment": "Reposition Edge & Flip Corner",
+        "alg-3.1": {
+            "name":"",
+            "case":"",
+            "alg":"y' U (R' U R U') (R' U' R)"
+        },
+        "alg-3.2": {
+            "name":"",
+            "case":"",
+            "alg":"U' (R U R' U) (R U R')"
+        },
+        "alg-3.3": {
+            "name":"",
+            "case":"",
+            "alg":"U' (R U2 R') y' U (R' U' R)"
+        },
+
+
+
+
+
+
+
+        
+        "alg-3.4": {
+            "name":"",
+            "case":"",
+            "alg":"U' (R U' R' U) y' (R' U' R)"
+        },
+
+        
+    },
+    "f2l-case-4": {
+        "alg-4.1": {
+            "name":"",
+            "case":"",
+            "alg":""
+        },
+        
+    }
+}
