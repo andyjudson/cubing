@@ -28,20 +28,22 @@
         tempoScale: 1.0,
       });
 
-      // define custom masking orbits to work with cfop + use z2 (or x2) to orientate cube so yellow is up
+      // define custom masking orbits to work with cfop stages and use z2 (or x2) to orientate cube so yellow is up
       const mask_default = "EDGES:------------,CORNERS:--------,CENTERS:------";
       const mask_f2l = "EDGES:----IIII----,CORNERS:----IIII,CENTERS:-----I";
       const mask_oll_cross = "EDGES:----OOOO----,CORNERS:----IIII,CENTERS:------";
       const mask_oll_layer = "EDGES:----OOOO----,CORNERS:----OOOO,CENTERS:------";
       const mask_pll_corners = "EDGES:----OOOO----,CORNERS:--------,CENTERS:------";
 
+      /*
+      // load algorithms from json
       async function loadAlgDb() {
-          const response = await fetch("./algdb-cfop.json");
+          const response = await fetch("./assets/algdb-cfop-beginner.json");
           return await response.json();
       }
-
       const algdb = await loadAlgDb();
       console.log(algdb);
+      */
             
       function play() {
         twistyPlayer.play();
@@ -232,7 +234,7 @@
       <div class="row py-3">
         <div class="col-12 p-2">
         <h1>CFOP Beginner Method</h1>
-        <p>The site is built to make it easier to practice (i.e. replay) the specific moves per case whilst learning CFOP algorithms. All examples and notes are based on the excellent <a href="https://www.youtube.com/playlist?list=PLqrfspOsG9B-zqJu9f-45BZRamipy-q2y">Beginner CFOP tutorials</a> from <img src="./png/cubehead_logo_bleached_hair_480x480.png" height="24px"><a href="https://www.youtube.com/@CubeHead">CubeHead</a>.</p>
+        <p>The site is built to make it easier to practice (i.e. replay) the specific moves per case whilst learning CFOP algorithms. All examples and notes are based on the excellent <a href="https://www.youtube.com/playlist?list=PLqrfspOsG9B-zqJu9f-45BZRamipy-q2y">Beginner CFOP tutorials</a> from <img src="./assets/cubehead_logo.png" height="24px"><a href="https://www.youtube.com/@CubeHead">CubeHead</a>.</p>
         <p>I'll focus on the F2L, OLL and PLL stages, and will skip the CROSS stage but see the videos from CubeHead. Just to be clear, I'm not a cubing expert, far from it, this is a cheat sheet for my own learning, and if others find it useful, then that is good to hear.</p>
         <div class="d-grid gap-2 d-md-block">
           <a href="#f2l" class="btn btn-light" tabindex="-1" role="button">Intuitive F2L</a>
@@ -251,12 +253,8 @@
         <div class="col-12 p-2">
           <a id="f2l"><h3>F2L intuitive cases</h3></a>
           <p>See <a href="https://youtu.be/ReOZZHscIGk?si=HSO998LSWOHP6Rvl">Intuitive F2L</a> YouTube video from CubeHead.</p>
-          <p>Like with the cross stage, solving the first two layers, is a combination of a few repeated patterns, 
-          and intuitively setting up pieces to allow you to slot an edge-corner pair into the position. Whilst there are 
-          over 40 algorithms, there are 4 easy cases when pieces are in the top layer, and you can use a few tricks to get 
-          other cases of pairs setup ready to insert, for example if the corner is in slot but the edge is in the top layer.
-          CubeHead explains this really well, way better than I ever could, so watch his video, but the gist of F2L breaks down as: 
-          1. find a pair, 2. setup easy inserts (i.e. pairs in top layer + disconnected), 3. solve pair in correct slot.</p>
+          <p>The goal of F2L (first two layers) is to efficiently solve the first two layers. Like with the cross stage, "intuitive" f2l uses a combination of a few repeated patterns, and setting up pieces to allow you to slot an edge-corner pair into the position. Whilst there are over 40 algorithms, there are 4 easy cases when pieces are in the top layer, and you can use a few tricks to setup other cases of pairs ready for an easy insert.</p>
+          <p>CubeHead explains this really well, way better than I ever could, so watch his video! The gist of F2L breaks down as: 1. find a pair, 2. setup easy inserts (i.e. pairs in top layer + disconnected), 3. solve pair in target slot whilst not impacting previously solved cases.</p>
         </div>
       </div>
 
@@ -270,7 +268,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-1-1.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-1-1.png" class="cube-model-png">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-f2l-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -293,7 +291,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-1-2.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-1-2.png" class="cube-model-png">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-f2l-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -316,7 +314,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-1-3.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-1-3.png" class="cube-model-png">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-f2l-1-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -339,7 +337,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-1-4.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-1-4.png" class="cube-model-png">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-f2l-1-4" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -363,11 +361,11 @@
         <!-- f2l :: edge in slot case -->                  
         <div class="col">
           <div class="card h-100">
-            <div class="card-header">2.1. Edge stuck in slot, corner in top layer</div>              
+            <div class="card-header">2.1. Edge stuck in slot + corner in top layer</div>              
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-2-1.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-2-1.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U R' ...</p>      
@@ -382,11 +380,11 @@
         <!-- f2l :: corner in slot case -->                  
         <div class="col">
           <div class="card h-100">
-            <div class="card-header">2.2. Corner stuck in slot, edge in top layer</div>              
+            <div class="card-header">2.2. Corner stuck in slot + edge in top layer</div>              
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-2-2.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-2-2.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U R' ...</p>      
@@ -405,7 +403,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-2-3.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-2-3.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U' R' ...</p>      
@@ -420,11 +418,11 @@
         <!-- f2l :: pair connected in top layer case -->                  
         <div class="col">
           <div class="card h-100">
-            <div class="card-header">2.4 Pair stuck unaligned and connected in top layer</div>              
+            <div class="card-header">2.4 Pair stuck unaligned + connected in top layer</div>              
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-2-4.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-2-4.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U2 R' ...</p>      
@@ -444,11 +442,11 @@
         <!-- f2l :: white face to side + colours match -->
         <div class="col">
           <div class="card h-100">
-            <div class="card-header">3.1 White face to side + colours match</div>              
+            <div class="card-header">3.1 White to side + colours match</div>              
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-3-1.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-3-1.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p>Hold white face to the side, if colours match, move the edge next to the corner to setup an insert pair case.</p>                  
@@ -457,8 +455,8 @@
               <div class="row g-0">
                 <div class="col-12">
                   <ol>
-                    <li>find the correct slot where corner needs to go</li>
-                    <li>turn upper layer once so can still see white</li>
+                    <li>turn upper layer so corner is over target slot</li>
+                    <li>turn upper layer again, to move corner away 1-turn and still see white</li>
                     <li>turn target slot up, putting corner to safety</li>
                     <li>turn upper layer, putting edge where needs to be for pair (next to)</li> 
                     <li>realign the cross, which brings corner back up</li>
@@ -474,11 +472,11 @@
         <!-- f2l :: white face to side + colours to not match -->                
         <div class="col">
           <div class="card h-100">
-            <div class="card-header">3.2 White face to side + colours not match</div>              
+            <div class="card-header">3.2 White to side + colours not match</div>              
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-3-2.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-3-2.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p>Hold white face to the side, if colours match, move the edge across from the corner, to setup an insert pair case.</p>                  
@@ -487,8 +485,8 @@
               <div class="row g-0">
                 <div class="col-12">
                   <ol>
-                    <li>find the correct slot where corner needs to go</li>
-                    <li>turn upper layer once so can still see white</li>
+                    <li>turn upper layer so corner is over target slot</li>
+                    <li>turn upper layer again, to move corner away 1-turn and still see white</li>
                     <li>turn target slot up, putting corner to safety</li>
                     <li>turn upper layer, putting edge where needs to be for pair (across from)</li> 
                     <li>realign the cross, bring corner back up</li>
@@ -504,11 +502,11 @@
         <!-- f2l :: white face up -->
         <div class="col">
           <div class="card h-100">
-            <div class="card-header">3.3 White face up</div>              
+            <div class="card-header">3.3 White is up</div>              
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./png/cfop-f2l-3-3.png" class="cube-modal">
+                  <img src="./assets/cfop-f2l-3-3.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p>If white face up ... </p>                  
@@ -559,7 +557,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-1-1.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-1-1.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined">
                     <button id="btn-oll-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -583,7 +581,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-1-2.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-1-2.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-2">
                     <button id="btn-oll-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -605,7 +603,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-1-3.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-1-3.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-2">
                     <button id="btn-oll-1-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -632,7 +630,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-2-1.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-2-1.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-2">
                     <button id="btn-oll-2-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -655,7 +653,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-2-2.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-2-2.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -678,7 +676,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-2-3.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-2-3.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -701,7 +699,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-2-4.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-2-4.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-4" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -724,7 +722,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-2-5.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-2-5.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-5" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -747,7 +745,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-2-6.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-2-6.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-6" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -770,7 +768,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-oll-2-7.svg" class="cube-modal">
+                  <img src="./assets/cfop-oll-2-7.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-7" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -797,7 +795,7 @@
           <a id="pll"><h3>PLL 2-Look Cases</h3></a>
           <p>See <a href="https://youtu.be/ZC9nwou59ow?si=NB4cbgdTsUZzbOba">2-look PLL</a>  YouTube video from CubeHead.</p>    
           <p>The goal of PLL (permutation of the last layer) is to finish the cube solve by moving pieces around after OLL.
-            You do this by recognizing patterns on the side of the last layer, and do an algorithm that solves that case. 
+            You do this by recognizing patterns on the side of the last layer, and use an algorithm that solves that case. 
             Even though there 21 cases in total, we only need 6 algorithms for 2-look PLL. The first step is to solve the corners, then the second step is to solve the edges.
           </p>
         </div>
@@ -813,7 +811,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-pll-1-1.svg" class="cube-modal">                  
+                  <img src="./assets/cfop-pll-1-1.svg" class="cube-model-svg">                  
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -836,7 +834,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-pll-1-1.svg" class="cube-modal">
+                  <img src="./assets/cfop-pll-1-1.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -864,7 +862,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-pll-2-1.svg" class="cube-modal">
+                  <img src="./assets/cfop-pll-2-1.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-2-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -887,7 +885,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-pll-2-2.svg" class="cube-modal">
+                  <img src="./assets/cfop-pll-2-2.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-2-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -910,7 +908,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-pll-2-3.svg" class="cube-modal">
+                  <img src="./assets/cfop-pll-2-3.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-2-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -933,7 +931,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./svg/cfop-pll-2-4.svg" class="cube-modal">
+                  <img src="./assets/cfop-pll-2-4.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-2-4" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>

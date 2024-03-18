@@ -22,24 +22,32 @@ twisty-alg-viewer .twisty-alg-current-move {
 }
 
 #algorithm {
+    background-color: inherit;
     width: 100%;
     text-align: center;
     padding: 2px;
-    background-color: inherit;
     font-size: 1.2em;
 }
 
 #control {
+    background-color: inherit;
     width: 100%;
     margin: auto;
-    text-align: center;
-    background-color: inherit;
+    text-align: center; 
 }
 
-.cube-modal {
-    width: 100px;
-    height: 100px;
+.cube-model-png {
+    width: 130px;
+    height: 130px;
+    transform: translate(-15%, -15%);
     margin: auto;
     padding: 0;
 }
 
+.cube-model-svg {
+    width: 120px;
+    height: 120px;
+    transform: translate(-10%, -10%);
+    margin: auto;
+    padding: 0;
+}
