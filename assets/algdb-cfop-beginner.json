@@ -31,22 +31,22 @@
             "alg":"(R U' R' U) (R U' R')"
         },
         "alg-2.3": {
-            "name":"Connected in slot",
+            "name":"Pair connected in slot",
             "case":"Connected",
             "alg":"(R U' R' U') R U R' U2 (R U' R')"
         },
         "alg-2.4": {
-            "name":"Connected in top layer",
+            "name":"Pair connected in top layer",
             "case":"Connected",
             "alg":"(R U2 R') U' (R U R')"
         },
         "alg-3.1": {
-            "name":"White side, Colours match",
+            "name":"White side, colours match",
             "case":"Solve pairs in slot",
             "alg":"(R U2 R') U' (R U R')"
         },
         "alg-3.2": {
-            "name":"White side, Colours not match",
+            "name":"White side, colours not match",
             "case":"Solve pairs in slot",
             "alg":"U' (R U R' U) (R U R')"
         },
@@ -135,7 +135,7 @@
             "name": "Ua perm",
             "case": "Edge cycle anti-clockwise",
             "probability": 0.333,
-            "alg": "(R U R' U') R' F R2 U' R' U' R U R' F'"
+            "alg": "(R2 U' R') U' R (U R) (U R) U' R"
         },
         "alg-2.2": {
             "name": "Ub perm",

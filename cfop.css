@@ -14,7 +14,7 @@ twisty-alg-viewer .twisty-alg-current-move {
     color: yellowgreen;
     font-weight: 400;
     font-size: 1.4em;
-    padding: 2px;
+    padding: 1.2px;
 }
 
 #player {
@@ -23,7 +23,7 @@ twisty-alg-viewer .twisty-alg-current-move {
 
 #algorithm {
     background-color: inherit;
-    width: 100%;
+    width: 90%;
     text-align: center;
     padding: 2px;
     font-size: 1.2em;

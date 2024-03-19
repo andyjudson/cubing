@@ -18,14 +18,14 @@
     <script type="module">
 
       import { TwistyPlayer, TwistyAlgViewer } from "https://cdn.cubing.net/js/cubing/twisty";
+      import { randomScrambleForEvent } from "https://cdn.cubing.net/js/cubing/scramble";
     
       const twistyPlayer = new TwistyPlayer({
         puzzle: "3x3x3",
         visualization: "PG3D",
         background: "none",
         hintFacelets: "none",
-        controlPanel: "none",
-        tempoScale: 1.0,
+        controlPanel: "none",        
       });
 
       // define custom masking orbits to work with cfop stages and use z2 (or x2) to orientate cube so yellow is up
@@ -61,9 +61,22 @@
         twistyPlayer.tempoScale = parseFloat(evt.target.id.substr(10, 3))
       }
 
+      function demoScramble() {
+          algNotes.innerHTML = "Scrambling ... try to solve this using CFOP techniques.";   
+          twistyPlayer.experimentalSetupAnchor = "start";
+          twistyPlayer.experimentalStickering = "full";
+          twistyPlayer.experimentalSetupAlg = "";
+          twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
+          twistyPlayer.tempoScale=3.0;
+          twistyPlayer.alg = randomScrambleForEvent("333");
+          twistyPlayer.jumpToStart();   
+          twistyPlayer.play();
+      }
+
       function demoAlg(evt) {        
         // apply defaults
         twistyPlayer.jumpToStart();
+        twistyPlayer.tempoScale=2.0;
         twistyPlayer.cameraLatitude=30;  // set camera angel (x-axis)
         twistyPlayer.cameraLongitude=45;  // set camera angel (y-axis)
         twistyPlayer.experimentalSetupAnchor = "end";  // end state so cube is solved using alg
@@ -72,31 +85,26 @@
         twistyPlayer.experimentalStickeringMaskOrbits = mask_default;  // no sticker manipulation
         // apply case settings            
         switch (evt.target.id) {
-          // demo
-          case "btn-demo":
-            algNotes.innerHTML = "OLL :: corner orientation using Sune algorithm.";
-            twistyPlayer.alg = "(R U R' U) (R U2 R')";
-            break;
           // f2l cases
           case "btn-f2l-1-1":
-            algNotes.innerHTML = "F2L :: easy insert with righty pair."
+            algNotes.innerHTML = "F2L :: easy insert with righty pair.";
             twistyPlayer.alg = "U R U' R'";
             twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;
           case "btn-f2l-1-2":
-            algNotes.innerHTML = "F2L :: easy insert with lefty pair."
+            algNotes.innerHTML = "F2L :: easy insert with lefty pair.";
             twistyPlayer.alg = "U' L' U L";
             twistyPlayer.experimentalSetupAlg = "z2 y";
             twistyPlayer.cameraLongitude=-45;
             twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;
           case "btn-f2l-1-3":
-            algNotes.innerHTML = "F2L :: easy insert with righty insert."
+            algNotes.innerHTML = "F2L :: easy insert with righty insert.";
             twistyPlayer.alg = "R U R'";
             twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;
           case "btn-f2l-1-4":
-            algNotes.innerHTML = "F2L :: easy insert with lefty insert."
+            algNotes.innerHTML = "F2L :: easy insert with lefty insert.";
             twistyPlayer.alg = "L' U' L";
             twistyPlayer.experimentalSetupAlg = "z2 y";
             twistyPlayer.cameraLongitude=-45;
@@ -160,24 +168,24 @@
             twistyPlayer.experimentalStickeringMaskOrbits = mask_pll_corners;
             break;
           case "btn-pll-1-2":
-            algNotes.innerHTML = "PLL :: adjacent corner swap using T perm algorithm."
+            algNotes.innerHTML = "PLL :: adjacent corner swap using T perm algorithm.";
             twistyPlayer.alg = "(R U R' U') R' F R2 U' R' U' R U R' F'";
             twistyPlayer.experimentalStickeringMaskOrbits = mask_pll_corners;
             break;
           case "btn-pll-2-1":
-            algNotes.innerHTML = "PLL :: Edge cycle anti-clockwise Ua perm algorithm."
+            algNotes.innerHTML = "PLL :: Edge cycle anti-clockwise Ua perm algorithm.";
             twistyPlayer.alg = "(R2 U' R') U' R (U R) (U R) U' R";
             break;
           case "btn-pll-2-2":
-            algNotes.innerHTML = "PLL :: Edge cycle clockwise Ub perm algorithm."
+            algNotes.innerHTML = "PLL :: Edge cycle clockwise Ub perm algorithm.";
             twistyPlayer.alg = "R' U (R' U') (R' U') R' U (R U R2)";
             break;
           case "btn-pll-2-3":
-            algNotes.innerHTML = "PLL :: Opposite edge swap using H perm algorithm."
+            algNotes.innerHTML = "PLL :: Opposite edge swap using H perm algorithm.";
             twistyPlayer.alg = "M2 U' (M2 U2 M2) U' M2";
             break;
           case "btn-pll-2-4":
-            algNotes.innerHTML = "PLL :: Adjacent edge swap Z perm algorithm."
+            algNotes.innerHTML = "PLL :: Adjacent edge swap Z perm algorithm.";
             twistyPlayer.alg = "M' U' (M2 U') (M2 U') M' U2 M2";
             break;
         }
@@ -196,7 +204,7 @@
       document.getElementById("btn-speed-1.0x").addEventListener("click", setSpeed);
       document.getElementById("btn-speed-2.0x").addEventListener("click", setSpeed);
       
-      document.getElementById("btn-demo").addEventListener("click", demoAlg);
+      document.getElementById("btn-demo").addEventListener("click", demoScramble);
 
       document.getElementById("btn-f2l-1-1").addEventListener("click", demoAlg);
       document.getElementById("btn-f2l-1-2").addEventListener("click", demoAlg);
@@ -241,7 +249,7 @@
           <a href="#oll" class="btn btn-light" tabindex="-1" role="button">2-Look OLL</a>
           <a href="#pll" class="btn btn-light" tabindex="-1" role="button">2-Look PLL</a>
           <button type="button" id="btn-demo" class="btn btn-light"
-            data-bs-toggle="modal" data-bs-target="#modalTwisty">Alg Demo</button>
+            data-bs-toggle="modal" data-bs-target="#modalTwisty">Scramble</button>
         </div>
         
         </div>
@@ -253,8 +261,8 @@
         <div class="col-12 p-2">
           <a id="f2l"><h3>F2L intuitive cases</h3></a>
           <p>See <a href="https://youtu.be/ReOZZHscIGk?si=HSO998LSWOHP6Rvl">Intuitive F2L</a> YouTube video from CubeHead.</p>
-          <p>The goal of F2L (first two layers) is to efficiently solve the first two layers, slotting edge-corner pairs at the same time. Like with the cross stage, "intuitive" f2l uses a combination of a few repeated patterns, and setting up pieces to allow you to slot an edge-corner pair into the position.</p> 
-          <p>Whilst there are over 40 algorithms, there are 4 easy cases when pieces are in the top layer, and you can use a few tricks to setup other cases of pairs ready for an easy insert.</p>
+          <p>The goal of F2L (first two layers) is to efficiently solve the first two layers, slotting edge-corner pairs at the same time. Like with the cross stage, "intuitive" f2l uses a combination of a few repeated patterns, and setting up cases to allow you to slot an edge-corner pair into the position.</p> 
+          <p>Whilst there are over 40 algorithms, there are 4 easy cases when edges-corner pairs are in the top layer, and you can use a few tricks to setup other cases of pairs ready for an easy insert.</p>
           <p>CubeHead explains this really well, way better than I ever could, so watch his video! The gist of F2L breaks down as: 1. find a pair, 2. setup easy inserts (i.e. pairs in top layer + disconnected), 3. solve pair in target slot whilst not impacting previously solved cases.</p>
         </div>
       </div>
@@ -554,7 +562,7 @@
         <!-- oll :: line case -->                  
         <div class="col">
           <div class="card h-100">
-            <div class="card-header">1.1. Line (horizontal)</div>              
+            <div class="card-header">1.1. Line</div>              
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
@@ -565,7 +573,8 @@
                   </span>
                 </div>
                 <div class="col-8">
-                  <p class="card-text">F (R U R' U') F'</p>        
+                  <p class="card-text">F (R U R' U') F'</p>
+                  <p>Hold cube so line is orientated horizontal. Algorithm uses front rotations + sexy trigger.</p>    
                 </div>
               </div>
             </div>
@@ -578,7 +587,7 @@
         <!-- oll :: hook case -->
         <div class="col">
           <div class="card h-100">
-            <div class="card-header">1.2. Hook (front/right)</div>              
+            <div class="card-header">1.2. Hook</div>              
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
@@ -589,7 +598,8 @@
                   </span>
                 </div>
                 <div class="col-8">
-                  <p class="card-text">f (R U R' U') f'</p>              
+                  <p class="card-text">f (R U R' U') f'</p>
+                  <p>Hold cube so hook is orientated front/right. Algorithm uses wide-front rotations + sexy trigger.</p>
                 </div>
               </div>
             </div>
@@ -611,7 +621,7 @@
                   </span>
                 </div>
                 <div class="col-8">
-                  <p class="card-text">F (R U R' U') F' f (R U R' U') f'</p>              
+                  <p class="card-text">F (R U R' U') F' f (R U R' U') f'</p><p>Hold cube any orientation. Use combination of front + wide-front rotations + sexy trigger.</p>           
                 </div>
               </div>
             </div>
@@ -639,7 +649,7 @@
                 </div>              
                 <div class="col-8">
                   <p class="card-text">(R U R' U) (R U2 R')</p>
-                  <p>Hold the fish mouth front left, with a yellow on the front right.</p>
+                  <p>Hold cube so fish mouth front left, with a yellow in the front right.</p>
                 </div>
               </div>
             </div>
@@ -662,7 +672,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">(R U2 R') (U' R U' R')</p>
-                  <p>Hold the fish mouth back right, with a yellow piece in the front left.</p>          
+                  <p>Hold cube so fish mouth back right, with a yellow in the front left.</p>          
                 </div>
               </div>
             </div>
@@ -708,7 +718,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U2 (R2 U') (R2 U') R2 U2 R</p>
-                  <p>Hold the cube so headlights on the left and side lights on the right.</p>         
+                  <p>Hold cube so headlights on the left and side lights on the right.</p>         
                 </div>
               </div>
             </div>
@@ -731,7 +741,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">(r U R' U') (r' F R F')</p>
-                  <p>Hold the block to the right, with outward facing stickers to the left.</p>            
+                  <p>Hold cube so block is on the right, with outward facing stickers on the left. Uses wide-right rotations.</p>            
                 </div>
               </div>
             </div>
@@ -754,7 +764,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">F' (r U R' U') (r' F R)</p>
-                  <p>Hold the cube so have two corners, one front right, one back left.</p>          
+                  <p>Hold cube so have two yellow corners so side, one front right, one left back. Uses wide-right rotations.</p>          
                 </div>
               </div>
             </div>
@@ -777,7 +787,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">R2 D (R' U2 R) D' (R' U2 R')</p>
-                  <p>Hold the yellow block, towards the back with headlights facing front.</p>           
+                  <p>Hold cube so yellow block at the back with headlights at the front.</p>           
                 </div>
               </div>
             </div>
@@ -819,7 +829,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">F R U' R' U' R U R' F'<br>(R U R' U') (R' F R F')</p>
-                  <p>If no headlights on any side, need to swap diagonal corners, it does not matter how orientate the cube.</p>                  
+                  <p>If no headlights on any side, need to swap diagonal corners, it does not matter how orientate the cube. Use algorithm to swap opposite corners.</p>                  
                 </div>
               </div>
             </div>
@@ -842,7 +852,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">(R U R' U') R' F<br>R2 U' R' U' R U R' F'</p>
-                  <p>If any headlights, hold them on the left side, use the algorithm to swap adjacent corners.</p>                   
+                  <p>If any headlights, hold cube so they are on the left side. Use algorithm to swap adjacent corners.</p>                   
                 </div>
               </div>
             </div>
@@ -870,7 +880,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">(R2 U' R') U' R<br>(U R) (U R) U' R</p>
-                  <p>Hold the cube so the bar is facing front, the edge of left is opposite its corners.</p>
+                  <p>Hold cube so the bar is at the front, edge on left is opposite its corners.</p>
                 </div>
               </div>
             </div>
@@ -893,7 +903,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">R' U (R' U') (R' U')<br>R' U (R U R2)</p>
-                  <p>Hold the cube with the bar facing front, and the edge on the right opposite its corners.</p>
+                  <p>Hold cube so the bar is at the front, edge on right is opposite its corners.</p>
                 </div>
               </div>
             </div>
@@ -939,7 +949,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">M' U' (M2 U')<br>(M2 U') M' U2 M2</p>
-                  <p>There is a checkerboard pattern, but this time edges are adjacent the corners, orientate the top layer or cube so that the edges that need to swap are in the front and right slots.</p>
+                  <p>There is a checkerboard pattern, but this time edges are adjacent the corners. Orientate the top layer or cube so that the edges that need to swap are in the front and right slots.</p>
                 </div>
               </div>
             </div>
@@ -974,7 +984,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="vstack gap-2">
+            <div class="vstack gap-2 mx-auto">
               <div id="notes" class="p-2"></div>
               <div id="algorithm" class="p-2"></div>
               <div id="player" class="p-2"></div>
