@@ -12,14 +12,15 @@ Experiments
  - [CFOP Beginner Cheatsheet](cfop.html)
 
 Resources
-- [CubeHead - Beginner method](https://youtu.be/Ir3BkmVePNQ?si=00P1emyC2wyi8LXV)
+- [CubeHead - Beginner Method](https://youtu.be/Ir3BkmVePNQ?si=00P1emyC2wyi8LXV)
+- [CubeHead - How to Solve faster with Beginner Method](https://youtu.be/Ir3BkmVePNQ?si=dWrfLa2NMFY-RN70)
 - [CubeHead - How to read Algorithms](https://youtu.be/xG6dl84vXig?si=FJXld4SzhnCwMXWn)
 - [CubeHead - Intuitive CROSS](https://youtu.be/M-vKaV2NbEo?si=OxAuMfna4qGy4iNg)
 - [CubeHead - Intuitive F2L](https://youtu.be/ReOZZHscIGk?si=HSO998LSWOHP6Rvl)
 - [CubeHead - 2-look OLL](https://youtu.be/6PSBaxlBqRg?si=UwraHaKXkdcLiIUn)
 - [CubeHead - 2-look PLL](https://youtu.be/ZC9nwou59ow?si=NB4cbgdTsUZzbOba)
 - [J Perm - Beginner Method](https://youtu.be/7Ron6MN45LY?si=4ndYWRLrvmN5RF4v)
-- [J Perm - Beginner How to Solve Faster](https://youtu.be/vmeleO65BHc?si=DdbEMmhVODN24ECI)
+- [J Perm - How to Solve faster with Beginner Method](https://youtu.be/vmeleO65BHc?si=DdbEMmhVODN24ECI)
 - [J Perm - 7 Tips for an Efficient Cross](https://youtu.be/IWXpkfwimo0?si=OtEjvxfntGijP1Y3)
 - [J Perm - Learn intuitive F2L](https://youtu.be/Ar_Zit1VLG0?si=Xh2D1e6Z04-JkMzp)
 - [J Perm - Learn 2-look OLL](https://youtu.be/GhmYBgLoQQg?si=n-5QSiKUfa14q3Gf)

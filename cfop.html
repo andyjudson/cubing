@@ -253,7 +253,8 @@
         <div class="col-12 p-2">
           <a id="f2l"><h3>F2L intuitive cases</h3></a>
           <p>See <a href="https://youtu.be/ReOZZHscIGk?si=HSO998LSWOHP6Rvl">Intuitive F2L</a> YouTube video from CubeHead.</p>
-          <p>The goal of F2L (first two layers) is to efficiently solve the first two layers. Like with the cross stage, "intuitive" f2l uses a combination of a few repeated patterns, and setting up pieces to allow you to slot an edge-corner pair into the position. Whilst there are over 40 algorithms, there are 4 easy cases when pieces are in the top layer, and you can use a few tricks to setup other cases of pairs ready for an easy insert.</p>
+          <p>The goal of F2L (first two layers) is to efficiently solve the first two layers, slotting edge-corner pairs at the same time. Like with the cross stage, "intuitive" f2l uses a combination of a few repeated patterns, and setting up pieces to allow you to slot an edge-corner pair into the position.</p> 
+          <p>Whilst there are over 40 algorithms, there are 4 easy cases when pieces are in the top layer, and you can use a few tricks to setup other cases of pairs ready for an easy insert.</p>
           <p>CubeHead explains this really well, way better than I ever could, so watch his video! The gist of F2L breaks down as: 1. find a pair, 2. setup easy inserts (i.e. pairs in top layer + disconnected), 3. solve pair in target slot whilst not impacting previously solved cases.</p>
         </div>
       </div>
@@ -538,12 +539,12 @@
           <p>See <a href="https://youtu.be/6PSBaxlBqRg?si=UwraHaKXkdcLiIUn">2-look OLL</a> YouTube video from CubeHead.</p>
           <p>The goal of OLL (orientation of last layer) is to solve the yellow face after finishing F2L.
           We can no longer use "intuitive" techniques, rather we need to use algorithms that solve 
-          specific patterns. Even though, there are 57 cases in total, we only need 9 algorithms for 2-look OLL.
+          specific patterns.</p>
+          <p>Whilst there are 57 cases in total, we only need 9 algorithms for 2-look OLL.
           Most algorithms begin by taking one pair out (often front-right or front-left), doing something 
           with it and then putting it back. To memorize the entire algorithm more easily, 
           try following what is happening to that pair.</p>
-          <p>Note: there are several funky named, triggers (denoted by round brackets) that you'll learn to use, for example: sexy (R U R' U') trigger 
-            features regularly in these algorithms, also common are: inverse sexy (U R U' R'), sledge (R' F R F').</p>
+          <p>Note: there are several funky named, triggers (denoted by round brackets) that you'll learn to use, for example: sexy (R U R' U') trigger features regularly in these algorithms, also common are: inverse sexy (U R U' R'), sledge (R' F R F').</p>
         </div>
       </div>
 
@@ -684,7 +685,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">(R U R' U) (R U' R' U) (R U2 R')</p>
-                  <p>This is first cross case, hold cube so the headlights face away to the sides.</p>             
+                  <p>Hold cube so headlights face away to the sides.</p>             
                 </div>
               </div>
             </div>
@@ -707,7 +708,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U2 (R2 U') (R2 U') R2 U2 R</p>
-                  <p>This is the second cross case, with headlights facing outwards, hold the cube so headlights on the left and side lights on the right.</p>         
+                  <p>Hold the cube so headlights on the left and side lights on the right.</p>         
                 </div>
               </div>
             </div>
@@ -794,9 +795,8 @@
         <div class="col-12 p-2">
           <a id="pll"><h3>PLL 2-Look Cases</h3></a>
           <p>See <a href="https://youtu.be/ZC9nwou59ow?si=NB4cbgdTsUZzbOba">2-look PLL</a>  YouTube video from CubeHead.</p>    
-          <p>The goal of PLL (permutation of the last layer) is to finish the cube solve by moving pieces around after OLL.
-            You do this by recognizing patterns on the side of the last layer, and use an algorithm that solves that case. 
-            Even though there 21 cases in total, we only need 6 algorithms for 2-look PLL. The first step is to solve the corners, then the second step is to solve the edges.
+          <p>The goal of PLL (permutation of the last layer) is to finish the cube solve by moving pieces around after OLL. You do this by recognizing patterns on the side of the last layer, and use an algorithm that solves that case.</p>
+          <p>Whilst there 21 cases in total, we only need 6 algorithms for 2-look PLL. The first step is to solve the corners (headlights on all sides), then the second step is to solve the edges.
           </p>
         </div>
       </div>
@@ -819,7 +819,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">F R U' R' U' R U R' F'<br>(R U R' U') (R' F R F')</p>
-                  <p>If no headlights on any side, need to swap diagonal corners.</p>                  
+                  <p>If no headlights on any side, need to swap diagonal corners, it does not matter how orientate the cube.</p>                  
                 </div>
               </div>
             </div>
@@ -842,7 +842,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">(R U R' U') R' F<br>R2 U' R' U' R U R' F'</p>
-                  <p>If have headlights, hold them on the left side, use the algorithm to swap adjacent corners.</p>                   
+                  <p>If any headlights, hold them on the left side, use the algorithm to swap adjacent corners.</p>                   
                 </div>
               </div>
             </div>
@@ -916,7 +916,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">M2 U' (M2 U2 M2) U' M2</p>
-                  <p>This algorithm uses middle layer moves. There is a checkerboard pattern all around the cube, each edge is opposite of the corners.</p>
+                  <p>There is a checkerboard pattern, each edge is opposite of the corners. This algorithm uses middle layer moves, it does not matter how orientate the cube.</p>
                 </div>
               </div>
             </div>
@@ -939,7 +939,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text">M' U' (M2 U')<br>(M2 U') M' U2 M2</p>
-                  <p>Another checkerboard pattern, but this time edges are not opposite the corners, orientate the top layer or cube so that the edges that need to swap are in the front and right slots.</p>
+                  <p>There is a checkerboard pattern, but this time edges are adjacent the corners, orientate the top layer or cube so that the edges that need to swap are in the front and right slots.</p>
                 </div>
               </div>
             </div>
