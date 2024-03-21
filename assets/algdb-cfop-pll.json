@@ -1,18 +1,122 @@
 {
     "pll-case-1": {
-        "comment": "Permutation of Edges or Corners Only",
-        "alg-1.1": {}
+        "comment": "permutation of edges",
+        "alg-1.1": {
+            "name": "Ub",
+            "alg": "R2 U (R U R' U') R' U' (R' U R')",
+            "prob": "1/18"     
+        },
+        "alg-1.2": {
+            "name": "Ua",
+            "alg": "(R U' R U) R U (R U' R' U') R2",
+            "prob": "1/18"     
+        },
+        "alg-1.3": {
+            "name": "Z",
+            "alg": "(M2' U M2' U) (M' U2) (M2' U2 M')",
+            "prob": "1/36"     
+        },
+        "alg-1.4": {
+            "name": "H",
+            "alg": "(M2' U M2') U2 (M2' U M2')",
+            "prob": "1/72"
+        }
     },
     "pll-case-2": {
-        "comment": "Swap One Set of Adjacent Corners",
-        "alg-2.1": {}
+        "comment": "permutation of corners",
+        "alg-2.1": {
+            "name": "Aa",
+            "alg": "x (R' U R') D2 (R U' R') D2 R2 x'",
+            "prob": "1/18"
+        },
+        "alg-2.2": {
+            "name": "Ab",
+            "alg": "x R2' D2 (R U R') D2 (R U' R) x'",
+            "prob": "1/18"
+        },
+        "alg-2.3": {
+            "name": "E",
+            "alg": "x' (R U' R' D) (R U R' D') (R U R' D) (R U' R' D') x",
+            "prob": "1/36"
+        }
     },
     "pll-case-3": {
-        "comment": "Swap One Set of Corners Diagonally",
-        "alg-3.1": {}
+        "comment": "swap adjacent corners",
+        "alg-3.1": {
+            "name": "Ra",
+            "alg": "(R U' R' U') (R U R D) (R' U' R D') (R' U2 R')",
+            "prob": "1/18"
+        },
+        "alg-3.2": {
+            "name": "Rb",
+            "alg": "(R' U2 R U2') R' F (R U R' U') R' F' R2",
+            "prob": "1/18"
+        },
+        "alg-3.3": {
+            "name": "Ja",
+            "alg": "(R' U L' U2) (R U' R' U2 R) L",
+            "prob": "1/18"
+        },
+        "alg-3.4": {
+            "name": "Jb",
+            "alg": "(R U R' F') (R U R' U') R' F R2 U' R' ",
+            "prob": "1/18"
+        },
+        "alg-3.5": {
+            "name": "T",
+            "alg": "(R U R' U') (R' F R2 U') R' U' (R U R' F')",
+            "prob": "1/18"
+        },
+        "alg-3.6": {
+            "name": "F",
+            "alg": "(R' U' F')(R U R' U')(R' F R2 U')(R' U' R U)(R' U R)",
+            "prob": "1/18"
+        }
     },
     "pll-case-4": {
-        "comment": "Double Spins",
-        "alg-4.1": {}
+        "comment": "swap diagonal corners",
+        "alg-4.1": {
+            "name": "V",
+            "alg": "(R' U R' U') y (R' F' R2 U') (R' U R' F) R F",
+            "prob": "1/18"
+        },
+        "alg-4.2": {
+            "name": "Y",
+            "alg": "F (R U' R' U') (R U R' F') (R U R' U') (R' F R F')",
+            "prob": "1/18"
+        },
+        "alg-4.3": {
+            "name": "Na",
+            "alg": "(R U R' U)(R U R' F') (R U R' U') (R' F R2 U') R' U2 (R U' R')",
+            "prob": "1/72"
+        },
+        "alg-4.4": {
+            "name": "Nb",
+            "alg": "(R' U R U') (R' F' U' F) (R U R' F) R' F' (R U' R)",
+            "prob": "1/72"
+        }
+    },
+    "pll-case-5": {
+        "comment": "double cycles",
+        "alg-5.1": {
+            "name": "Ga",
+            "alg": "R2 U (R' U R' U') (R U' R2) D U' (R' U R D')",
+            "prob": "1/18"
+        },
+        "alg-5.2": {
+            "name": "Gb",
+            "alg": "(F' U' F) (R2 u R' U) (R U' R u') R2'",
+            "prob": "1/18"
+        },
+        "alg-5.3": {
+            "name": "Gc",
+            "alg": "R2 U' (R U' R U) (R' U R2 D') (U R U' R') D",
+            "prob": "1/18"
+        },
+        "alg-5.4": {
+            "name": "Gd",
+            "alg": "D' (R U R' U') D (R2 U' R U') (R' U R' U) R2",
+            "prob": "1/18"
+        }
     }
 }

@@ -1,124 +1,187 @@
 {
     "f2l-case-1": {
-        "comment": "Easy Cases",
+        "comment": "basic inserts",
         "alg-1.1": {
-            "name":"Righty pair",
-            "case":"Easy inserts",
-            "alg":"U (R U' R')"
+            "name": "Righty pair",
+            "alg": "U (R U' R')"
         },
         "alg-1.2": {
-            "name":"Left pair",
-            "case":"Easy inserts",
-            "alg":"U' (L' U L)"
+            "name": "Left pair",
+            "alg": "y' U' (R' U R)"
         },
         "alg-1.3": {
-            "name":"Left insert",
-            "case":"Easy inserts",
-            "alg":"(L' U' L)"
+            "name": "Left insert",
+            "alg": "y' (R' U' R)"
         },
         "alg-1.4": {
-            "name":"Right insert",
-            "case":"Easy inserts",
-            "alg":"(R U R')"
+            "name": "Right insert",
+            "alg": "(R U R')"
         }
     },
     "f2l-case-2": {
-        "comment": "Reposition Edge",
         "alg-2.1": {
-            "name":"",
-            "case":"",
-            "alg":"(U' R U R') U2 (R U' R')"
+            "name": "",
+            "alg": "U' (R U' R' U) y' (R' U' R)"
         },
         "alg-2.2": {
-            "name":"",
-            "case":"",
-            "alg":"y' (U R' U' R) U2 (R' U R)"
+            "name": "",
+            "alg": "U' (R U R' U) (R U R')"
         },
         "alg-2.3": {
-            "name":"",
-            "case":"",
-            "alg":"U' (R U2 R') U2 (R U' R')"
+            "name": "",
+            "alg": "U' (R U2' R' U) y' (R' U' R)"
         },
         "alg-2.4": {
-            "name":"",
-            "case":"",
-            "alg":"y' U (R' U2 R) U2 (R' U R)"
+            "name": "",
+            "alg": "R' U2' R2 U R2' U R"
+        },
+        "alg-2.5": {
+            "name": "",
+            "alg": "y' U (R' U R U') (R' U' R)"
+        },
+        "alg-2.6": {
+            "name": "",
+            "alg": "U' (R U' R' U) (R U R')"
         }
     },
     "f2l-case-3": {
-        "comment": "Reposition Edge & Flip Corner",
         "alg-3.1": {
-            "name":"",
-            "case":"",
-            "alg":"y' U (R' U R U') (R' U' R)"
+            "name": "",
+            "alg": "(U' R U R') U2 (R U' R')"
         },
         "alg-3.2": {
-            "name":"",
-            "case":"",
-            "alg":"U' (R U R' U) (R U R')"
+            "name": "",
+            "alg": "y' (U R' U' R) U2' (R' U R)"
         },
         "alg-3.3": {
-            "name":"",
-            "case":"",
-            "alg":"U' (R U2 R') y' U (R' U' R)"
+            "name": "",
+            "alg": "U' (R U2' R') U2 (R U' R')"
         },
         "alg-3.4": {
-            "name":"",
-            "case":"",
-            "alg":"y' U (R' U2 R) d' U (R U R')"
-        },
-        "alg-3.5": {
-            "name":"",
-            "case":"",
-            "alg":"y' U (R' U R U') (R' U' R)"
-        },
-        "alg-3.6": {
-            "name":"",
-            "case":"",
-            "alg":"U' (R U' R' U) (R U R')"
+            "name": "",
+            "alg": "y' U (R' U2 R) U2' (R' U R)"
         }
     },
     "f2l-case-4": {
-        "comment": "Split Pair by Going Over",
         "alg-4.1": {
-            "name":"",
-            "case":"",
-            "alg":"y' (R' U R U') y U' (R U R')"
+            "name": "",
+            "alg": "U (R U2 R') U (R U' R')"
         },
         "alg-4.2": {
-            "name":"",
-            "case":"",
-            "alg":"(R U' R' U) y' U (R' U' R)"
+            "name": "",
+            "alg": "y' U' (R' U2 R) U' (R' U R)"
         },
         "alg-4.3": {
-            "name":"",
-            "case":"",
-            "alg":"(R U2 R') U' (R U R')"
+            "name": "",
+            "alg": "U2 (R U R' U) (R U' R')"
         },
         "alg-4.4": {
-            "name":"",
-            "case":"",
-            "alg":"y' (R' U2 R) U (R' U' R)"
+            "name": "",
+            "alg": "y' U2 (R' U' R) U' (R' U R)"
         }
     },
     "f2l-case-5": {
-        "comment": "Pair Made on Side",
-        "alg-5.1": {}
+        "comment": "incorrectly connected pieces",        
+        "alg-5.1": {
+            "name": "",
+            "alg": "y' (R' U R) U2' y (R U R')"
+        },
+        "alg-5.2": {
+            "name": "",
+            "alg": "(R U' R' U2) y' (R' U' R)"
+        },
+        "alg-5.3": {
+            "name": "",
+            "alg": "(R U2 R') U' (R U R')"
+        },
+        "alg-5.4": {
+            "name": "",
+            "alg": "y' (R' U2 R) U (R' U' R)"
+        },
+        "alg-5.5": {
+            "name": "",
+            "alg": "U (R U' R' U') (R U' R' U) (R U' R')"
+        },
+        "alg-5.6": {
+            "name": "",
+            "alg": "y' U' (R' U R U) (R' U R U') (R' U R)"
+        }
     },
     "f2l-case-6": {
-        "comment": "Weird",
-        "alg-6.1": {}
+        "comment": "corner in place, edge in u-face",        
+        "alg-6.1": {
+            "name": "",
+            "alg": "U' F' (R U R' U') R' F R"
+        },
+        "alg-6.2": {
+            "name": "",
+            "alg": "U (R U' R') U' (F' U F)"
+        },
+        "alg-6.3": {
+            "name": "",
+            "alg": "(R U' R' U) (R U' R')"
+        },
+        "alg-6.4": {
+            "name": "",
+            "alg": "y' (R' U R U') (R' U R)"
+        },
+        "alg-6.5": {
+            "name": "",
+            "alg": "y' (R' U' R U) (R' U' R)"
+        },
+        "alg-6.6": {
+            "name": "",
+            "alg": "(R U R' U') (R U R')"
+        }
     },
     "f2l-case-7": {
-        "comment": "Corner in Slot, Edge in U Face",
-        "alg-7.1": {}
+        "comment": "edge in place, corner in u-face",        
+        "alg-7.1": {
+            "name": "",
+            "alg": "(R U' R' U) y' (R' U R)"
+        },
+        "alg-7.1": {
+            "name": "",
+            "alg": "(U R U' R') (U R U' R') (U R U' R')"
+        },
+        "alg-7.1": {
+            "name": "",
+            "alg": "(U' R U' R') U2 (R U' R')"
+        },
+        "alg-7.1": {
+            "name": "",
+            "alg": "U (R U R') U2 (R U R')"
+        },
+        "alg-7.1": {
+            "name": "",
+            "alg": "(U' R U R') U y' (R' U' R)"
+        },
+        "alg-7.1": {
+            "name": "",
+            "alg": "U (F' U' F) U' (R U R')"
+        }
     },
     "f2l-case-8": {
-        "comment": "Edge in Slot, Corner in U Face",
-        "alg-8.1": {}
-    },
-    "f2l-case-9": {
-        "comment": "Edge and Corner in Slot",
-        "alg-9.1": {}
+        "comment": "edge and corner in place",        
+        "alg-8.1": {
+            "name": "",
+            "alg": "(R U' R') d (R' U2 R) U2' (R' U R)"
+        },
+        "alg-8.2": {
+            "name": "",
+            "alg": "(R U' R' U') R U R' U2 (R U' R')"
+        },
+        "alg-8.3": {
+            "name": "",
+            "alg": "(R U' R' U) (R U2' R') U (R U' R')"
+        },
+        "alg-8.4": {
+            "name": "",
+            "alg": "(F' U F) U2 (R U R' U) (R U' R')"
+        },
+        "alg-8.5": {
+            "name": "",
+            "alg": "(R U R' U') (R U' R') U2 y' (R' U' R)"
+        }
     }
 }

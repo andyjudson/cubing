@@ -1,58 +1,329 @@
 {
     "oll-case-1": {
-        "comment": "Edges Oriented Correctly",
-        "alg-1.1": {}
+        "comment": "edges oriented correctly",
+        "alg-1.1": {
+            "name": "",
+            "alg": "R U2 R' U' R U' R'",
+            "prob": "1/54"            
+        },
+        "alg-1.2": {
+            "name": "",
+            "alg": "R U R' U R U2' R'",
+            "prob": "1/54"            
+        },
+        "alg-1.3": {
+            "name": "",
+            "alg": "(R U2 R') (U' R U R') (U' R U' R')",
+            "prob": "1/108"            
+        },
+        "alg-1.4": {
+            "name": "",
+            "alg": "R U2' R2' U' R2 U' R2' U2' R",
+            "prob": "1/54"            
+        },
+        "alg-1.5": {
+            "name": "",
+            "alg": "(r U R' U') (r' F R F')",
+            "prob": "1/54"            
+        },
+        "alg-1.6": {
+            "name": "",
+            "alg": "y F' (r U R' U') r' F R",
+            "prob": "1/54"            
+        },
+        "alg-1.7": {
+            "name": "",
+            "alg": "R2 D (R' U2 R) D' (R' U2 R')",
+            "prob": "1/54"            
+        }
     },
     "oll-case-2": {
-        "comment": "Corners Oriented Correct, Edges Flipped",
-        "alg-2.1": {}
+        "comment": "t-shapes",
+        "alg-2.1": {
+            "name": "",
+            "alg": "(R U R' U') (R' F R F')",
+            "prob": "1/54"            
+        },
+        "alg-2.2": {
+            "name": "",
+            "alg": "F (R U R' U') F'",
+            "prob": "1/54"            
+        }
     },
     "oll-case-3": {
-        "comment": "P Shapes",
-        "alg-3.1": {}
+        "comment": "squares",
+        "alg-3.1": {
+            "name": "",
+            "alg": "(r' U2' R U R' U r)",
+            "prob": "1/54"            
+        },
+        "alg-3.2": {
+            "name": "",
+            "alg": "(r U2 R' U' R U' r')",
+            "prob": "1/54"            
+        }
     },
     "oll-case-4": {
-        "comment": "W Shapes",
-        "alg-4.1": {}
+        "comment": "c-shapes",
+        "alg-4.1": {
+            "name": "",
+            "alg": "(R U R2' U') (R' F R U) R U' F'",
+            "prob": "1/54"            
+        },
+        "alg-4.2": {
+            "name": "",
+            "alg": "R' U' (R' F R F') U R",
+            "prob": "1/54"            
+        }
     },
     "oll-case-5": {
-        "comment": "Squares Shapes",
-        "alg-5.1": {}
+        "comment": "w-shapes",
+        "alg-5.1": {
+            "name": "",
+            "alg": "(R' U' R U') (R' U R U) l U' R' U x",
+            "prob": "1/54"            
+        },
+        "alg-5.2": {
+            "name": "",
+            "alg": "(R U R' U) (R U' R' U') (R' F R F')",
+            "prob": "1/54"            
+        }
     },
     "oll-case-6": {
-        "comment": "L Shapes",
-        "alg-6.1": {}
+        "comment": "corners correct, edges flipped",
+        "alg-6.1": {
+            "name": "",
+            "alg": "(r U R' U') M (U R U' R')",
+            "prob": "1/54"            
+        },
+        "alg-6.2": {
+            "name": "",
+            "alg": "(R U R' U') M' (U R U' r')",
+            "prob": "1/108"            
+        }
     },
     "oll-case-7": {
-        "comment": "Fish Shapes",
-        "alg-7.1": {}
+        "comment": "p-shapes",
+        "alg-7.1": {
+            "name": "",
+            "alg": "(R' U' F) (U R U' R') F' R",
+            "prob": "1/54"            
+        },
+        "alg-7.2": {
+            "name": "",
+            "alg": "R U B' (U' R' U) (R B R')",
+            "prob": "1/54"            
+        },
+        "alg-7.3": {
+            "name": "",
+            "alg": "y R' U' F' U F R",
+            "prob": "1/54"            
+        },
+        "alg-7.4": {
+            "name": "",
+            "alg": "f (R U R' U') f'",
+            "prob": "1/54"            
+        }
     },
     "oll-case-8": {
-        "comment": "Weird Shapes",
-        "alg-8.1": {}
+        "comment": "i-shapes",
+        "alg-8.1": {
+            "name": "",
+            "alg": "f (R U R' U') (R U R' U') f'",
+            "prob": "1/54"            
+        },
+        "alg-8.2": {
+            "name": "",
+            "alg": "r' U' r (U' R' U R) (U' R' U R) r' U r",
+            "prob": "1/108"            
+        },
+        "alg-8.3": {
+            "name": "",
+            "alg": "(R' U' R U' R' U) y' (R' U R) B",
+            "prob": "1/54"            
+        },
+        "alg-8.4": {
+            "name": "",
+            "alg": "y (R' F R U) (R U' R2' F') R2 U' R' (U R U R')",
+            "prob": "1/108"            
+        }
     },
     "oll-case-9": {
-        "comment": "Lighting Shapes",
-        "alg-9.1": {}
+        "comment": "fish shapes",
+        "alg-9.1": {
+            "name": "",
+            "alg": "(R U R' U') R' F (R2 U R' U') F'",
+            "prob": "1/54"            
+        },
+        "alg-9.2": {
+            "name": "",
+            "alg": "(R U R' U) (R' F R F') (R U2' R')",
+            "prob": "1/54"            
+        },
+        "alg-9.3": {
+            "name": "",
+            "alg": "(R U2') (R2' F R F') (R U2' R')",
+            "prob": "1/54"            
+        },
+        "alg-9.4": {
+            "name": "",
+            "alg": "F (R U' R' U') (R U R' F')",
+            "prob": "1/54"            
+        }
     },
     "oll-case-10": {
-        "comment": "T Shapes",
-        "alg-10.1": {}
+        "comment": "knight move shapes",
+        "alg-10.1": {
+            "name": "",
+            "alg": "(r U' r') (U' r U r') y' (R' U R)",
+            "prob": "1/54"            
+        },
+        "alg-10.2": {
+            "name": "",
+            "alg": "(R' F R) (U R' F' R) (F U' F')",
+            "prob": "1/54"            
+        },
+        "alg-10.3": {
+            "name": "",
+            "alg": "(r U r') (R U R' U') (r U' r')",
+            "prob": "1/54"            
+        },
+        "alg-10.4": {
+            "name": "",
+            "alg": "(r' U' r) (R' U' R U) (r' U r)",
+            "prob": "1/54"            
+        }
     },
     "oll-case-11": {
-        "comment": "C Shapes",
-        "alg-11.1": {}
+        "comment": "awkward shapes",
+        "alg-11.1": {
+            "name": "",
+            "alg": "y (R U R' U') (R U' R') (F' U' F) (R U R')",
+            "prob": "1/54"            
+        },
+        "alg-11.2": {
+            "name": "",
+            "alg": "y' F U (R U2 R' U') (R U2 R' U') F'",
+            "prob": "1/54"            
+        },
+        "alg-11.3": {
+            "name": "",
+            "alg": "(R U R' U R U2' R') F (R U R' U') F'",
+            "prob": "1/54"            
+        },
+        "alg-11.4": {
+            "name": "",
+            "alg": "(R' U' R U' R' U2 R) F (R U R' U') F'",
+            "prob": "1/54"            
+        }
     },
     "oll-case-12": {
-        "comment": "I Shapes",
-        "alg-12.1": {}
+        "comment": "l-shapes",
+        "alg-12.1": {
+            "name": "",
+            "alg": "F (R U R' U') (R U R' U') F'",
+            "prob": "1/54"            
+        },
+        "alg-12.2": {
+            "name": "",
+            "alg": "F' (L' U' L U) (L' U' L U) F",
+            "prob": "1/54"            
+        },
+        "alg-12.3": {
+            "name": "",
+            "alg": "r U' r2' U r2 U r2' U' r",
+            "prob": "1/54"            
+        },
+        "alg-12.4": {
+            "name": "",
+            "alg": "r' U r2 U' r2' U' r2 U r'",
+            "prob": "1/54"            
+        },
+        "alg-12.5": {
+            "name": "",
+            "alg": "(r' U' R U') (R' U R U') R' U2 r",
+            "prob": "1/54"            
+        },
+        "alg-12.6": {
+            "name": "",
+            "alg": "(r U R' U) (R U' R' U) R U2' r'",
+            "prob": "1/54"            
+        }
     },
     "oll-case-13": {
-        "comment": "L Shapes",
-        "alg-13.1": {}
+        "comment": "lightning shapes",
+        "alg-13.1": {
+            "name": "",
+            "alg": "(r U R' U R U2' r')",
+            "prob": "1/54"            
+        },
+        "alg-13.2": {
+            "name": "",
+            "alg": "(r' U' R U' R' U2 r)",
+            "prob": "1/54"            
+        },
+        "alg-13.3": {
+            "name": "",
+            "alg": "r' (R2 U R' U R U2 R') U M'",
+            "prob": "1/54"            
+        },
+        "alg-13.4": {
+            "name": "",
+            "alg": "M' (R' U' R U' R' U2 R) U' M",
+            "prob": "1/54"            
+        },
+        "alg-13.5": {
+            "name": "",
+            "alg": "(L F') (L' U' L U) F U' L'",
+            "prob": "1/54"            
+        },
+        "alg-13.6": {
+            "name": "",
+            "alg": "(R' F) (R U R' U') F' U R",
+            "prob": "1/54"            
+        }
     },
     "oll-case-14": {
-        "comment": "No Edges Flipped Correctly",
-        "alg-14.1": {}
-    }
+        "comment": "no edges flipped correctly",
+        "alg-14.1": {
+            "name": "",
+            "alg": "(R U2') (R2' F R F') U2' (R' F R F')",
+            "prob": "1/108"            
+        },
+        "alg-14.2": {
+            "name": "",
+            "alg": "F (R U R' U') F' f (R U R' U') f'",
+            "prob": "1/54"            
+        },
+        "alg-14.3": {
+            "name": "",
+            "alg": "f (R U R' U') f' U' F (R U R' U') F'",
+            "prob": "1/54"            
+        },
+        "alg-14.4": {
+            "name": "",
+            "alg": "f (R U R' U') f' U F (R U R' U') F'",
+            "prob": "1/54"            
+        },
+        "alg-14.5": {
+            "name": "",
+            "alg": "y R U2' (R2' F R F') U2' M' (U R U' r')",
+            "prob": "1/54"            
+        },
+        "alg-14.6": {
+            "name": "",
+            "alg": "M U (R U R' U') M' (R' F R F')",
+            "prob": "1/54"            
+        },
+        "alg-14.7": {
+            "name": "",
+            "alg": "(R U R' U) (R' F R F') U2' (R' F R F')",
+            "prob": "1/54"            
+        },
+        "alg-14.8": {
+            "name": "",
+            "alg": "M U (R U R' U') M2' (U R U' r')",
+            "prob": "1/216"            
+        }
+    }  
 }

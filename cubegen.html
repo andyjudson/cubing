@@ -28,8 +28,8 @@
       });
             
       function apply() {
+        twistyPlayer.alg = document.getElementById("form-alg").value;        
         twistyPlayer.visualization = document.getElementById("form-vizualization").value;
-        twistyPlayer.alg = document.getElementById("form-alg").value;
         twistyPlayer.experimentalSetupAlg = document.getElementById("form-setupalg").value;
         twistyPlayer.experimentalSetupAnchor = document.getElementById("form-anchor").value;
         twistyPlayer.experimentalStickering = document.getElementById("form-stickering").value;
@@ -42,30 +42,21 @@
       }
 
       function screenshot() {
-        // cubing.js does not yet let us control the format, it generates png for 3d and svg for 2d
+        // cubing.js does not yet let us control the format it generates png for 3d and svg for 2d
+        // i've used sips (osx) to resize png images to be 288px which is same used for svg
         twistyPlayer.experimentalDownloadScreenshot("cubing-3x3")
-        /*let p = twistyPlayer.experimentalScreenshot("cubing-3x3")
-        p.then(result => {
-          console.log(result);
-          navigator.clipboard.writeText(result);
-        })*/
       }
       
       function play() {
         twistyPlayer.alg = document.getElementById("form-alg").value;
         twistyPlayer.play();
       }
-
-      function rewind() {
-        twistyPlayer.jumpToStart();
-      }
-      
+    
       document.getElementById("player").appendChild(twistyPlayer);
 
       document.getElementById("btn-apply").addEventListener("click", apply);
       document.getElementById("btn-screenshot").addEventListener("click", screenshot);
       document.getElementById("btn-play").addEventListener("click", play);
-      document.getElementById("btn-rewind").addEventListener("click", rewind);  
           
       window.addEventListener("keydown", async (e) => {
         if (e.code === "Enter") {
@@ -73,8 +64,6 @@
         }
       })
 
-
-      
     </script>
 
   </head>
@@ -113,16 +102,13 @@
               <option value="start">start</option>              
             </select>
           </div>
-          <div class="py-1 w-100">
-            
+          <div class="py-1 w-100">            
             <button id="btn-apply" type="button" class="btn btn-primary ">
               <span class="material-symbols-outlined align-middle">refresh</span>apply</button>           
             <button id="btn-screenshot" type="button" class="btn btn-primary">
               <span class="material-symbols-outlined align-middle">capture</span>capture</button>
-            <button id="btn-play" type="button" class="btn btn-primary disabled">
-              <span class="material-symbols-outlined align-middle">play_arrow</span>play</button>
-            <button id="btn-rewind" type="button" class="btn btn-primary disabled">
-              <span class="material-symbols-outlined align-middle">fast_rewind</span>rewind</button>
+            <button id="btn-play" type="button" class="btn btn-primary">
+              <span class="material-symbols-outlined align-middle">play_arrow</span>play</button>        
           </div>          
         </form>
 
