@@ -26,6 +26,15 @@
         tempoScale: 1.0,
       });
 
+      // load algorithms from json
+      async function loadAlgDb() {
+          const response = await fetch("./assets/algdb-cfop.json");
+          return await response.json();
+      }
+      
+      const algdb = await loadAlgDb();
+      console.log(algdb);
+
     </script>
 
 </head>

@@ -19,6 +19,7 @@
 
       import { TwistyPlayer, TwistyAlgViewer } from "https://cdn.cubing.net/js/cubing/twisty";
       import { randomScrambleForEvent } from "https://cdn.cubing.net/js/cubing/scramble";
+      import { Alg } from "https://cdn.cubing.net/js/cubing/alg";
     
       const twistyPlayer = new TwistyPlayer({
         puzzle: "3x3x3",
@@ -34,16 +35,6 @@
       const mask_oll_cross = "EDGES:----OOOO----,CORNERS:----IIII,CENTERS:------";
       const mask_oll_layer = "EDGES:----OOOO----,CORNERS:----OOOO,CENTERS:------";
       const mask_pll_corners = "EDGES:----OOOO----,CORNERS:--------,CENTERS:------";
-
-      /*
-      // load algorithms from json
-      async function loadAlgDb() {
-          const response = await fetch("./assets/algdb-cfop-beginner.json");
-          return await response.json();
-      }
-      const algdb = await loadAlgDb();
-      console.log(algdb);
-      */
             
       function play() {
         twistyPlayer.play();
@@ -74,16 +65,17 @@
       }
 
       function demoAlg(evt) {        
-        // apply defaults
-        twistyPlayer.jumpToStart();
-        twistyPlayer.tempoScale=2.0;
+        // apply defaults settings
         twistyPlayer.cameraLatitude=30;  // set camera angel (x-axis)
         twistyPlayer.cameraLongitude=45;  // set camera angel (y-axis)
         twistyPlayer.experimentalSetupAnchor = "end";  // end state so cube is solved using alg
-        twistyPlayer.experimentalStickering = "full";  // prefer full instead of masking which messes with setup alg + colours orientation, or need to understanding how to do custom masking
-        twistyPlayer.experimentalSetupAlg = "z2";  // rotate cube so U is yellow, stickering only supports white on top
-        twistyPlayer.experimentalStickeringMaskOrbits = mask_default;  // no sticker manipulation
-        // apply case settings            
+        twistyPlayer.experimentalStickering = "full";  // full masking by default, others work but assume white is u-face
+        twistyPlayer.experimentalSetupAlg = "z2";  // orientate cube for yellow u-face
+        twistyPlayer.experimentalStickeringMaskOrbits = mask_default;  // no sticker manipulation, but override for f2l, oll, pll
+        twistyPlayer.tempoScale=2.0;
+        twistyPlayer.jumpToStart();        
+        
+        // apply case specific settings            
         switch (evt.target.id) {
           // f2l cases
           case "btn-f2l-1-1":
@@ -127,6 +119,11 @@
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_cross;
             break;   
           case "btn-oll-2-1":
+            // todo: test training scramble idea
+            let sune = new Alg("(R U R' U) (R U2 R')");
+            let invert = sune.invert() // is this a scramble we can use to setup a sune case, or is it invert = anti-sune
+            console.log("case: sune; alg: " + sune.toString() + "; invert: " + invert.toString());
+
             algNotes.innerHTML = "OLL :: corner orientation using Sune algorithm.";
             twistyPlayer.alg = "(R U R' U) (R U2 R')";
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
@@ -844,7 +841,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-pll-1-1.svg" class="cube-model-svg">
+                  <img src="./assets/cfop-pll-1-2.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>

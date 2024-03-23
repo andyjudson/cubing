@@ -13,21 +13,6 @@
     <link rel="stylesheet" href="./default.css">
     <link rel="stylesheet" href="./cfop.css">
 
-    <script type="module">
-
-      import { TwistyPlayer, TwistyAlgViewer } from "https://cdn.cubing.net/js/cubing/twisty";
-    
-      const twistyPlayer = new TwistyPlayer({
-        puzzle: "3x3x3",
-        visualization: "PG3D",
-        background: "none",
-        hintFacelets: "none",
-        controlPanel: "none",
-        tempoScale: 1.0,
-      });
-
-    </script>
-
 </head>
 
 <body data-bs-theme="dark">
@@ -39,18 +24,50 @@
     <div class="row py-3">
       <div class="col-12 p-2">
         <h1>Cubing Beginner Method</h1>
-        <p>placeholder</p>
+        <p>I first learnt how to solve a Rubik's cube using the <a href="https://youtu.be/7Ron6MN45LY">JPerm Beginner Method</a> tutorial on YouTube. It is also worth learning some of the faster techniques (e.g. solving cross or finger tricks). With practice, you should find you have the learnt how to solve a cube in 2 to 3 minutes.</p>
+        <p>Another good beginner tutorial video is the <a href="https://www.youtube.com/watch?v=zGu4QSKmj4Y">CubeHead Beginner Method</a> which he recently shared on YouTube, it looks to use very similar techniques with his usual quality of engaging style and clear explanations. This a useful primer for Beginner CFOP as he introduces some of those algorithms.</p>
       </div>
     </div>
 
-    <div>
-      <div>1. white cross</div>
-      <div>2. solve 1st layer</div>
-      <div>3. solve 2nd layer</div>
-      <div>4. yellow cross</div>
-      <div>5. position edges of 3rd layer</div>
-      <div>6. position corners of 3rd layer</div>
-      <div>7. solve 3rd layer</div>
+    <div class="row py-3">
+      <div class="col-12 p-2">
+        <h3>solve in stages</h3>
+        <div>1. white cross</div>
+        <div>2. solve 1st layer</div>
+        <div>3. solve 2nd layer</div>
+        <div>4. yellow cross</div>
+        <div>5. position edges of 3rd layer</div>
+        <div>6. position corners of 3rd layer</div>
+        <div>7. solve 3rd layer</div>
+      </div>
+    </div>
+
+    <div class="row py-3">
+      <div class="col-12 p-2">
+        <h3>cubing notation & finger techniques</h3>
+        <p>A letter without the prime annotation (e.g. U) means a clockwise rotation (as looking at that face), and with the prime annotation (e.g. U'), means an anti-clockwise rotation. Most cubing algorithms are dominated by upward and righty moves, some double turns, some inverted with lefty moves, and lastly some occasional use of downward or back moves, cube rotations or slice moves. As you'll see in this tutorial, repeating a move several times will cycle it through a series of states, and will eventually get you back to the original state, e.g. try this with the sexy trigger (R U R' U') algorithm.</p>
+        <table class="table table-bordered table-striped">
+          <tr><th>notation</th><th>technique</th></tr>
+          <tr><td>U</td><td>upwards face, left rotation by the right index finger</td></tr>
+          <tr><td>U'</td><td>upwards face, right rotation by the left index finger</td></tr>
+          <tr><td>R</td><td>right face, upward rotation by the right hand</td></tr>
+          <tr><td>R'</td><td>right face, downward rotation by right hand</td></tr>
+          <tr><td>L</td><td>left face, downward rotation by the left hand</td></tr>
+          <tr><td>L'</td><td>left face, upward rotation by the left hand</td></tr>
+          <tr><td>F</td><td>front face, downward rotation by the right index finger</td></tr>
+          <tr><td>F'</td><td>front face, downward rotation by the left index finger</td></tr>
+          <tr><td>D</td><td>downwards face, right rotation by the left ring finger</td></tr>
+          <tr><td>D'</td><td>downwards face, left rotation by right ring finger</td></tr>
+          <tr><td>B</td><td>back face, downward rotation by the left ring finger</td></tr>
+          <tr><td>B'</td><td>back face, downward rotation by the right ring finger</td></tr>
+          <tr><td>M</td><td>middle layer slice, follows R direction</td></tr>
+          <tr><td>E</td><td>middle layer slice, follows U direction</td></tr>
+          <tr><td>S</td><td>middle layer slice, follows F direction</td></tr>
+          <tr><td>x</td><td>cube rotation, follows R direction</td></tr>
+          <tr><td>y</td><td>cube rotation, follows U direction</td></tr>
+          <tr><td>z</td><td>cube rotation, follows F direction</td></tr>
+        </table>
+      </div>    
     </div>
 
     <!-- footer -->
@@ -67,8 +84,7 @@
 
   </div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 
