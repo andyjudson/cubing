@@ -1,20 +1,20 @@
 twisty-player {
     width: 100%;
     margin: auto;
-    padding: 2px;
+    padding: 1px;
 }
 
 twisty-alg-viewer {
     width: 100%;
     margin: auto;
-    padding: 2px;
+    padding: 1px;
 }
 
 twisty-alg-viewer .twisty-alg-current-move {
     color: yellowgreen;
     font-weight: 400;
-    font-size: 1.4em;
-    padding: 1.2px;
+    font-size: 1.2em;
+    padding: 1px;
 }
 
 #player {
