@@ -73,8 +73,13 @@
         twistyPlayer.experimentalSetupAlg = "z2";  // orientate cube for yellow u-face
         twistyPlayer.experimentalStickeringMaskOrbits = mask_default;  // no sticker manipulation, but override for f2l, oll, pll
         twistyPlayer.tempoScale=2.0;
-        twistyPlayer.jumpToStart();        
+        twistyPlayer.jumpToStart();   
         
+        // testing alg invert command, can we use this as an alg training scramble
+        //let sune = new Alg("(R U R' U) (R U2 R')");
+        //let invert = sune.invert()
+        //console.log("case: sune; alg: " + sune.toString() + "; invert: " + invert.toString());
+              
         // apply case specific settings            
         switch (evt.target.id) {
           // f2l cases
@@ -119,11 +124,6 @@
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_cross;
             break;   
           case "btn-oll-2-1":
-            // todo: test training scramble idea
-            let sune = new Alg("(R U R' U) (R U2 R')");
-            let invert = sune.invert() // is this a scramble we can use to setup a sune case, or is it invert = anti-sune
-            console.log("case: sune; alg: " + sune.toString() + "; invert: " + invert.toString());
-
             algNotes.innerHTML = "OLL :: corner orientation using Sune algorithm.";
             twistyPlayer.alg = "(R U R' U) (R U2 R')";
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
@@ -274,7 +274,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-1-1.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-1-1.png" class="cube-model-png">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-f2l-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -297,7 +297,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-1-2.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-1-2.png" class="cube-model-png">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-f2l-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -320,7 +320,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-1-3.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-1-3.png" class="cube-model-png">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-f2l-1-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -343,7 +343,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-1-4.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-1-4.png" class="cube-model-png">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-f2l-1-4" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -371,7 +371,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-2-1.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-2-1.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U R' ...</p>      
@@ -390,7 +390,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-2-2.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-2-2.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U R' ...</p>      
@@ -409,7 +409,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-2-3.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-2-3.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U' R' ...</p>      
@@ -428,7 +428,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-2-4.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-2-4.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p class="card-text">R U2 R' ...</p>      
@@ -452,7 +452,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-3-1.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-3-1.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p>Hold white face to the side, if colours match, move the edge next to the corner to setup an insert pair case.</p>                  
@@ -482,7 +482,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-3-2.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-3-2.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p>Hold white face to the side, if colours match, move the edge across from the corner, to setup an insert pair case.</p>                  
@@ -512,7 +512,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-f2l-3-3.png" class="cube-model-png">
+                  <img src="./assets/cfop/cfop-f2l-3-3.png" class="cube-model-png">
                 </div>
                 <div class="col-8">
                   <p>If white face up ... </p>                  
@@ -563,7 +563,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-1-1.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-1-1.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined">
                     <button id="btn-oll-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -588,7 +588,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-1-2.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-1-2.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-2">
                     <button id="btn-oll-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -611,7 +611,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-1-3.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-1-3.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-2">
                     <button id="btn-oll-1-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -638,14 +638,14 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-2-1.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-2-1.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-2">
                     <button id="btn-oll-2-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
                   </span>
                 </div>              
                 <div class="col-8">
-                  <p class="card-text">(R U R' U) (R U2 R')</p>
+                  <p class="card-text">(R U R’) U (R U2 R’)</p>
                   <p>Hold cube so fish mouth front left, with a yellow in the front right.</p>
                 </div>
               </div>
@@ -661,7 +661,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-2-2.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-2-2.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -684,7 +684,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-2-3.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-2-3.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -707,7 +707,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-2-4.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-2-4.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-4" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -730,7 +730,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-2-5.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-2-5.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-5" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -753,7 +753,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-2-6.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-2-6.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-6" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -776,7 +776,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-oll-2-7.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-oll-2-7.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-oll-2-7" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -818,7 +818,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-pll-1-1.svg" class="cube-model-svg">                  
+                  <img src="./assets/cfop/cfop-pll-1-1.svg" class="cube-model-svg">                  
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -841,7 +841,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-pll-1-2.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-pll-1-2.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -869,7 +869,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-pll-2-1.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-pll-2-1.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-2-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -892,7 +892,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-pll-2-2.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-pll-2-2.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-2-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -915,7 +915,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-pll-2-3.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-pll-2-3.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-2-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>
@@ -938,7 +938,7 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop-pll-2-4.svg" class="cube-model-svg">
+                  <img src="./assets/cfop/cfop-pll-2-4.svg" class="cube-model-svg">
                   <span class="material-symbols-outlined p-1">
                     <button id="btn-pll-2-4" data-bs-toggle="modal" data-bs-target="#modalTwisty"
                       class="btn btn-light">play_circle</button>

@@ -32,13 +32,16 @@
         twistyPlayer.visualization = document.getElementById("form-vizualization").value;
         twistyPlayer.experimentalSetupAlg = document.getElementById("form-setupalg").value;
         twistyPlayer.experimentalSetupAnchor = document.getElementById("form-anchor").value;
-        twistyPlayer.experimentalStickering = document.getElementById("form-stickering").value;
+        twistyPlayer.jumpToStart();
+        let mask = document.getElementById("form-maskorbits").value;
         let mask_default = "EDGES:------------,CORNERS:--------,CENTERS:------";
-        let mask = document.getElementById("form-maskorbits").value
-        if (mask != "")
-          twistyPlayer.experimentalStickeringMaskOrbits = mask;
-        else
+        if (mask != "") {
+          twistyPlayer.experimentalStickeringMaskOrbits = mask;       
+        } else {
+          // todo: define custom presets for all models + map these to drop down values
+          //twistyPlayer.experimentalStickering = document.getElementById("form-stickering").value;          
           twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
+        }      
       }
 
       function screenshot() {
@@ -49,6 +52,7 @@
       
       function play() {
         twistyPlayer.alg = document.getElementById("form-alg").value;
+        twistyPlayer.tempoScale = 1.5;
         twistyPlayer.play();
       }
     
@@ -85,11 +89,10 @@
             <label class="form-label">visualization</label>
             <select id="form-vizualization" class="form-select">
               <option value="PG3D">3d</option>
-              <option value="2D">2d</option>
-              <option value="experimental-2D-LL">2d-ll</option>
+              <option value="experimental-2D-LL">2d</option>
             </select>
             <label class="form-label">stickering</label>
-            <select id="form-stickering" class="form-select">
+            <select id="form-stickering" class="form-select" disabled>
               <option value="full">full</option>
               <option value="Cross">cross</option>
               <option value="F2L">f2l</option>
