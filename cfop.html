@@ -17,6 +17,9 @@
 
     <script type="module">
 
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+      const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
       import { TwistyPlayer, TwistyAlgViewer } from "https://cdn.cubing.net/js/cubing/twisty";
       import { randomScrambleForEvent } from "https://cdn.cubing.net/js/cubing/scramble";
       import { Alg } from "https://cdn.cubing.net/js/cubing/alg";
@@ -52,14 +55,29 @@
         twistyPlayer.tempoScale = parseFloat(evt.target.id.substr(10, 3));
       }
 
+      function setAlg(algStr, notes) {
+        if (algStr == "scramble") {
+          twistyPlayer.alg = randomScrambleForEvent("333");
+          document.getElementById("notes").innerHTML = "Scrambling ... try to solve this using CFOP techniques.";
+          document.getElementById("btn-invert").disabled = true;
+        } else {
+          twistyPlayer.alg = algStr
+          document.getElementById("notes").innerHTML = notes
+          document.getElementById("btn-invert").disabled = false;
+          bootstrap.Popover.getOrCreateInstance("#btn-invert").setContent({
+            '.popover-header': 'Inverted Alg',
+            '.popover-body': new Alg(algStr).invert().expand().toString()
+          })
+        }
+      }
+
       function demoScramble() {
-          algNotes.innerHTML = "Scrambling ... try to solve this using CFOP techniques.";   
+          setAlg("scramble")
           twistyPlayer.experimentalSetupAnchor = "start";
           twistyPlayer.experimentalStickering = "full";
           twistyPlayer.experimentalSetupAlg = "";
           twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
           twistyPlayer.tempoScale=3.0;
-          twistyPlayer.alg = randomScrambleForEvent("333");
           twistyPlayer.jumpToStart();   
           twistyPlayer.play();
       }
@@ -76,122 +94,96 @@
         twistyPlayer.jumpToStart();  
         twistyPlayer.play();   
         
-        // testing alg invert command, can we use this as an alg training scramble
-        //let sune = new Alg("(R U R' U) (R U2 R')");
-        //let invert = sune.invert()
-        //console.log("case: sune; alg: " + sune.toString() + "; invert: " + invert.toString());
-              
         // apply case specific settings            
         switch (evt.target.id) {
           // f2l cases
           case "btn-f2l-1-1":
-            algNotes.innerHTML = "F2L :: easy insert with righty pair.";
-            twistyPlayer.alg = "U R U' R'";
+            setAlg("U R U' R'", "F2L :: easy insert with righty pair.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;
           case "btn-f2l-1-2":
-            algNotes.innerHTML = "F2L :: easy insert with lefty pair.";
-            twistyPlayer.alg = "U' L' U L";
+            setAlg("U' L' U L", "F2L :: easy insert with lefty pair.");
             twistyPlayer.experimentalSetupAlg = "z2 y";
             twistyPlayer.cameraLongitude=-45;
             twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;
           case "btn-f2l-1-3":
-            algNotes.innerHTML = "F2L :: easy insert with righty insert.";
-            twistyPlayer.alg = "R U R'";
+            setAlg("R U R'", "F2L :: easy insert with righty insert.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;
           case "btn-f2l-1-4":
-            algNotes.innerHTML = "F2L :: easy insert with lefty insert.";
-            twistyPlayer.alg = "L' U' L";
+            setAlg("L' U' L", "F2L :: easy insert with lefty insert.");
             twistyPlayer.experimentalSetupAlg = "z2 y";
             twistyPlayer.cameraLongitude=-45;
             twistyPlayer.experimentalStickeringMaskOrbits = mask_f2l;
             break;       
           // oll cases
           case "btn-oll-1-1":
-            algNotes.innerHTML = "OLL :: cross orientation using Line algorithm.";
-            twistyPlayer.alg = "F (R U R' U') F'";
+            setAlg("F (R U R' U') F'", "OLL :: cross orientation using Line algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_cross;
             break;
           case "btn-oll-1-2":
-            algNotes.innerHTML = "OLL :: cross orientation using Hook algorithm.";
-            twistyPlayer.alg = "f (R U R' U') f'";
+            setAlg("f (R U R' U') f'", "OLL :: cross orientation using Hook algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_cross;
             break;          
           case "btn-oll-1-3":
-            algNotes.innerHTML = "OLL :: cross orientation using Dot algorithm.";
-            twistyPlayer.alg = "F (R U R' U') F' f (R U R' U') f'";
+            setAlg("F (R U R' U') F' f (R U R' U') f'", "OLL :: cross orientation using Dot algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_cross;
             break;   
           case "btn-oll-2-1":
-            algNotes.innerHTML = "OLL :: corner orientation using Sune algorithm.";
-            twistyPlayer.alg = "(R U R' U) (R U2 R')";
+            setAlg("(R U R' U) (R U2 R')", "OLL :: corner orientation using Sune algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-2":
-            algNotes.innerHTML = "OLL :: corner orientation using Anti-Sune algorithm.";
-            twistyPlayer.alg = "(R U2 R') (U' R U' R')"; 
+            setAlg("(R U2 R') (U' R U' R')", "OLL :: corner orientation using Anti-Sune algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-3":
-            algNotes.innerHTML = "OLL :: corner orientation using Cross-1 algorithm.";
-            twistyPlayer.alg = "(R U R' U) (R U' R' U) (R U2 R')";
+            setAlg("(R U R' U) (R U' R' U) (R U2 R')", "OLL :: corner orientation using Cross-1 algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-4":
-            algNotes.innerHTML = "OLL :: corner orientation using Cross-2 algorithm.";
-            twistyPlayer.alg = "R U2 (R2 U') (R2 U') R2 U2 R";
+            setAlg("R U2 (R2 U') (R2 U') R2 U2 R", "OLL :: corner orientation using Cross-2 algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-5":
-            algNotes.innerHTML = "OLL :: corner orientation using Chameleon algorithm.";
-            twistyPlayer.alg = "(r U R' U') (r' F R F')";
+            setAlg("(r U R' U') (r' F R F')", "OLL :: corner orientation using Chameleon algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-6":
-            algNotes.innerHTML = "OLL :: corner orientation using Kite algorithm.";
-            twistyPlayer.alg = "F' (r U R' U') (r' F R)";
+            setAlg("F' (r U R' U') (r' F R)", "OLL :: corner orientation using Kite algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-7":
-            algNotes.innerHTML = "OLL :: corner orientation using Headlights algorithm.";
-            twistyPlayer.alg = "R2 D (R' U2 R) D' (R' U2 R')";
+            setAlg("R2 D (R' U2 R) D' (R' U2 R')", "OLL :: corner orientation using Headlights algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           // pll cases
           case "btn-pll-1-1":
-            algNotes.innerHTML = "PLL :: opposite corner swap using Y perm algorithm.";
-            twistyPlayer.alg = "F R U' R' U' R U R' F' (R U R' U') (R' F R F')";
+            setAlg("F R U' R' U' R U R' F' (R U R' U') (R' F R F')", "PLL :: opposite corner swap using Y perm algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_pll_corners;
             break;
           case "btn-pll-1-2":
-            algNotes.innerHTML = "PLL :: adjacent corner swap using T perm algorithm.";
-            twistyPlayer.alg = "(R U R' U') R' F R2 U' R' U' R U R' F'";
+            setAlg("(R U R' U') R' F R2 U' R' U' R U R' F'", "PLL :: adjacent corner swap using T perm algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_pll_corners;
             break;
           case "btn-pll-2-1":
-            algNotes.innerHTML = "PLL :: Edge cycle anti-clockwise Ua perm algorithm.";
-            twistyPlayer.alg = "(R2 U' R') U' R (U R) (U R) U' R";
+            setAlg("(R2 U' R') U' R (U R) (U R) U' R", "PLL :: Edge cycle anti-clockwise Ua perm algorithm.");
             break;
           case "btn-pll-2-2":
-            algNotes.innerHTML = "PLL :: Edge cycle clockwise Ub perm algorithm.";
-            twistyPlayer.alg = "R' U (R' U') (R' U') R' U (R U R2)";
+            setAlg("R' U (R' U') (R' U') R' U (R U R2)", "PLL :: Edge cycle clockwise Ub perm algorithm.");
             break;
           case "btn-pll-2-3":
-            algNotes.innerHTML = "PLL :: Opposite edge swap using H perm algorithm.";
-            twistyPlayer.alg = "M2 U' (M2 U2 M2) U' M2";
+            setAlg("M2 U' (M2 U2 M2) U' M2", "PLL :: Opposite edge swap using H perm algorithm.");
             break;
           case "btn-pll-2-4":
-            algNotes.innerHTML = "PLL :: Adjacent edge swap Z perm algorithm.";
-            twistyPlayer.alg = "M' U' (M2 U') (M2 U') M' U2 M2";
+            setAlg("M' U' (M2 U') (M2 U') M' U2 M2", "PLL :: Adjacent edge swap Z perm algorithm.");            
             break;
         }
-        
       }
-      
-      const algNotes = document.getElementById("notes");
 
+      
+      
       document.getElementById("player").appendChild(twistyPlayer);      
       document.getElementById("algorithm").appendChild(new TwistyAlgViewer({ twistyPlayer: twistyPlayer }));
 
@@ -991,6 +983,11 @@
                   <button type="button" id="btn-rewind" class="btn btn-outline-light">fast_rewind</button>
                   <button type="button" id="btn-play" class="btn btn-outline-light">play_arrow</button>
                   <button type="button" id="btn-pause" class="btn btn-outline-light">pause</button>
+                  <button type="button" id="btn-invert" class="btn btn-outline-light" 
+                    data-bs-toggle="popover"
+                    data-bs-placement="top"
+                    data-bs-title="header"
+                    data-bs-content="content">cognition</button>
                 </div>              
                 <div class="btn-group" role="group">
                   <button id="btn-speed-0.5x" type="button" class="btn btn-outline-light">speed_0_5</button>
