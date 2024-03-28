@@ -51,3 +51,9 @@ twisty-alg-viewer .twisty-alg-current-move {
     margin: auto;
     padding: 0;
 }
+
+.custom-popover {
+    --bs-popover-max-width: 180px;
+    --bs-popover-body-padding-x: .5rem;
+    --bs-popover-body-padding-y: .5rem;
+}
