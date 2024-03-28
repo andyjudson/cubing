@@ -140,23 +140,23 @@
             "name": "",
             "alg": "(R U' R' U) y' (R' U R)"
         },
-        "alg-7.1": {
+        "alg-7.2": {
             "name": "",
             "alg": "(U R U' R') (U R U' R') (U R U' R')"
         },
-        "alg-7.1": {
+        "alg-7.3": {
             "name": "",
             "alg": "(U' R U' R') U2 (R U' R')"
         },
-        "alg-7.1": {
+        "alg-7.4": {
             "name": "",
             "alg": "U (R U R') U2 (R U R')"
         },
-        "alg-7.1": {
+        "alg-7.5": {
             "name": "",
             "alg": "(U' R U R') U y' (R' U' R)"
         },
-        "alg-7.1": {
+        "alg-7.6": {
             "name": "",
             "alg": "U (F' U' F) U' (R U R')"
         }

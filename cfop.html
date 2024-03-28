@@ -64,7 +64,7 @@
           twistyPlayer.alg = algStr
           document.getElementById("notes").innerHTML = notes
           document.getElementById("btn-invert").disabled = false;
-          bootstrap.Popover.getOrCreateInstance("#btn-invert").setContent({
+          bootstrap.Popover.getInstance("#btn-invert").setContent({
             '.popover-header': 'Inverted Alg',
             '.popover-body': new Alg(algStr).invert().expand().toString()
           })
@@ -89,7 +89,6 @@
         twistyPlayer.experimentalSetupAnchor = "end";  // end state so cube is solved using alg
         twistyPlayer.experimentalStickering = "full";  // full masking by default, others work but assume white is u-face
         twistyPlayer.experimentalSetupAlg = "z2";  // orientate cube for yellow u-face
-        twistyPlayer.experimentalStickeringMaskOrbits = mask_default;  // no sticker manipulation, but override for f2l, oll, pll
         twistyPlayer.tempoScale=1.5;
         twistyPlayer.jumpToStart();  
         twistyPlayer.play();   
@@ -169,21 +168,23 @@
             break;
           case "btn-pll-2-1":
             setAlg("(R2 U' R') U' R (U R) (U R) U' R", "PLL :: Edge cycle anti-clockwise Ua perm algorithm.");
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
             break;
           case "btn-pll-2-2":
             setAlg("R' U (R' U') (R' U') R' U (R U R2)", "PLL :: Edge cycle clockwise Ub perm algorithm.");
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
             break;
           case "btn-pll-2-3":
             setAlg("M2 U' (M2 U2 M2) U' M2", "PLL :: Opposite edge swap using H perm algorithm.");
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
             break;
           case "btn-pll-2-4":
-            setAlg("M' U' (M2 U') (M2 U') M' U2 M2", "PLL :: Adjacent edge swap Z perm algorithm.");            
+            setAlg("M' U' (M2 U') (M2 U') M' U2 M2", "PLL :: Adjacent edge swap Z perm algorithm.");
+            twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
             break;
         }
       }
 
-      
-      
       document.getElementById("player").appendChild(twistyPlayer);      
       document.getElementById("algorithm").appendChild(new TwistyAlgViewer({ twistyPlayer: twistyPlayer }));
 
