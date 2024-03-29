@@ -236,9 +236,10 @@
         <p>The site is built to make it easier to practice (i.e. replay) the specific moves per case whilst learning CFOP algorithms. All examples and notes are based on the excellent <a href="https://www.youtube.com/playlist?list=PLqrfspOsG9B-zqJu9f-45BZRamipy-q2y">Beginner CFOP tutorials</a> from <img src="./assets/cubehead_logo.png" height="24px"><a href="https://www.youtube.com/@CubeHead">CubeHead</a>.</p>
         <p>I'll focus on the F2L, OLL and PLL stages, and will skip the CROSS stage but see the videos from CubeHead. Just to be clear, I'm not a cubing expert, far from it, this is a cheat sheet for my own learning, and if others find it useful, then that is good to hear.</p>
         <div class="d-grid gap-2 d-md-block">
-          <a href="#f2l" class="btn btn-light" tabindex="-1" role="button">Intuitive F2L</a>
-          <a href="#oll" class="btn btn-light" tabindex="-1" role="button">2-Look OLL</a>
-          <a href="#pll" class="btn btn-light" tabindex="-1" role="button">2-Look PLL</a>
+          <a href="#f2l" class="btn btn-light" role="button">Intuitive F2L</a>
+          <a href="#oll" class="btn btn-light" role="button">2-Look OLL</a>
+          <a href="#pll" class="btn btn-light" role="button">2-Look PLL</a>
+          <a href="#3lk" class="btn btn-light" role="button">3-Look OLL / PLL</a>
           <button type="button" id="btn-demo" class="btn btn-light"
             data-bs-toggle="modal" data-bs-target="#modalTwisty">Scramble</button>
         </div>
@@ -264,7 +265,9 @@
         <!-- f2l :: righty pair case -->                  
         <div class="col">
           <div class="card h-100">
-            <div class="card-header">1.1. Righty pair</div>              
+            <div class="card-header">1.1. Righty pair
+              
+            </div>              
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
@@ -948,6 +951,65 @@
           </div>
         </div>
 
+      </div>
+
+      <div class="row py-3">
+        <div class="col-12 p-2">
+          <a id="3lk"><h3>3-Look OLL/PLL</h3></a>
+          <p>As an intermediate step, we can use these 3 algorithms, with repetitions depending on OLL and PLL cases. Whilst this reduces the number algorithms to learn, it increases time for solve the last layer with some unpredictability. You should be using intuitive CROSS and F2L techniques for the first two layers, and once you've got comfortable with these algorithms, start learning the rest of the 2-look algorithms.</p>
+          <div class="row row-cols-1 row-cols-md-5 g-2">
+            <div class="col">
+              <div class="card h-100 text-center">
+                <div class="card-header">oll :: corner orientation</div>              
+                <div class="card-body fs-5">
+                  <img src="./assets/bgnr/ly3-sune-case1.svg" class="cube-model-svg">
+                  <p>(R U R') U (R U2 R')</p>
+                </div>
+                <div class="card-footer text-body-secondary">sune (1 corner)</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 text-center">
+                <div class="card-header">oll :: corner orientation</div>              
+                <div class="card-body fs-5">
+                  <img src="./assets/bgnr/ly3-sune-case2.svg" class="cube-model-svg">
+                  <p>(R U R') U (R U2 R')</p>
+                </div>
+                <div class="card-footer text-body-secondary">sune (2 corner)</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 text-center">
+                <div class="card-header">oll :: corner orientation</div>              
+                <div class="card-body fs-5">
+                  <img src="./assets/bgnr/ly3-sune-case0.svg" class="cube-model-svg">
+                  <p>(R U R') U (R U2 R')</p>
+                </div>
+                <div class="card-footer text-body-secondary">sune (0 corner)</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 text-center">
+                <div class="card-header">pll :: corner permutation</div>              
+                <div class="card-body fs-5">
+                  <img src="./assets/bgnr/ly3-tperm.svg" class="cube-model-svg">
+                  <p>(R U R' U') (R' F R2 U')<br>R' U' (R U R' F')</p>
+                </div>
+                <div class="card-footer text-body-secondary">t-perm (headlights)</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 text-center">
+                <div class="card-header">pll :: edge permutation</div>              
+                <div class="card-body fs-5">
+                  <img src="./assets/bgnr/ly3-uaperm.svg" class="cube-model-svg">
+                  <p>(R U') (R U) (R U) (R U')<br>R' U' R2</p>
+                </div>   
+                <div class="card-footer text-body-secondary">ua-perm (block)</div>             
+              </div>
+            </div>            
+          </div>            
+        </div>
       </div>
 
       <!-- footer -->
