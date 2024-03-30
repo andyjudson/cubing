@@ -40,7 +40,7 @@
 
     <div class="container p-2">
       <h1>Cubing Beginner Method</h1>
-      <p>I first learnt how to solve a Rubik's cube using the beginner method from <a href="https://youtu.be/7Ron6MN45LY">JPerm (Dylan Wang)</a>, or if you like, <a href="https://youtu.be/PW2J8IblczM">Cubehead (Milan Struyf with Matty Inaba)</a> shared a tutorial using the same method recently. I've made a quick reference version of this method below, but if you are just getting started, then you should watch their videos as they explain the steps. This method uses repetitions of the Righty alg (R U R' U') or Lefty alg (L' U' L U) in several stages, with the Sune and Niklas algorithm to orientate the last layer, edges and corners. It is also worth learning some of the faster techniques (e.g. skipping daisy and solving white cross in down layer, or useful finger tricks). With practice, you should find you have the learnt to solve a cube within 2 to 3 minutes. Alternatively, <a href="https://www.cubeskills.com/tutorials/the-beginners-method-for-solving-the-rubiks-cube">CubeSkills (Felix Zemdegs)</a> teaches a similar method (also copied below) but he uses the Sune, T-perm, and Ua-perm algorithms to solve the last layer of the cube.</p>
+      <p>I first learnt how to solve a Rubik's cube using the beginner method from <a href="https://youtu.be/7Ron6MN45LY">JPerm (Dylan Wang)</a>, or if you like, <a href="https://youtu.be/PW2J8IblczM">Cubehead (Milan Struyf with Matty Inaba)</a> shared a tutorial using the same method recently. I've made a quick reference version of this method below, but if you are just getting started, then you should watch their videos as they explain the steps. This method uses repetitions of the Righty alg (R U R' U') or Lefty alg (L' U' L U) in several stages, with the Sune and Niklas algorithm to orientate the last layer, edges and corners. It is also worth learning some of the faster techniques (e.g. skipping daisy and solving white cross in down layer, or useful finger tricks). With practice, you should find you have the learnt to solve a cube within 2 to 3 minutes.</p>
     </div>
 
     <div class="container py-4">
@@ -120,100 +120,6 @@
         </div>
         <div class="col"><img src="./assets/bgnr/ly3-corner-orien.png" class="cube-model-png">
           <br>(R U R' U')<br>HOLD UNSOLVED CORNER FRONT/RIGHT</div>     
-      </div>
-
-    </div>
-    
-   
-
-    <div class="container py-4">
-      <h3>Felix Zemdegs Beginner Method</h3>
-
-      <div class="row border">
-        <div class="col-6 my-2">
-          <h6>FIRST LAYER WHITE CROSS</h6>
-          <p>The 1st step is to correctly position the 4 white edge pieces around the white center piece to create a cross. When you do this, make sure that the non-white stickers of the edge pieces also line up with their corresponding center pieces.</p>
-        </div>
-        <div class="col"><img src="./assets/bgnr/ly1-cross-case1.png" class="cube-model-png">
-          <br>SOLVED</div>
-        <div class="col"><img src="./assets/bgnr/ly1-cross-case2.png" class="cube-model-png">
-          <br>UNSOLVED</div>
-        <div class="col"><img src="./assets/bgnr/ly1-cross-case3.png" class="cube-model-png">
-          <br>F U' R U<br>FLIPPED</div>
-      </div>
-
-      <div class="row border">
-        <div class="col-6 my-2">
-          <h6>FIRST LAYER CORNERS</h6>
-          <p>The 2nd step is to solve the corners of the first layer. There are 3 basic cases. Note: if a corner is misoriented, or in the wrong position, you can take it out using R U R'.</p>
-        </div>
-        <div class="col"><img src="./assets/bgnr/ly1-corners-case1.png" class="cube-model-png">
-          <br>R U R'<br>WHITE ON RIGHT</div>
-        <div class="col"><img src="./assets/bgnr/ly1-corners-case2.png" class="cube-model-png">
-          <br>U R U' R'<br>WHITE ON LEFT</div>
-        <div class="col"><img src="./assets/bgnr/ly1-corners-case3.png" class="cube-model-png">
-          <br>(R U2 R') U' (R U R')<br>WHITE ON UP</div>
-      </div>
-
-      <div class="row border">
-        <div class="col-6 my-2">
-          <h6>MIDDLE LAYER EDGES</h6>
-          <p>The 3rd step is to solve the edges of the middle layer. Edge pieces from the top layer will either need to go to the right or left position, if you hold them at the front. If an edge piece is oriented or stuck in the wrong position, take it out by inserting another edge into its position.</p>
-        </div>
-        <div class="col"><img src="./assets/bgnr/ly2-edge-left.png" class="cube-model-png">
-          <br>(U' L' U L) (U F U' F')<br>LEFT CASE</div>
-        <div class="col"><img src="./assets/bgnr/ly2-edge-right.png" class="cube-model-png">
-          <br>(U R U' R') (U' F' U F)<br>RIGHT CASE</div>
-      </div>
-
-      <div class="row border">
-        <div class="col-6 my-2">
-          <h6>LAST LAYER YELLOW CROSS</h6>
-          <p>The 4th step is to orient the edges of the last layer. Hold the yellow layer on top. Use the algorithm for each case (line = 1 repetition, hook = 2 repetitions, dot = 3 repetitions).</p>
-        </div>
-        <div class="col"><img src="./assets/bgnr/ly3-cross-dot.svg" class="cube-model-svg">
-          <br>F (R U R' U') F'<br>DOT</div>
-        <div class="col"><img src="./assets/bgnr/ly3-cross-hook.svg" class="cube-model-svg">
-          <br>F (R U R' U') F'<br>HOOK</div>
-        <div class="col"><img src="./assets/bgnr/ly3-cross-line.svg" class="cube-model-svg">
-          <br>F (R U R' U') F'<br>LINE</div>
-        <div class="col"><img src="./assets/bgnr/ly3-cross-solved.svg" class="cube-model-svg">
-          <br>SOLVED</div>
-      </div>
-
-      <div class="row border">
-        <div class="col-6 my-2">
-          <h6>LAST LAYER CORNER ORIENTATION</h6>
-          <p>The 5th step is to orientate the corners of the last layer. Check how many are up in the top layer and hold the cube in the position for that case. Then use the corner orientation (Sune) algorithm, repeated as required for that case (1 corner = 1 or 2 repetitions, 2 corners = 2 or 3 repetitions, 0 corners = 2 or 3 repetitions).</p>
-        </div>
-        <div class="col"><img src="./assets/bgnr/ly3-sune-case0.svg" class="cube-model-svg">
-          <br>(R U R') U (R U2 R')<br>0 CORNERS ORIENTED</div>
-        <div class="col"><img src="./assets/bgnr/ly3-sune-case2.svg" class="cube-model-svg">
-          <br>(R U R') U (R U2 R')<br>2 CORNERS ORIENTED</div>
-        <div class="col"><img src="./assets/bgnr/ly3-sune-case1.svg" class="cube-model-svg">
-          <br>(R U R') U (R U2 R')<br>1 CORNER ORIENTED</div>
-        <div class="col"><img src="./assets/bgnr/ly3-solved.svg" class="cube-model-svg">
-          <br>SOLVED</div>
-      </div>
-
-      <div class="row border">
-        <div class="col-6 my-2">
-          <h6>LAST LAYER CORNER PERMUTATION</h6>
-          <p>The 6th step is to align the corners of the last layer. Hold two corners on the left side as if headlights, and then execute the (T-perm) algorithm. If there are initially no matching corners, perform the algorithm from any angle, then repeat for headlight case.</p>
-        </div>
-        <div class="col">
-          <img src="./assets/bgnr/ly3-tperm.svg" class="cube-model-svg">
-          <br>(R U R' U') (R' F R2 U') R' U' (R U R' F')<br>HOLD HEADLIGHTS ON LEFT</div>
-      </div>
-
-      <div class="row border">
-        <div class="col-6 my-2">
-          <h6>LAST LAYER EDGE PERMUTATION</h6>
-          <p>The 7th step is to align the edges of the last layer, which solves the cube. Hold the cube so a solid block, where an edge is solved, is at the back. Then execute the (Ua-perm) algorithm (may need 1 or 2 repetitions depending on case). If there is initially no block, perform the algorithm from any angle.</p>
-        </div>
-        <div class="col">
-          <img src="./assets/bgnr/ly3-uaperm.svg" class="cube-model-svg">
-          <br>(R U') (R U) (R U) (R U') R' U' R2<br>HOLD BLOCK IN BACK</div>
       </div>
 
     </div>
@@ -297,8 +203,7 @@
     <div class="row py-3 footer">
       <div class="col-12 p-2">
         Disclaimer :: this site is based on the cubing tutorials from 
-        <a href="https://www.youtube.com/@JPerm">JPerm</a> (aka. Dylan Wang) and 
-        <a href="https://www.cubeskills.com/">CubeSkills</a> (aka. Felix Zemdegs)
+        <a href="https://www.youtube.com/@JPerm">JPerm</a> (aka. Dylan Wang)
         | built with <a href="https://github.com/cubing/cubing.js">cubing.js</a> (Lucas Garron)
         | see <a href="https://github.com/andyjudson/cubing">github</a> for the source code.
       </div>

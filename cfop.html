@@ -130,11 +130,11 @@
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_cross;
             break;   
           case "btn-oll-2-1":
-            setAlg("(R U R' U) (R U2 R')", "OLL :: corner orientation using Sune algorithm.");
+            setAlg("(R U R') U (R U2 R')", "OLL :: corner orientation using Sune algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-2":
-            setAlg("(R U2 R') (U' R U' R')", "OLL :: corner orientation using Anti-Sune algorithm.");
+            setAlg("(R U2 R') U' (R U' R')", "OLL :: corner orientation using Anti-Sune algorithm.");
             twistyPlayer.experimentalStickeringMaskOrbits = mask_oll_layer;
             break;
           case "btn-oll-2-3":
@@ -665,7 +665,7 @@
                   </span>
                 </div>
                 <div class="col-8">
-                  <p class="card-text">(R U2 R') (U' R U' R')</p>
+                  <p class="card-text">(R U2 R') U' (R U' R')</p>
                   <p>Hold cube so fish mouth back right, with a yellow in the front left.</p>          
                 </div>
               </div>
@@ -956,13 +956,13 @@
       <div class="row py-3">
         <div class="col-12 p-2">
           <a id="3lk"><h3>3-Look OLL/PLL</h3></a>
-          <p>As an intermediate step, we can use these 3 algorithms, with repetitions depending on OLL and PLL cases. Whilst this reduces the number algorithms to learn, it increases time for solve the last layer with some unpredictability. You should be using intuitive CROSS and F2L techniques for the first two layers, and once you've got comfortable with these algorithms, start learning the rest of the 2-look algorithms.</p>
-          <div class="row row-cols-1 row-cols-md-5 g-2">
+          <p>There is a minimal subset of algorithms (sune/anti-sune, t-perm, ua-perm) we can to solve the last layer, with repetitions, depending on the cases you get. Whilst this reduces the number of CFOP algorithms to learn, it increases the time to solve the last layer with some unpredictability. You should be using intuitive CROSS and F2L techniques for the first two layers, and when you are comfortable with these algorithms, start learning the rest of the 2-look algorithms.</p>
+          <div class="row row-cols-1 row-cols-md-4 g-2">
             <div class="col">
               <div class="card h-100 text-center">
                 <div class="card-header">oll :: corner orientation</div>              
                 <div class="card-body fs-5">
-                  <img src="./assets/bgnr/ly3-sune-case1.svg" class="cube-model-svg">
+                  <img src="./assets/bgnr/ly3-corner-case1-sune.svg" class="cube-model-svg">
                   <p>(R U R') U (R U2 R')</p>
                 </div>
                 <div class="card-footer text-body-secondary">sune (1 corner)</div>
@@ -972,7 +972,17 @@
               <div class="card h-100 text-center">
                 <div class="card-header">oll :: corner orientation</div>              
                 <div class="card-body fs-5">
-                  <img src="./assets/bgnr/ly3-sune-case2.svg" class="cube-model-svg">
+                  <img src="./assets/bgnr/ly3-corner-case1-antisune.svg" class="cube-model-svg">
+                  <p>(R U2 R') U' (R U' R')</p>
+                </div>
+                <div class="card-footer text-body-secondary">anti-sune (1 corner)</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 text-center">
+                <div class="card-header">oll :: corner orientation</div>              
+                <div class="card-body fs-5">
+                  <img src="./assets/bgnr/ly3-corner-case2-sune.svg" class="cube-model-svg">
                   <p>(R U R') U (R U2 R')</p>
                 </div>
                 <div class="card-footer text-body-secondary">sune (2 corner)</div>
@@ -982,7 +992,7 @@
               <div class="card h-100 text-center">
                 <div class="card-header">oll :: corner orientation</div>              
                 <div class="card-body fs-5">
-                  <img src="./assets/bgnr/ly3-sune-case0.svg" class="cube-model-svg">
+                  <img src="./assets/bgnr/ly3-corner-case0-sune.svg" class="cube-model-svg">
                   <p>(R U R') U (R U2 R')</p>
                 </div>
                 <div class="card-footer text-body-secondary">sune (0 corner)</div>
