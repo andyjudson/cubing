@@ -17,6 +17,7 @@
           width: 130px;
           height: 130px;
           transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
           margin: auto;
           padding: 0;
       }
@@ -39,6 +40,7 @@
 
     <div class="container py-4">
       <h3>How to solve a Rubik's cube</h3>
+      <h3>How to solve a Rubik's cube</h3>
 
       <div class="row py-4">
         <div class="col-md-12">
@@ -46,9 +48,13 @@
           <p>The objective of the 1st step is to create a white cross. Hold cube with white face upwards. If white edge is in top or bottom layer, align edge color with its side-face center and rotate that face to bring it into position in the top layer. If edge is in side layer, move it into the bottom and rotate it away so you can re-align the edge, then solve as before. If an edge is flipped, you need to rotate the white layer so the edge can be rotated into the target slot.</p>
         </div>
         <div class="col-md-4 text-center"><img src="./assets/bgnr/ly1-cross-case1.png" class="cube-model-png">
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly1-cross-case1.png" class="cube-model-png">
           <br>SOLVED</div>
         <div class="col-md-4 text-center"><img src="./assets/bgnr/ly1-cross-case2.png" class="cube-model-png">
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly1-cross-case2.png" class="cube-model-png">
           <br>UNSOLVED</div>
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly1-cross-case3.png" class="cube-model-png">
+          <br>FLIPPED</div>
         <div class="col-md-4 text-center"><img src="./assets/bgnr/ly1-cross-case3.png" class="cube-model-png">
           <br>FLIPPED</div>
       </div>
@@ -57,7 +63,15 @@
         <div class="col-md-12">
           <h6>STEP 2 - FIRST LAYER CORNERS</h6>
           <p>The objective of the 2nd step is to solve the first layer. Hold cube with white cross downwards. Rotate top layer so white corner piece is over target slot, between the other colour centers. If the corner has white facing right, use righty alg. If white is facing left use the lefty alg. If white is facing up, use 3 repetitions of the righty alg. If corner is already in the wrong slot, hold it on the right and use righty alg to take it out of the slot, and then re-insert it in as before. Repeat to solve for each corner slot.</p>
+      <div class="row py-4">
+        <div class="col-md-12">
+          <h6>STEP 2 - FIRST LAYER CORNERS</h6>
+          <p>The objective of the 2nd step is to solve the first layer. Hold cube with white cross downwards. Rotate top layer so white corner piece is over target slot, between the other colour centers. If the corner has white facing right, use righty alg. If white is facing left use the lefty alg. If white is facing up, use 3 repetitions of the righty alg. If corner is already in the wrong slot, hold it on the right and use righty alg to take it out of the slot, and then re-insert it in as before. Repeat to solve for each corner slot.</p>
         </div>
+        <div class="col-md-6 text-center"><img src="./assets/bgnr/ly1-corners-case1.png" class="cube-model-png">
+          <br><b>(R U R' U')</b><br>RIGHTY ALG</div>
+        <div class="col-md-6 text-center"><img src="./assets/bgnr/ly1-corners-case2.png" class="cube-model-png">
+          <br><b>(L' U' L U)</b><br>LEFTY ALG</div>          
         <div class="col-md-6 text-center"><img src="./assets/bgnr/ly1-corners-case1.png" class="cube-model-png">
           <br><b>(R U R' U')</b><br>RIGHTY ALG</div>
         <div class="col-md-6 text-center"><img src="./assets/bgnr/ly1-corners-case2.png" class="cube-model-png">
@@ -69,6 +83,10 @@
           <h6>STEP 3 - MIDDLE LAYER EDGES</h6>
           <p>The objective of the 3rd step is to solve the second layer. Hold cube facing a non-yellow edge that need to solve. Align this edge with center of the side colour and check which side the other colour matches. Then use algorithm to rotate edge away, take corner piece out, setup corner-edge pair and re-insert. Repeat this until all edge pieces in the second layer are solved. If only yellow pieces facing upward, then swap one of these in a target edge using same technique.</p>
         </div>
+        <div class="col-md-6 text-center"><img src="./assets/bgnr/ly2-edge-left.png" class="cube-model-png">
+          <br><b>U' (L' U' L U) y' (R U R' U')</b><br>LEFT CASE</div>
+        <div class="col-md-6 text-center"><img src="./assets/bgnr/ly2-edge-right.png" class="cube-model-png">
+          <br><b>U (R U R' U') y (L' U' L U)</b><br>RIGHT CASE</div>
         <div class="col-md-6 text-center"><img src="./assets/bgnr/ly2-edge-left.png" class="cube-model-png">
           <br><b>U' (L' U' L U) y' (R U R' U')</b><br>LEFT CASE</div>
         <div class="col-md-6 text-center"><img src="./assets/bgnr/ly2-edge-right.png" class="cube-model-png">
@@ -86,6 +104,12 @@
           <br><b>F (R U R' U') F'</b><br>HOOK</div>
         <div class="col-md-4 text-center"><img src="./assets/bgnr/ly3-cross-line.png" class="cube-model-png">
           <br><b>F (R U R' U') F'</b><br>LINE</div>
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly3-cross-dot.png" class="cube-model-png">
+          <br><b>F (R U R' U') F'</b><br>DOT</div>
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly3-cross-hook.png" class="cube-model-png">
+          <br><b>F (R U R' U') F'</b><br>HOOK</div>
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly3-cross-line.png" class="cube-model-png">
+          <br><b>F (R U R' U') F'</b><br>LINE</div>
       </div>
 
       <div class="row py-4">
@@ -93,6 +117,8 @@
           <h6>STEP 5 - LAST LAYER EDGES ORIENTATION</h6>
           <p>The objective of the 5th step is to orientate the edges in the third layer. Rotate the upward layer to align as many edges with their center colour (always match 2). If matching edges are next to each other, hold cube so they are back/right, then use Sune algorithm to solve. If they are across from each other, hold them in any pattern, then use Sune algorithm to setup adjacent pair, and repeat for this case. You may need an upper layer (U) rotation to re-align edges with their center.</p>
         </div>
+        <div class="col-md-12 text-center"><img src="./assets/bgnr/ly3-edges-adjacent.png" class="cube-model-png">
+          <br><b>(R U R') U (R U2 R')</b><br>HOLD SOLVED EDGES BACK/RIGHT</div>
         <div class="col-md-12 text-center"><img src="./assets/bgnr/ly3-edges-adjacent.png" class="cube-model-png">
           <br><b>(R U R') U (R U2 R')</b><br>HOLD SOLVED EDGES BACK/RIGHT</div>
       </div>
@@ -104,8 +130,14 @@
         </div>
         <div class="col-md-12 text-center"><img src="./assets/bgnr/ly3-corner-perm.png" class="cube-model-png">
           <br><b>(U R U' L') (U R' U' L)</b><br>HOLD SOLVED CORNER FRONT/RIGHT</div>     
+        <div class="col-md-12 text-center"><img src="./assets/bgnr/ly3-corner-perm.png" class="cube-model-png">
+          <br><b>(U R U' L') (U R' U' L)</b><br>HOLD SOLVED CORNER FRONT/RIGHT</div>     
       </div>
 
+      <div class="row py-4">
+        <div class="col-md-12 my-2">
+          <h6>STEP 7 - LAST LAYER CORNER ORIENTATION</h6>
+          <p>The objective of the 7th step is to solve the corners in the third layer, there by solving the cube. Hold cube flipped, with yellow face downward, with an unsolved corner in front/right position. Repeatedly use the righty alg until the corner is solved. If need to solve other corners, rotate bottom layer (D) to bring the unsolved corner into the front/right position, and repeat the right trigger, do not rotate the cube by mistake.</p>
       <div class="row py-4">
         <div class="col-md-12 my-2">
           <h6>STEP 7 - LAST LAYER CORNER ORIENTATION</h6>
