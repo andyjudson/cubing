@@ -16,15 +16,7 @@
       .cube-model-png {
           width: 130px;
           height: 130px;
-          transform: translate(-15%, 0%);
-          margin: auto;
-          padding: 0;
-      }
-
-      .cube-model-svg {
-          width: 120px;
-          height: 120px;
-          transform: translate(-10%, 0%);
+          transform: translate(0%, 0%);
           margin: auto;
           padding: 0;
       }
@@ -40,162 +32,87 @@
 
     <div class="container p-2">
       <h1>Cubing Beginner Method</h1>
-      <p>I first learnt how to solve a Rubik's cube using the beginner method from <a href="https://youtu.be/7Ron6MN45LY">JPerm (Dylan Wang)</a>, or if you like, <a href="https://youtu.be/PW2J8IblczM">Cubehead (Milan Struyf with Matty Inaba)</a> shared a tutorial using the same method recently. I've made a quick reference version of this method below, but if you are just getting started, then you should watch their videos as they explain the steps.</p>
-      <p>This method uses repetitions of the Righty alg (R U R' U') or Lefty alg (L' U' L U) in several stages, with the Sune and Niklas algorithm to orientate the last layer, edges and corners. It is also worth learning some of the faster techniques (e.g. skipping daisy and solving white cross in down layer, or useful finger tricks).</p>
-      <p>With practice, you should find you have the learnt to solve a cube within 2 to 3 minutes. If you want to progress to faster times and are ready to learn some more algorithms, then see this <a href="cfop.html">CFOP 2-look</a> method.</p>
+      <p>I first learnt how to solve a Rubik's cube using the beginner method from <a href="https://youtu.be/7Ron6MN45LY">JPerm (Dylan Wang)</a>, or if you like, <a href="https://youtu.be/PW2J8IblczM">Cubehead (Milan Struyf with Matty Inaba)</a> shared a tutorial using the same method recently. Below is quick reference of this method, but if you are just getting started, then you should watch their videos as they explain the steps and rotation logic rather than using <a href=notation.html>cube notation</a>.</p>
+      <p>This method uses repetitions of the <b>Righty alg (R U R' U')</b> or <b>Lefty alg (L' U' L U)</b> in several stages, with the <b>Sune</b> and <b>Niklas</b> algorithms to orientate the last layer, edges and corners. It is also worth learning some of the faster techniques e.g. skipping daisy and solving white cross in down layer, or some finger tricks.</p>
+      <p>With practice, you should find you have the learnt to solve a cube within 2 to 3 minutes. If you want to progress to faster times and are ready to learn some more algorithms, then see this beginner <a href="cfop.html">CFOP 2-look</a> method.</p>
     </div>
 
     <div class="container py-4">
-      <h3>Beginner Method Quick Reference</h3>
+      <h3>How to solve a Rubik's cube</h3>
 
-      <div class="row border">
-        <div class="col-md-6 my-2">
-          <h6>FIRST LAYER WHITE CROSS</h6>
-          <p>The 1st step is to create a white cross. Hold cube with white face upwards. If white edge is in top or bottom layer, align edge color with its side-face center and rotate that face to bring it into position in the top layer. If edge is in side layer, move it into the bottom and turn it away so you can re-align the edge, then solve as before. If an edge is flipped, you need to rotate the white layer so the edge can be rotated into the target slot.</p>
+      <div class="row py-4">
+        <div class="col-md-12">
+          <h6>STEP 1 - FIRST LAYER WHITE CROSS</h6>
+          <p>The objective of the 1st step is to create a white cross. Hold cube with white face upwards. If white edge is in top or bottom layer, align edge color with its side-face center and rotate that face to bring it into position in the top layer. If edge is in side layer, move it into the bottom and rotate it away so you can re-align the edge, then solve as before. If an edge is flipped, you need to rotate the white layer so the edge can be rotated into the target slot.</p>
         </div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly1-cross-case1.png" class="cube-model-png">
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly1-cross-case1.png" class="cube-model-png">
           <br>SOLVED</div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly1-cross-case2.png" class="cube-model-png">
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly1-cross-case2.png" class="cube-model-png">
           <br>UNSOLVED</div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly1-cross-case3.png" class="cube-model-png">
-          <br>F U' R U<br>FLIPPED</div>
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly1-cross-case3.png" class="cube-model-png">
+          <br>FLIPPED</div>
       </div>
 
-      <div class="row border">
-        <div class="col-md-6 my-2">
-          <h6>FIRST LAYER CORNERS</h6>
-          <p>The 2nd step is to solve the first layer. Hold cube with white cross downwards. Rotate top layer so white corner piece is over target slot, between the other colour centers. If the corner has white facing right, use righty alg. If white is facing left use the lefty alg. If white is facing up, use 3 repetitions of the righty alg. If corner is already in the wrong slot, hold it on the right and use righty alg to take it out of the slot, and then re-insert it in as before. Repeat to solve for each corner slot.</p>
+      <div class="row py-4">
+        <div class="col-md-12">
+          <h6>STEP 2 - FIRST LAYER CORNERS</h6>
+          <p>The objective of the 2nd step is to solve the first layer. Hold cube with white cross downwards. Rotate top layer so white corner piece is over target slot, between the other colour centers. If the corner has white facing right, use righty alg. If white is facing left use the lefty alg. If white is facing up, use 3 repetitions of the righty alg. If corner is already in the wrong slot, hold it on the right and use righty alg to take it out of the slot, and then re-insert it in as before. Repeat to solve for each corner slot.</p>
         </div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly1-corners-case1.png" class="cube-model-png">
-          <br>(R U R' U')<br>RIGHTY ALG</div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly1-corners-case2.png" class="cube-model-png">
-          <br>(L' U' L U)<br>LEFTY ALG</div>          
+        <div class="col-md-6 text-center"><img src="./assets/bgnr/ly1-corners-case1.png" class="cube-model-png">
+          <br><b>(R U R' U')</b><br>RIGHTY ALG</div>
+        <div class="col-md-6 text-center"><img src="./assets/bgnr/ly1-corners-case2.png" class="cube-model-png">
+          <br><b>(L' U' L U)</b><br>LEFTY ALG</div>          
       </div>
 
-      <div class="row border">
-        <div class="col-md-6 my-2">
-          <h6>MIDDLE LAYER EDGES</h6>
-          <p>The 3rd step is to solve the second layer. Hold cube facing a non-yellow edge that need to solve. Align this edge with center of the side colour and check which side the other colour matches. Then use algorithm to turn edge away, take corner piece out, setup corner-edge pair and re-insert. Repeat this until all edge pieces in the second layer are solved. If only yellow pieces facing upward, then swap one of these in a target edge using same technique.</p>
+      <div class="row py-4">
+        <div class="col-md-12 my-2">
+          <h6>STEP 3 - MIDDLE LAYER EDGES</h6>
+          <p>The objective of the 3rd step is to solve the second layer. Hold cube facing a non-yellow edge that need to solve. Align this edge with center of the side colour and check which side the other colour matches. Then use algorithm to rotate edge away, take corner piece out, setup corner-edge pair and re-insert. Repeat this until all edge pieces in the second layer are solved. If only yellow pieces facing upward, then swap one of these in a target edge using same technique.</p>
         </div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly2-edge-left.png" class="cube-model-png">
-          <br>U' (L' U' L U) y' (R U R' U')<br>LEFT CASE</div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly2-edge-right.png" class="cube-model-png">
-          <br>U (R U R' U') y (L' U' L U)<br>RIGHT CASE</div>
+        <div class="col-md-6 text-center"><img src="./assets/bgnr/ly2-edge-left.png" class="cube-model-png">
+          <br><b>U' (L' U' L U) y' (R U R' U')</b><br>LEFT CASE</div>
+        <div class="col-md-6 text-center"><img src="./assets/bgnr/ly2-edge-right.png" class="cube-model-png">
+          <br><b>U (R U R' U') y (L' U' L U)</b><br>RIGHT CASE</div>
       </div>
 
-      <div class="row border">
-        <div class="col-md-6 my-2">
-          <h6>LAST LAYER YELLOW CROSS</h6>
-          <p>The 4th step is to create a yellow cross. Hold cube with yellow face as upward layer and rotate it, so pattern is either dot, hook (back/left), or (horizontal) line.
-            Use algorithm and repeat until have a yellow cross (3x for dot, 2x for hook, 1x for line).</p>
+      <div class="row py-4">
+        <div class="col-md-12 my-2">
+          <h6>STEP 4 - LAST LAYER YELLOW CROSS</h6>
+          <p>The objective of the 4th step is to create a yellow cross. Hold cube with yellow face as upward layer and rotate it, so pattern is either dot, hook (back/left), or (horizontal) line. Use algorithm and repeat until have a yellow cross (3x for dot, 2x for hook, 1x for line).</p>
         </div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly3-cross-dot.png" class="cube-model-png">
-          <br>F (R U R' U') F'<br>DOT</div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly3-cross-hook.png" class="cube-model-png">
-          <br>F (R U R' U') F'<br>HOOK</div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly3-cross-line.png" class="cube-model-png">
-          <br>F (R U R' U') F'<br>LINE</div>
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly3-cross-dot.png" class="cube-model-png">
+          <br><b>F (R U R' U') F'</b><br>DOT</div>
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly3-cross-hook.png" class="cube-model-png">
+          <br><b>F (R U R' U') F'</b><br>HOOK</div>
+        <div class="col-md-4 text-center"><img src="./assets/bgnr/ly3-cross-line.png" class="cube-model-png">
+          <br><b>F (R U R' U') F'</b><br>LINE</div>
       </div>
 
-      <div class="row border">
-        <div class="col-md-6 my-2">
-          <h6>LAST LAYER EDGES ORIENTATION</h6>
-          <p>The 5th step is to orientate the edges in the third layer. Rotate the upward layer to align as many edges with their center colour (always match 2). If matching edges are next to each other, hold cube so they are back/right, then use Sune algorithm to solve. If they are across from each other, hold them in any pattern, then use Sune algorithm to setup adjacent pair, and repeat for this case. You may need an extra turn to re-align edges with their center.</p>
+      <div class="row py-4">
+        <div class="col-md-12 my-2">
+          <h6>STEP 5 - LAST LAYER EDGES ORIENTATION</h6>
+          <p>The objective of the 5th step is to orientate the edges in the third layer. Rotate the upward layer to align as many edges with their center colour (always match 2). If matching edges are next to each other, hold cube so they are back/right, then use Sune algorithm to solve. If they are across from each other, hold them in any pattern, then use Sune algorithm to setup adjacent pair, and repeat for this case. You may need an upper layer (U) rotation to re-align edges with their center.</p>
         </div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly3-edges-adjacent.png" class="cube-model-png">
-          <br>(R U R') U (R U2 R')<br>HOLD SOLVED EDGES BACK/RIGHT</div>
+        <div class="col-md-12 text-center"><img src="./assets/bgnr/ly3-edges-adjacent.png" class="cube-model-png">
+          <br><b>(R U R') U (R U2 R')</b><br>HOLD SOLVED EDGES BACK/RIGHT</div>
       </div>
 
-      <div class="row border">
-        <div class="col-md-6 my-2">
-          <h6>LAST LAYER CORNER PERMUTATION</h6>
-          <p>The 6th step is to position the corners in the third layer. If 1 corner is in correct slot between its other colour centers, hold it in the front/right. If 0 are correct, hold any corner in the front/right. Use Niklas algorithm to position the corners (observe how both sides are turned up, then down, intermixed with u-face turns) and repeat until all four corners are aligned and the edges are over their correct center. You may need an extra turn to re-align edges with their center.</p>
+      <div class="row py-4">
+        <div class="col-md-12 my-2">
+          <h6>STEP 6 - LAST LAYER CORNER PERMUTATION</h6>
+          <p>The objective of the 6th step is to position the corners in the third layer. If 1 corner is in correct slot between its other colour centers, hold it in the front/right. If 0 are correct, hold any corner in the front/right. Use Niklas algorithm to position the corners (observe how both sides are rotated up, then down, intermixed with a u-face rotation) and repeat until all four corners are aligned and the edges are over their correct center. You may need an upper layer (U) rotation to re-align edges with their center.</p>
         </div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly3-corner-perm.png" class="cube-model-png">
-          <br>(U R U' L') (U R' U' L)<br>HOLD SOLVED CORNER FRONT/RIGHT</div>     
+        <div class="col-md-12 text-center"><img src="./assets/bgnr/ly3-corner-perm.png" class="cube-model-png">
+          <br><b>(U R U' L') (U R' U' L)</b><br>HOLD SOLVED CORNER FRONT/RIGHT</div>     
       </div>
 
-      <div class="row border">
-        <div class="col-md-6 my-2">
-          <h6>LAST LAYER CORNER ORIENTATION</h6>
-          <p>The 7th step is to solve the corners in the third layer, there by solving the cube. Hold cube flipped, with yellow face downward, with an unsolved corner in front/right position. Repeatedly use the righty alg until the corner is solved. If need to solve other corners, rotate bottom layer (D) to bring the unsolved corner into the front/right position, and repeat the right trigger, do not rotate the cube by mistake.</p>
+      <div class="row py-4">
+        <div class="col-md-12 my-2">
+          <h6>STEP 7 - LAST LAYER CORNER ORIENTATION</h6>
+          <p>The objective of the 7th step is to solve the corners in the third layer, there by solving the cube. Hold cube flipped, with yellow face downward, with an unsolved corner in front/right position. Repeatedly use the righty alg until the corner is solved. If need to solve other corners, rotate bottom layer (D) to bring the unsolved corner into the front/right position, and repeat the right trigger, do not rotate the cube by mistake.</p>
         </div>
-        <div class="col-md-2"><img src="./assets/bgnr/ly3-corner-orien.png" class="cube-model-png">
-          <br>(R U R' U')<br>HOLD UNSOLVED CORNER FRONT/RIGHT</div>     
-      </div>
-
-    </div>
-
-    <div class="container py-4">  
-      <h3>Cubing Notation & Finger Techniques</h3>
-
-      <div class="accordion" id="accordionNotation">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Explanation</button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionNotation">
-            <div class="accordion-body">
-              <p>Holding the cube in a fixed position, there are 6 sides that can be turned. A single letter denotes turning the specified face 90 degrees clockwise (e.g. F). A letter followed by a prime symbol (e.g. R') denotes a 90 degree turn anti-clockwise. A letter followed by a 2 denotes a double turn of that face (e.g. U2).</p>
-              <p>Most cubing algorithms are dominated by up-face (U), right-face (R) and front-face (F) rotations. Some case will use left-face (e.g. L or L') turns, and some occasional cases use down-face (D) or back-face (B) turns, or cube rotations (e.g. y) or slice moves (e.g. M).</p>
-              <p>Orientation refers to ensuring all the pieces are turned correctly within their spots (e.g. entire top layer the same colour). Permutation refers to moving these oriented pieces around so they are in their correct spot (e.g. surrounded and aligned with each matching colour face).</p>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Face Rotations & Techniques</button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionNotation">
-            <div class="accordion-body">
-              <table class="table table-bordered table-striped">
-                <tr><th style="width: 100px;">notation</th><th>rotation</th><th>technique</th></tr>
-                <tr><td>F</td><td>front face, clockwise &#8635;</td><td>use right index finger - downward rotation</td></tr>
-                <tr><td>F'</td><td>front face, anti-clockwise &#8634;</td><td>use left index finger - downward rotation</td></tr>
-                <tr><td>U</td><td>up face, clockwise &#8635;</td><td>use right index finger - left rotation</td></tr>
-                <tr><td>U'</td><td>up face, anti-clockwise &#8634;</td><td>use left index finger - right rotation</td></tr>
-                <tr><td>R</td><td>right face, clockwise &#8635;</td><td>use right hand - upward rotation</td></tr>
-                <tr><td>R'</td><td>right face, anti-clockwise &#8634;</td><td>use right hand - downward rotation</td></tr>
-                <tr><td>L</td><td>left face, clockwise &#8635;</td><td>use left hand - downward rotation</td></tr>
-                <tr><td>L'</td><td>left face, anti-clockwise &#8634;</td><td>use left hand - upward rotation </td></tr>
-                <tr><td>D</td><td>down face, clockwise &#8635;</td><td>use left ring finger - right rotation</td></tr>
-                <tr><td>D'</td><td>down face, anti-clockwise &#8634;</td><td>use right ring finger - left rotation</td></tr>
-                <tr><td>B</td><td>back face, clockwise &#8635;</td><td>use left ring finger - downward rotation</td></tr>
-                <tr><td>B'</td><td>back face, anti-clockwise &#8634;</td><td>use right ring finger - downward rotation </td></tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Slice Rotations</button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionNotation">
-            <div class="accordion-body">
-              <table class="table table-bordered table-striped">
-                <tr><th style="width: 100px;">notation</th><th>rotation</th></tr>
-                <tr><td>M</td><td>middle layer, slice rotation, follows L direction (cw = down, ccw = up)</td></tr>
-                <tr><td>E</td><td>middle layer, slice rotation, follows D direction (cw = right, ccw = left)</td></tr>
-                <tr><td>S</td><td>middle layer, slice rotation, follows F direction (cw = down, ccw = up)</td></tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Cube Rotations</button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionNotation">
-            <div class="accordion-body">
-              <table class="table table-bordered table-striped">
-                <tr><th style="width: 100px;">notation</th><th>rotation</th></tr>
-                <tr><td>x</td><td>cube rotation, follows R direction (cw = up, ccw = down)</td></tr>
-                <tr><td>y</td><td>cube rotation, follows U direction (cw = left, ccw = right)</td></tr>
-                <tr><td>z</td><td>cube rotation, follows F direction (cw = down, ccw = up)</td></tr>
-              </table>
-            </div>
-          </div>
-        </div>
+        <div class="col-md-12 text-center"><img src="./assets/bgnr/ly3-corner-orien.png" class="cube-model-png">
+          <br><b>(R U R' U')</b><br>HOLD UNSOLVED CORNER FRONT/RIGHT</div>     
       </div>
 
     </div>
