@@ -7,7 +7,7 @@ twisty-player {
 twisty-alg-viewer {
     width: 100%;
     margin: auto;
-    padding: 1px;
+    padding: 1px;    
 }
 
 twisty-alg-viewer .twisty-alg-current-move {
@@ -52,13 +52,8 @@ twisty-alg-viewer .twisty-alg-current-move {
     padding: 0;
 }
 
-.custom-popover {
-    --bs-popover-max-width: 180px;
-    --bs-popover-body-padding-x: .5rem;
-    --bs-popover-body-padding-y: .5rem;
-}
-
-.btn-notation {
-    width: 2.3rem; 
-    height:2.3rem;
+.btn-sized {
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 0.6rem 0.9rem;
 }
