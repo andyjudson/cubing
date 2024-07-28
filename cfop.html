@@ -58,11 +58,26 @@
       function setAlg(algStr, notes) {
         if (algStr == "scramble") {
           twistyPlayer.alg = randomScrambleForEvent("333");
-          document.getElementById("notes").innerHTML = "Scrambling ... try to solve this using CFOP techniques.";
+          document.getElementById("notes").innerHTML = "Scrambling ... try to solve this using CFOP techniques";
+          document.getElementById("notes").hidden = false;          
+          document.getElementById("algorithm").hidden = false;
+          document.getElementById("control").hidden = false;
+          document.getElementById("notation").hidden = true;
           document.getElementById("btn-invert").disabled = true;
+        } else if (algStr == "notation") {
+          twistyPlayer.alg = "";
+          document.getElementById("notes").innerHTML = "Notation demonstration ... select example move";
+          document.getElementById("notes").hidden = false;
+          document.getElementById("algorithm").hidden = true;
+          document.getElementById("control").hidden = true;
+          document.getElementById("notation").hidden = false;
         } else {
           twistyPlayer.alg = algStr
           document.getElementById("notes").innerHTML = notes
+          document.getElementById("notes").hidden = false;          
+          document.getElementById("algorithm").hidden = false;
+          document.getElementById("control").hidden = false;
+          document.getElementById("notation").hidden = true;
           document.getElementById("btn-invert").disabled = false;
           bootstrap.Popover.getInstance("#btn-invert").setContent({
             '.popover-header': 'Inverted Alg',
@@ -71,15 +86,25 @@
         }
       }
 
+      function demoNotation() {
+        setAlg("notation")
+        twistyPlayer.experimentalSetupAnchor = "start";
+        twistyPlayer.experimentalStickering = "full";
+        twistyPlayer.experimentalSetupAlg = "";
+        twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
+        twistyPlayer.tempoScale=3.0;
+        twistyPlayer.jumpToStart();
+      }
+      
       function demoScramble() {
-          setAlg("scramble")
-          twistyPlayer.experimentalSetupAnchor = "start";
-          twistyPlayer.experimentalStickering = "full";
-          twistyPlayer.experimentalSetupAlg = "";
-          twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
-          twistyPlayer.tempoScale=3.0;
-          twistyPlayer.jumpToStart();   
-          twistyPlayer.play();
+        setAlg("scramble")
+        twistyPlayer.experimentalSetupAnchor = "start";
+        twistyPlayer.experimentalStickering = "full";
+        twistyPlayer.experimentalSetupAlg = "";
+        twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
+        twistyPlayer.tempoScale=3.0;
+        twistyPlayer.jumpToStart();
+        twistyPlayer.play();
       }
 
       function demoAlg(evt) {        
@@ -195,7 +220,8 @@
       document.getElementById("btn-speed-1.0x").addEventListener("click", setSpeed);
       document.getElementById("btn-speed-2.0x").addEventListener("click", setSpeed);
       
-      document.getElementById("btn-demo").addEventListener("click", demoScramble);
+      document.getElementById("btn-scramble").addEventListener("click", demoScramble);
+      document.getElementById("btn-notation").addEventListener("click", demoNotation);
 
       document.getElementById("btn-f2l-1-1").addEventListener("click", demoAlg);
       document.getElementById("btn-f2l-1-2").addEventListener("click", demoAlg);
@@ -240,8 +266,10 @@
           <a href="#oll" class="btn btn-light" role="button">2-Look OLL</a>
           <a href="#pll" class="btn btn-light" role="button">2-Look PLL</a>
           <a href="#3lk" class="btn btn-light" role="button">3-Look OLL / PLL</a>
-          <button type="button" id="btn-demo" class="btn btn-light"
+          <button type="button" id="btn-scramble" class="btn btn-light"
             data-bs-toggle="modal" data-bs-target="#modalTwisty">Scramble</button>
+          <button type="button" id="btn-notation" class="btn btn-light"
+            data-bs-toggle="modal" data-bs-target="#modalTwisty">Notation</button>
         </div>
         
         </div>
@@ -1059,13 +1087,70 @@
                     data-bs-placement="top"
                     data-bs-title="header"
                     data-bs-content="content">cognition</button>
-                </div>              
+                </div>          
                 <div class="btn-group" role="group">
                   <button id="btn-speed-0.5x" type="button" class="btn btn-outline-light">speed_0_5</button>
                   <button id="btn-speed-1.0x" type="button" class="btn btn-outline-light">1x_mobiledata</button>
                   <button id="btn-speed-2.0x" type="button" class="btn btn-outline-light">speed_2x</button>
                 </div>
-              </div>        
+              </div>
+              <div id="notation" class="p-2">
+
+                <div class="float-start">
+                  <h6>face</h6>
+                  <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">R</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">R'</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">R2</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">r</button>
+                  </div>
+                  <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">L</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">L'</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">L2</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">l</button>                
+                  </div>
+                  <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">U</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">U'</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">U2</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">u</button>                
+                  </div>
+                  <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">D</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">D'</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">D2</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">d</button>                
+                  </div>
+                  <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">F</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">F'</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">F2</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">f</button>                
+                  </div>
+                  <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">B</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">B'</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">B2</button>
+                    <button type="button" class="btn btn-sm btn-outline-light btn-notation">b</button>                
+                  </div>
+                </div>
+
+                <div class="float-end">
+                  <h6>slice / cube</h6>
+                  <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-sm btn-outline-light" style="width: 2.3rem; height:2.3rem;">M</button>
+                    <button type="button" class="btn btn-sm btn-outline-light" style="width: 2.3rem; height:2.3rem;"">E</button>
+                    <button type="button" class="btn btn-sm btn-outline-light" style="width: 2.3rem; height:2.3rem;">S</button>
+                  </div>
+                  <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-sm btn-outline-light" style="width: 2.3rem; height:2.3rem;">x</button>
+                    <button type="button" class="btn btn-sm btn-outline-light" style="width: 2.3rem; height:2.3rem;"">y</button>
+                    <button type="button" class="btn btn-sm btn-outline-light" style="width: 2.3rem; height:2.3rem;">z</button>
+                  </div>
+                </div>
+                
+              </div>
             </div>  
           </div>
           <div class="modal-footer">
