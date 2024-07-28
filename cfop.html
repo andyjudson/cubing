@@ -209,7 +209,7 @@
       
       function demoNotation() {
         // toggle visible components
-        document.getElementById("notes").innerHTML = "Notation demo ... select a move";
+        document.getElementById("notes").innerHTML = "Notation demo ... use keypad to see move";
         document.getElementById("notes").hidden = false;          
         document.getElementById("algorithm").hidden = true;
         document.getElementById("control").hidden = true;
@@ -321,10 +321,10 @@
         <p>The site is built to make it easier to practice (i.e. replay) the specific moves per case whilst learning CFOP algorithms. All examples and notes are based on the excellent <a href="https://www.youtube.com/playlist?list=PLqrfspOsG9B-zqJu9f-45BZRamipy-q2y">Beginner CFOP tutorials</a> from <img src="./assets/cubehead_logo.png" height="24px"><a href="https://www.youtube.com/@CubeHead">CubeHead</a>.</p>
         <p>I'll focus on the F2L, OLL and PLL stages, and will skip the CROSS stage but see the videos from CubeHead. Just to be clear, I'm not a cubing expert, far from it, this is a cheat sheet for my own learning, and if others find it useful, then that is good to hear.</p>
         <div class="d-grid gap-2 d-md-block">
-          <a href="#f2l" class="btn btn-light" role="button">Intuitive F2L</a>
-          <a href="#oll" class="btn btn-light" role="button">2-Look OLL</a>
-          <a href="#pll" class="btn btn-light" role="button">2-Look PLL</a>
-          <a href="#3lk" class="btn btn-light" role="button">3-Look OLL / PLL</a>
+          <a href="#f2l" class="btn btn-light">Intuitive F2L</a>
+          <a href="#oll" class="btn btn-light">2-Look OLL</a>
+          <a href="#pll" class="btn btn-light">2-Look PLL</a>
+          <a href="#3lk" class="btn btn-light">3-Look OLL / PLL</a>
           <button type="button" id="btn-scramble" class="btn btn-light"
             data-bs-toggle="modal" data-bs-target="#modalTwisty">Scramble</button>
           <button type="button" id="btn-notation" class="btn btn-light"
@@ -1128,25 +1128,25 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="vstack gap-2 mx-auto">
-              <div id="notes" class="p-2"></div>
-              <div id="algorithm" class="py-2 px-4"></div>
-              <div id="player" class="p-2"></div>
-              <div id="control" class="p-2">
-                <div class="btn-group material-symbols-outlined" role="group">
+            <div class="vstack gap-1 mx-auto">
+              <div id="notes" class="py-2"></div>
+              <div id="algorithm" class="py-0 px-4"></div>
+              <div id="player" class="p-0"></div>
+              <div id="control" class="py-2">
+                <div class="btn-group material-symbols-outlined">
                   <button type="button" id="btn-rewind" class="btn btn-outline-light btn-sized">fast_rewind</button>
                   <button type="button" id="btn-play" class="btn btn-outline-light btn-sized">play_arrow</button>
                   <button type="button" id="btn-pause" class="btn btn-outline-light btn-sized">pause</button>              
                 </div>          
-                <div class="btn-group" role="group">
+                <div class="btn-group">
                   <button type="button" id="btn-speed-0.5" class="btn btn-outline-light btn-sized">0.5</button>
                   <button type="button" id="btn-speed-1.5" class="btn btn-outline-light btn-sized">1.5</button>
                   <button type="button" id="btn-speed-2.5" class="btn btn-outline-light btn-sized">2.5</button>
                 </div>
               </div>
-              <div id="inverted" class="p-2" style="font-size: 0.9em; color: gray;"></div>                            
-              <div id="notation" class="p-2">
-                <div class="float-start">
+              <div id="inverted" class="py-2" style="font-size: 0.9em; color: gray;"></div>                            
+              <div id="notation" class="mx-auto">
+                <div class="py-1">
                   <h6>face</h6>
                   <div class="btn-group-vertical">
                     <button type="button" id="btn-notation-rcw" class="btn btn-outline-light btn-sized">R</button>
@@ -1185,30 +1185,25 @@
                     <button type="button" id="btn-notation-bwd" class="btn btn-outline-light btn-sized">b</button>                
                   </div>
                 </div>
-                <div class="float-end">
+                <div class="py-1">
                   <h6>slice / cube</h6>
-                  <div class="btn-group-vertical">
+                  <div class="btn-group">
                     <button type="button" id="btn-notation-mcw" class="btn btn-outline-light btn-sized">M</button>
                     <button type="button" id="btn-notation-ecw" class="btn btn-outline-light btn-sized">E</button>
                     <button type="button" id="btn-notation-scw" class="btn btn-outline-light btn-sized">S</button>
                   </div>
-                  <div class="btn-group-vertical">
+                  <div class="btn-group">
                     <button type="button" id="btn-notation-xcw" class="btn btn-outline-light btn-sized">x</button>
                     <button type="button" id="btn-notation-ycw" class="btn btn-outline-light btn-sized">y</button>
                     <button type="button" id="btn-notation-zcw" class="btn btn-outline-light btn-sized">z</button>
                   </div>
-                </div>              
-              </div>
+                </div> 
+              </div>                          
             </div>  
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-          </div>
+          </div>        
         </div>
       </div>
     </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
 
