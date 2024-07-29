@@ -60,7 +60,8 @@
         document.getElementById("algorithm").hidden = false;
         document.getElementById("control").hidden = false;
         document.getElementById("inverted").hidden = false;
-        document.getElementById("notation").hidden = true;        
+        document.getElementById("notation").hidden = true;
+
         // apply twisty player settings
         twistyPlayer.cameraLatitude=30;  // set camera angel (x-axis)
         twistyPlayer.cameraLongitude=45;  // set camera angel (y-axis)
@@ -69,7 +70,8 @@
         twistyPlayer.experimentalSetupAlg = "z2";  // orientate cube for yellow u-face
         twistyPlayer.tempoScale=1.5;
         twistyPlayer.jumpToStart();  
-        twistyPlayer.play();   
+        twistyPlayer.play();
+
         // apply algorithm specific settings
         var algStr
         var algCmt                   
@@ -182,10 +184,12 @@
             twistyPlayer.experimentalStickeringMaskOrbits = mask_default;
             break;
         }
-        // bind variables to twisty player
+        
+        // bind variables to twisty player + modal
         twistyPlayer.alg = new Alg(algStr)
-        document.getElementById("notes").innerHTML = algCmt 
-        document.getElementById("inverted").innerHTML = 'inverted alg = ' + new Alg(algStr).invert().expand().toString()                   
+        document.getElementById("notes").innerHTML = algCmt
+        document.getElementById("inverted").innerHTML = 'inverted alg = ' + new Alg(algStr).invert().expand().toString()
+
       }
 
       function demoScramble() {
@@ -319,7 +323,7 @@
         <div class="col-12 p-2">
         <h1>CFOP 2-Look Method</h1>
         <p>The site is built to make it easier to practice (i.e. replay) the specific moves per case whilst learning CFOP algorithms. All examples and notes are based on the excellent <a href="https://www.youtube.com/playlist?list=PLqrfspOsG9B-zqJu9f-45BZRamipy-q2y">Beginner CFOP tutorials</a> from <img src="./assets/cubehead_logo.png" height="24px"><a href="https://www.youtube.com/@CubeHead">CubeHead</a>.</p>
-        <p>I'll focus on the F2L, OLL and PLL stages, and will skip the CROSS stage but see the videos from CubeHead. Just to be clear, I'm not a cubing expert, far from it, this is a cheat sheet for my own learning, and if others find it useful, then that is good to hear.</p>
+        <p>I'll focus on the F2L, OLL and PLL stages, and will skip the CROSS stage but see the videos from CubeHead. Just to be clear, I'm not a cubing expert, far from it, this is a cheat sheet for my own learning, and if others find it useful, then that is good to hear. For most cases below, you can click on the cube image to see a demonstration of the algorithm.</p>
         <div class="d-grid gap-2 d-md-block">
           <a href="#f2l" class="btn btn-light">Intuitive F2L</a>
           <a href="#oll" class="btn btn-light">2-Look OLL</a>
@@ -358,11 +362,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-f2l-1-1.png" class="cube-model-png">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-f2l-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-f2l-1-1.png" class="cube-model-png" 
+                    id="btn-f2l-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">U R U' R'</p>      
@@ -381,11 +382,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-f2l-1-2.png" class="cube-model-png">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-f2l-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-f2l-1-2.png" class="cube-model-png" 
+                    id="btn-f2l-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">U' L' U L</p>      
@@ -404,11 +402,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-f2l-1-3.png" class="cube-model-png">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-f2l-1-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-f2l-1-3.png" class="cube-model-png"
+                    id="btn-f2l-1-3" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">R U R'</p>      
@@ -427,11 +422,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-f2l-1-4.png" class="cube-model-png">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-f2l-1-4" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-f2l-1-4.png" class="cube-model-png"
+                    id="btn-f2l-1-4" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">L' U' L</p>      
@@ -459,7 +451,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">R U R' ...</p>      
-                  <p class="card-text">Hold edge on right, put the corner front left and use above (insert trigger) algorithm to bring pair into top layer and disconnected. Then setup, or use an insert to solve.</p>
+                  <p class="card-text">Hold edge on right, put the corner front left and use trigger to bring pair into top layer and disconnected. Then setup, or use an insert to solve.</p>
                 </div>
               </div>
             </div>
@@ -478,7 +470,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">R U R' ...</p>      
-                  <p class="card-text">Hold edge on left, put the corner front right and use above (insert trigger) algorithm to bring pair into top layer and disconnected. Then setup, or use an insert to solve.</p>
+                  <p class="card-text">Hold edge on left, put the corner front right and use trigger to bring pair into top layer and disconnected. Then setup, or use an insert to solve.</p>
                 </div>
               </div>
             </div>
@@ -497,7 +489,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">R U' R' ...</p>      
-                  <p class="card-text">Hold pair on right, use similar algorithm but with a u-prime to bring pair into top layer and disconnected. Then setup, or use an insert to solve.</p>
+                  <p class="card-text">Hold pair on right, use trigger but with a U' to bring pair into top layer and disconnected. Then setup, or use an insert to solve.</p>
                 </div>
               </div>
             </div>
@@ -516,7 +508,7 @@
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">R U2 R' ...</p>      
-                  <p class="card-text">Hold corner on right, use similar algorithm but with a u-double rotation. Then setup, or use an insert to solve.</p>
+                  <p class="card-text">Hold corner on right, use trigger but with a U2 rotation. Then setup, or use an insert to solve.</p>
                 </div>
               </div>
             </div>
@@ -644,11 +636,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-1-1.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined">
-                    <button id="btn-oll-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-1-1.svg" class="cube-model-svg"
+                    id="btn-oll-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">F (R U R' U') F'</p>
@@ -669,11 +658,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-1-2.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-2">
-                    <button id="btn-oll-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-1-2.svg" class="cube-model-svg"
+                    id="btn-oll-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">f (R U R' U') f'</p>
@@ -692,11 +678,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-1-3.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-2">
-                    <button id="btn-oll-1-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-1-3.svg" class="cube-model-svg"
+                    id="btn-oll-1-3" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">F (R U R' U') F'<br>f (R U R' U') f'</p>
@@ -720,11 +703,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-2-1.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-2">
-                    <button id="btn-oll-2-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-2-1.svg" class="cube-model-svg"
+                    id="btn-oll-2-1" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>              
                 <div class="col-8">
                   <p class="card-text fs-5">(R U R’ U) (R U2 R’)</p>
@@ -743,11 +723,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-2-2.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-oll-2-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-2-2.svg" class="cube-model-svg"
+                    id="btn-oll-2-2" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">(R U2 R') (U' R U' R')</p>
@@ -766,11 +743,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-2-3.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-oll-2-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-2-3.svg" class="cube-model-svg"
+                    id="btn-oll-2-3" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">(R U R' U) (R U' R' U)<br>(R U2 R')</p>
@@ -789,11 +763,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-2-4.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-oll-2-4" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-2-4.svg" class="cube-model-svg"
+                    id="btn-oll-2-4" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">R U2 (R2 U') (R2 U')<br>R2 U2 R</p>
@@ -812,11 +783,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-2-5.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-oll-2-5" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-2-5.svg" class="cube-model-svg"
+                    id="btn-oll-2-5" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">(r U R' U') (r' F R) F'</p>
@@ -835,11 +803,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-2-6.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-oll-2-6" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-2-6.svg" class="cube-model-svg" 
+                    id="btn-oll-2-6" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">F' (r U R' U') (r' F R)</p>
@@ -858,11 +823,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-oll-2-7.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-oll-2-7" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-oll-2-7.svg" class="cube-model-svg"
+                    id="btn-oll-2-7" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">R2 D (R' U2 R)<br>D' (R' U2 R')</p>
@@ -875,7 +837,6 @@
         </div>
 
       </div>
-
     
       <!-- pll cases -->
 
@@ -899,11 +860,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-pll-1-1.svg" class="cube-model-svg">                  
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-pll-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-pll-1-1.svg" class="cube-model-svg"
+                    id="btn-pll-1-1" data-bs-toggle="modal" data-bs-target="#modalTwisty">                  
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">F R U' R' U' R U R' F'<br>(R U R' U') (R' F R F')</p>
@@ -922,11 +880,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-pll-1-2.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-pll-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-pll-1-2.svg" class="cube-model-svg"
+                    id="btn-pll-1-2" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">(R U R' U') R' F<br>R2 U' R' U' R U R' F'</p>
@@ -950,11 +905,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-pll-2-1.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-pll-2-1" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-pll-2-1.svg" class="cube-model-svg"
+                    id="btn-pll-2-1" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">(R2 U' R') U' R<br>(U R) (U R) U' R</p>
@@ -973,11 +925,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-pll-2-2.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-pll-2-2" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-pll-2-2.svg" class="cube-model-svg"
+                    id="btn-pll-2-2" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">R' U (R' U') (R' U')<br>R' U (R U R2)</p>
@@ -996,11 +945,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-pll-2-3.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-pll-2-3" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-pll-2-3.svg" class="cube-model-svg"
+                    id="btn-pll-2-3" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">M2 U' (M2 U2 M2)<br>U' M2</p>
@@ -1019,11 +965,8 @@
             <div class="card-body">
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/cfop/cfop-pll-2-4.svg" class="cube-model-svg">
-                  <span class="material-symbols-outlined p-1">
-                    <button id="btn-pll-2-4" data-bs-toggle="modal" data-bs-target="#modalTwisty"
-                      class="btn btn-light">play_circle</button>
-                  </span>
+                  <img src="./assets/cfop/cfop-pll-2-4.svg" class="cube-model-svg"
+                    id="btn-pll-2-4" data-bs-toggle="modal" data-bs-target="#modalTwisty">
                 </div>
                 <div class="col-8">
                   <p class="card-text fs-5">M' U' (M2 U')<br>(M2 U') M' U2 M2</p>
@@ -1049,7 +992,7 @@
                   <img src="./assets/bgnr/ly3-corner-case1-sune.svg" class="cube-model-svg">
                   <p class="card-text fs-5">(R U R') U (R U2 R')</p>
                 </div>
-                <div class="card-footer text-body-secondary">sune (1-corner)</div>
+                <div class="card-footer text-body-secondary">sune<br>(1-corner)</div>
               </div>
             </div>
             <div class="col">
@@ -1059,7 +1002,7 @@
                   <img src="./assets/bgnr/ly3-corner-case1-antisune.svg" class="cube-model-svg">
                   <p class="card-text fs-5">(R U2 R') U' (R U' R')</p>
                 </div>
-                <div class="card-footer text-body-secondary">anti-sune (1-corner)</div>
+                <div class="card-footer text-body-secondary">anti-sune<br>(1-corner)</div>
               </div>
             </div>
             <div class="col">
@@ -1069,7 +1012,7 @@
                   <img src="./assets/bgnr/ly3-corner-case2-sune.svg" class="cube-model-svg">
                   <p class="card-text fs-5">(R U R') U (R U2 R')</p>
                 </div>
-                <div class="card-footer text-body-secondary">sune (2-corner) &#8594; repeat case</div>
+                <div class="card-footer text-body-secondary">sune<br>(2-corner) + repeat</div>
               </div>
             </div>
             <div class="col">
@@ -1079,7 +1022,7 @@
                   <img src="./assets/bgnr/ly3-corner-case0-sune.svg" class="cube-model-svg">
                   <p class="card-text fs-5">(R U R') U (R U2 R')</p>
                 </div>
-                <div class="card-footer text-body-secondary">sune (0-corner) &#8594; repeat case</div>
+                <div class="card-footer text-body-secondary">sune<br>(0-corner) + repeat</div>
               </div>
             </div>
             <div class="col">
@@ -1089,7 +1032,7 @@
                   <img src="./assets/bgnr/ly3-tperm.svg" class="cube-model-svg">
                   <p class="card-text fs-5">(R U R' U') R' F<br>(R2 U' R') U' (R U R') F'</p>
                 </div>
-                <div class="card-footer text-body-secondary">t-perm (headlights/none) &#8594; repeat case</div>
+                <div class="card-footer text-body-secondary">t-perm<br>(headlights/none) + repeat</div>
               </div>
             </div>
             <div class="col">
@@ -1099,7 +1042,7 @@
                   <img src="./assets/bgnr/ly3-uaperm-front.svg" class="cube-model-svg">
                   <p class="card-text fs-5">(R2 U' R')<br>U' R (U R) (U R) U' R</p>
                 </div>   
-                <div class="card-footer text-body-secondary">ua-perm (block/none) &#8594; repeat case</div>             
+                <div class="card-footer text-body-secondary">ua-perm<br>(block/none) + repeat</div>             
               </div>
             </div>            
           </div>            
