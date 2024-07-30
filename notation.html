@@ -12,61 +12,72 @@
     
     <link rel="stylesheet" href="./default.css">
 
+    <style>
+      table {
+        font-size: 0.8em;
+      }
+    </style>
+
   </head>
 
   <body data-bs-theme="dark">
 
     <div class="container vw-100 vh-100 py-2">
 
-    <div class="container py-4">  
       <h1>Cubing Notation & Finger Techniques</h1>
-      <h3>Notation Explained</h3>
-
+      
       <div class="row">
-        <div class="col-2">
-          <img src="assets/cubing-3x3.png" style="width: 200px; height: 200px;">
-        </div>
-        <div class="col-10">
+        <div class="col-10 mx-auto py-2">
+          <h3>Notation Explained</h3>
+          <img src="assets/cubing-3x3.png" style="width: 200px; height: 200px;" class="img-fluid float-end m-1">
           <p>A rubik's cube has 6 coloured faces or sides that can be turned, each comprised of 1 fixed center piece + 4 edge pieces (2 colours) + 4 corner pieces (3 colours). Scrambles are generated with the cube orientated so white is up-face, green is front-face.</p>
           <p>An uppercase letter (e.g. F) denotes a 90 degree clockwise turn of that face, as if looking towards it. A letter followed by a prime symbol (e.g. R') denotes a 90 degree anticlockwise turn. A letter followed by 2 (e.g. U2) denotes a 180 degree turn of that face. A lowercase letter, means a wide turn based on that face + middle layer (e.g. r), or a cube rotation on that axis (e.g. y).</p>
           <p>Most cubing algorithms are dominated by up-face (U), right-face (R), left-face (L) and front-face (F) turns. Less so, some algorithms will use down-face (D), or back-face (B) turns, or cube rotations, or slice moves.</p>
           <p>Orientation means moving pieces so that the face of the layer is all the same colour. Permutation means moving these oriented pieces around so that they are also matching the colour of their other faces.</p>
           <p>Logical groups of moves are denoted by round bracket so easier to remember, some of which are named triggers, for example: sexy (R U R' U'), extract pair (R U R'), insert pair (R U' R'), reverse sexy (U R U' R'), and sledgehammer (R' F R F').</p>
+          
         </div>
       </div>
 
-      <h3>Face Rotations</h3>
-      <div>
-        <table class="table table-bordered table-striped">
-          <tr><th style="width: 25px;">notation</th><th style="width: 100px;">rotation</th><th style="width: 150px;">clockwise</th><th style="width: 150px;">anticlockwise</th></tr>
-          <tr><td>R</td><td>right face</td><td>use <b>right</b> hand - <b>upward</b></td><td>use <b>right</b> hand - <b>downward</b></td></tr>
-          <tr><td>L</td><td>left face</td><td>use <b>left</b> hand - <b>downward</b></td><td>use <b>left</b> hand - <b>upward</b></td></tr>
-          <tr><td>U</td><td>up face</td><td>use <b>right</b> index finger - <b>forward</b></td><td>use <b>left</b> index finger - <b>forward</b></td></tr>
-          <tr><td>D</td><td>down face</td><td>use <b>left</b> ring finger - <b>forward</b></td><td>use <b>right</b> ring finger - <b>forward</b></td></tr>
-          <tr><td>F</td><td>front face</td><td>use <b>right</b> index finger - <b>downward</b></td><td>use <b>left</b> index finger - <b>downward</b></td></tr>
-          <tr><td>B</td><td>back face</td><td>use <b>left</b> ring finger - <b>downward</b></td><td>use <b>right</b> ring finger - <b>downward</b></td></tr>
-        </table>
-      </div>
-      <h3>Slice Rotations</h3>
-      <div>
-        <table class="table table-bordered table-striped">
-          <tr><th style="width: 25px;">notation</th><th style="width: 150px;">rotation</th><th style="width: 100px;">clockwise</th><th style="width: 100px;">anticlockwise</th></tr>
-          <tr><td>M</td><td>middle slice (x axis) - follows L direction</td><td>down</td><td>up</td></tr>
-          <tr><td>E</td><td>middle slice (y axis) - follows D direction</td><td>right</td><td>left</td></tr>
-          <tr><td>S</td><td>middle slice (z axis) - follows F direction</td><td>down</td><td>up</td></tr>
-        </table>
-      </div>
-      <h3>Cube Rotations</h3>
-      <div>
-        <table class="table table-bordered table-striped">
-          <tr><th style="width: 25px;">notation</th><th style="width: 150px;">rotation</th><th style="width: 100px;">clockwise</th><th style="width: 100px;">anticlockwise</th></tr>
-          <tr><td>x</td><td>cube rotation - follows R direction</td><td>up</td><td>down</td></tr>
-          <tr><td>y</td><td>cube rotation - follows U direction</td><td>left</td><td>right</td></tr>
-          <tr><td>z</td><td>cube rotation -follows F direction</td><td>down</td><td>up</td></tr>
-        </table>
+      <div class="row">
+        <div class="col-10 mx-auto py-2">
+          <h3>Face Rotations</h3>
+          <table class="table table-bordered table-striped">
+            <tr><th style="width: 25px;">notation</th><th style="width: 100px;">rotation</th><th style="width: 150px;">clockwise</th><th style="width: 150px;">anticlockwise</th></tr>
+            <tr><td>R</td><td>right face</td><td>use <b>right</b> hand - <b>upward</b></td><td>use <b>right</b> hand - <b>downward</b></td></tr>
+            <tr><td>L</td><td>left face</td><td>use <b>left</b> hand - <b>downward</b></td><td>use <b>left</b> hand - <b>upward</b></td></tr>
+            <tr><td>U</td><td>up face</td><td>use <b>right</b> index finger - <b>forward</b></td><td>use <b>left</b> index finger - <b>forward</b></td></tr>
+            <tr><td>D</td><td>down face</td><td>use <b>left</b> ring finger - <b>forward</b></td><td>use <b>right</b> ring finger - <b>forward</b></td></tr>
+            <tr><td>F</td><td>front face</td><td>use <b>right</b> index finger - <b>downward</b></td><td>use <b>left</b> index finger - <b>downward</b></td></tr>
+            <tr><td>B</td><td>back face</td><td>use <b>left</b> ring finger - <b>downward</b></td><td>use <b>right</b> ring finger - <b>downward</b></td></tr>
+          </table>
+        </div>
       </div>
 
-    </div>
+      <div class="row">
+        <div class="col-10 mx-auto py-2">
+          <h3>Slice Rotations</h3>
+          <table class="table table-bordered table-striped">
+            <tr><th style="width: 25px;">notation</th><th style="width: 150px;">rotation</th><th style="width: 100px;">clockwise</th><th style="width: 100px;">anticlockwise</th></tr>
+            <tr><td>M</td><td>middle slice (x axis) - follows L direction</td><td>down</td><td>up</td></tr>
+            <tr><td>E</td><td>middle slice (y axis) - follows D direction</td><td>right</td><td>left</td></tr>
+            <tr><td>S</td><td>middle slice (z axis) - follows F direction</td><td>down</td><td>up</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-10 mx-auto py-2">
+          <h3>Cube Rotations</h3>
+          <table class="table table-bordered table-striped">
+            <tr><th style="width: 25px;">notation</th><th style="width: 150px;">rotation</th><th style="width: 100px;">clockwise</th><th style="width: 100px;">anticlockwise</th></tr>
+            <tr><td>x</td><td>cube rotation - follows R direction</td><td>up</td><td>down</td></tr>
+            <tr><td>y</td><td>cube rotation - follows U direction</td><td>left</td><td>right</td></tr>
+            <tr><td>z</td><td>cube rotation -follows F direction</td><td>down</td><td>up</td></tr>
+          </table>
+        </div>
+      </div>
+      
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
